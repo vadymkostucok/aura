@@ -1,5 +1,5 @@
 import React from 'react'
-import { H1 } from '../Typography'
+import { H2 } from '../Typography'
 import { FlexContainer } from '../FlexContainer'
 import { Card } from '../Card'
 
@@ -28,10 +28,10 @@ export const About = () => {
     return (
         <FlexContainer direction="flex-col" gap="gap-10" className="py-10">
             <FlexContainer center>
-                <H1 className="capitalize">
-                    {"Don't worry. "}
-                    <span className="text-green-300">we got you.</span>
-                </H1>
+                <H2 className="capitalize">
+                    {'Don’t Worry. '}
+                    <span className="text-[#21D7A6]">we got you.</span>
+                </H2>
             </FlexContainer>
             <FlexContainer gap="gap-10" className="px-10">
                 {configMap.map((card) => (

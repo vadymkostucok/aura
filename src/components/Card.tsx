@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box } from './Box'
-import { H3, P } from './Typography'
+
+import { H3, P, TypographySmall } from './Typography'
 import { FlexContainer } from './FlexContainer'
 
 type CardType = {
@@ -13,11 +13,17 @@ type CardType = {
 export const Card = ({ title, description, index }: CardType) => {
     return (
         <FlexContainer direction="flex-col">
-            <P>Panel {index}</P>
-            <Box className="bg-black border border-gray-700">
-                <H3>{title}</H3>
+            <TypographySmall className="uppercase">
+                Panel-{index}
+            </TypographySmall>
+            <FlexContainer
+                direction="flex-col"
+                gap="gap-6"
+                className="bg-black border border-gray-700"
+            >
+                <H3 className="text-[#FFF973]">{title}</H3>
                 <P>{description}</P>
-            </Box>
+            </FlexContainer>
         </FlexContainer>
     )
 }

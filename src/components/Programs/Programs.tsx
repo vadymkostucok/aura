@@ -1,9 +1,12 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H1, H3, H4, P } from '../Typography'
+import { H2 } from '../Typography'
+import { ProgramsCard } from './ProgramsCard'
 
 const mapConfig = [
     {
+        type: 'PR-02_£399.00 GBP',
+        complexity: 'junior',
         title: 'SOC BTL1 Junior',
         subtitle:
             'Lessons available in 9 languages with native text-to-speech (beta)',
@@ -17,6 +20,8 @@ const mapConfig = [
         ],
     },
     {
+        type: 'PR-02_£399.00 GBP',
+        complexity: 'junior',
         title: 'SOC BTL1 Junior',
         subtitle:
             'Lessons available in 9 languages with native text-to-speech (beta)',
@@ -35,37 +40,20 @@ export const Programs = () => {
     return (
         <FlexContainer className="px-10 py-10">
             <FlexContainer direction="flex-col" gap="gap-16">
-                <H1>Index of popular cybersecurity programs</H1>
-                <H1>ICON</H1>
+                <H2>Index of popular cybersecurity programs</H2>
+                <H2>ICON</H2>
             </FlexContainer>
-            <FlexContainer direction="flex-col">
+            <FlexContainer direction="flex-col" gap="gap-6">
                 {mapConfig.map((card, index) => (
-                    <FlexContainer
+                    <ProgramsCard
                         key={index}
-                        direction="flex-col"
-                        className="bg-black border border-gray-700"
-                    >
-                        <H3>{card.title}</H3>
-                        <H4 className="text-green-300">{card.subtitle}</H4>
-                        {card.description}
-                        <P>Top skills you gain</P>
-                        <FlexContainer justifyContent="justify-between">
-                            <div className="grid grid-cols-2">
-                                {card.skills.map((skill, index) => (
-                                    <FlexContainer
-                                        key={index}
-                                        alignItems="items-center"
-                                    >
-                                        <div className="bg-green-300 w-2 h-2" />
-                                        {skill}
-                                    </FlexContainer>
-                                ))}
-                            </div>
-                            <button className="bg-yellow-300 text-black px-5 py-2.5">
-                                Learn more
-                            </button>
-                        </FlexContainer>
-                    </FlexContainer>
+                        type={card.type}
+                        complexity={card.complexity}
+                        title={card.title}
+                        subtitle={card.subtitle}
+                        description={card.description}
+                        skills={card.skills}
+                    />
                 ))}
             </FlexContainer>
         </FlexContainer>
