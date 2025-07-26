@@ -1,36 +1,44 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H1, P } from '../Typography'
+import { H2, P } from '../Typography'
 import { Box } from '../Box'
+import { PodcastCard } from './PodcastCard'
 
 const configMap = [
     {
-        description:
-            'Science Securing Vibe Coded Apps Colin Gounden / CEO of Via',
+        date: 'July 26, 2025',
+        title: 'Science Securing Vibe Coded Apps',
+        author: 'Colin Gounden',
+        position: 'CEO of Via',
     },
     {
-        description:
-            'Science Securing Vibe Coded Apps Colin Gounden / CEO of Via',
+        date: 'July 26, 2025',
+        title: 'Science Securing Vibe Coded Apps',
+        author: 'Colin Gounden',
+        position: 'CEO of Via',
     },
     {
-        description:
-            'Science Securing Vibe Coded Apps Colin Gounden / CEO of Via',
+        date: 'July 26, 2025',
+        title: 'Science Securing Vibe Coded Apps',
+        author: 'Colin Gounden',
+        position: 'CEO of Via',
     },
 ]
 
 export const Podcast = () => {
     return (
         <FlexContainer direction="flex-col" center className="px-10 py-10">
-            <H1>The Fast and Curious Podcast</H1>
+            <H2>The Fast and Curious Podcast</H2>
             <FlexContainer>
-                <FlexContainer direction="flex-col">
+                <FlexContainer direction="flex-col" gap="gap-6">
                     {configMap.map((card, index) => (
-                        <Box
+                        <PodcastCard
                             key={index}
-                            className="bg-black border border-gray-700"
-                        >
-                            <P>{card.description}</P>
-                        </Box>
+                            date={card.date}
+                            title={card.title}
+                            author={card.author}
+                            position={card.position}
+                        />
                     ))}
                 </FlexContainer>
                 <Box>
@@ -42,7 +50,9 @@ export const Podcast = () => {
                             by an expert, who with take questions from the
                             audience.
                         </P>
-                        <button>learn more</button>
+                        <button className="uppercase text-[#FFF973]">
+                            learn_more
+                        </button>
                     </FlexContainer>
                 </Box>
             </FlexContainer>

@@ -12,8 +12,8 @@ export default function Home() {
         <>
             <VideoScrollWrapper>
                 <Intro />
-                <Podcast />
                 <About />
+                <Podcast />
                 <Report />
                 <Libraries />
                 <Programs />

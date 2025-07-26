@@ -9,7 +9,7 @@ export function H1({
 }) {
     return (
         <h1
-            className={`${className} scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl`}
+            className={`${className} font-violet scroll-m-20 text-[186px] tracking-tight`}
         >
             {children}
         </h1>
@@ -25,7 +25,7 @@ export function H2({
 }) {
     return (
         <h2
-            className={`${className} scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0`}
+            className={`${className} font-violet scroll-m-20 text-7xl tracking-tight`}
         >
             {children}
         </h2>
@@ -40,9 +40,7 @@ export function H3({
     className?: string
 }) {
     return (
-        <h3
-            className={`${className} scroll-m-20 text-2xl font-semibold tracking-tight`}
-        >
+        <h3 className={`${className} font-violet scroll-m-20 text-[40px]`}>
             {children}
         </h3>
     )
@@ -56,11 +54,23 @@ export function H4({
     className?: string
 }) {
     return (
-        <h4
-            className={`${className} scroll-m-20 text-xl font-semibold tracking-tight`}
-        >
+        <h4 className={`${className} font-violet scroll-m-20 text-[26px]`}>
             {children}
         </h4>
+    )
+}
+
+export function H5({
+    children,
+    className,
+}: {
+    children: ReactNode
+    className?: string
+}) {
+    return (
+        <h5 className={`${className} font-violet scroll-m-20 text-[20px]`}>
+            {children}
+        </h5>
     )
 }
 
@@ -71,8 +81,7 @@ export function P({
     children: ReactNode
     className?: string
 }) {
-    // [&:not(:first-child)]:mt-6
-    return <p className={`${className} leading-7`}>{children}</p>
+    return <p className={`${className} text-[15px] leading-5`}>{children}</p>
 }
 
 export function InlineCode({
@@ -124,11 +133,7 @@ export function TypographySmall({
     children: ReactNode
     className?: string
 }) {
-    return (
-        <small className={`${className} text-sm font-medium leading-none`}>
-            {children}
-        </small>
-    )
+    return <small className={`${className} text-[13px]`}>{children}</small>
 }
 
 export function TypographyMuted({
