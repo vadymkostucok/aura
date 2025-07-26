@@ -7,18 +7,6 @@ export const Intro = () => {
     return (
         <Box>
             <FlexContainer direction="flex-col" minHeight="min-h-screen" center>
-                <header className="absolute top-0 left-1/2 -translate-x-1/2">
-                    <FlexContainer gap="gap-2">
-                        <div>icon</div>
-                        <nav>
-                            <ul className="flex gap-2">
-                                <li>resources</li>
-                                <li>community</li>
-                                <li>certifications</li>
-                            </ul>
-                        </nav>
-                    </FlexContainer>
-                </header>
                 <P className="uppercase text-[#FFF973]">
                     Illuminate your path to cybersecurity mastery
                 </P>

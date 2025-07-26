@@ -6,10 +6,12 @@ import { Libraries } from '@/components/Libraries/Libraries'
 import { Programs } from '@/components/Programs/Programs'
 import { Form } from '@/components/Form/Form'
 import { VideoScrollWrapper } from '@/components/Video'
+import { Header } from '@/components/Header/Header'
 
 export default function Home() {
     return (
         <>
+            <Header />
             <VideoScrollWrapper>
                 <Intro />
                 <About />
