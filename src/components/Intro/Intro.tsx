@@ -1,11 +1,26 @@
+'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H1, P } from '../Typography'
+import { H1, P, TypographyDisclaimer } from '../Typography'
 import { Box } from '../Box'
+import ArrowsCTA from '@/assets/ArrowsCTA.json'
+import Lottie from 'lottie-react'
 
 export const Intro = () => {
     return (
-        <Box>
+        <Box className="overflow-hidden">
+            <div
+                className="absolute inset-0 z-0 pointer-events-none"
+                style={{
+                    backgroundImage: `
+                        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '25px 25px',
+                    backgroundPosition: 'center',
+                }}
+            />
+
             <FlexContainer direction="flex-col" minHeight="min-h-screen" center>
                 <P className="uppercase text-[#FFF973]">
                     Illuminate your path to cybersecurity mastery
@@ -15,13 +30,25 @@ export const Intro = () => {
                     The cybersecurity world is daunting. <br />
                     We’ll guide you through it, no matter your skill level.
                 </P>
-                <div className="absolute bottom-0 left-0 w-full">
+                <div className="absolute bottom-0 left-0 w-full p-5">
                     <FlexContainer justifyContent="justify-between">
-                        <P>©2025_aura security</P>
-                        <P>Learn More</P>
-                        <P>[Scroll to discover]</P>
+                        <TypographyDisclaimer>
+                            ©2025_aura security
+                        </TypographyDisclaimer>
+                        <TypographyDisclaimer>
+                            [Scroll to discover]
+                        </TypographyDisclaimer>
                     </FlexContainer>
                 </div>
+                <Lottie
+                    animationData={ArrowsCTA}
+                    loop
+                    autoplay
+                    className="h-32 w-64 absolute bottom-[15px] left-1/2 -translate-x-1/2"
+                />
+                <button className="absolute bottom-16 left-1/2 -translate-x-1/2 font-disket text-lg">
+                    Learn More
+                </button>
             </FlexContainer>
         </Box>
     )
