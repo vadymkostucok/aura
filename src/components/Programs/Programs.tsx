@@ -38,7 +38,7 @@ const mapConfig = [
 
 export const Programs = () => {
     return (
-        <FlexContainer className="px-10 py-10">
+        <FlexContainer className="px-10 pt-36">
             <FlexContainer direction="flex-col" gap="gap-16">
                 <H2>Index of popular cybersecurity programs</H2>
                 <H2>ICON</H2>

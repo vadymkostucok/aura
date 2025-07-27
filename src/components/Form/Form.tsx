@@ -4,7 +4,7 @@ import { H2, H3, P } from '../Typography'
 
 export const Form = () => {
     return (
-        <FlexContainer className="px-10 py-10">
+        <FlexContainer className="px-10 pt-36">
             <FlexContainer direction="flex-col" gap="gap-6">
                 <H2>
                     Join Our <br />

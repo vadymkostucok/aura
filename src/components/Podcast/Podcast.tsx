@@ -27,7 +27,7 @@ const configMap = [
 
 export const Podcast = () => {
     return (
-        <FlexContainer direction="flex-col" center className="px-10 py-10">
+        <FlexContainer direction="flex-col" center className="px-10 pt-36">
             <H2>The Fast and Curious Podcast</H2>
             <FlexContainer>
                 <FlexContainer direction="flex-col" gap="gap-6">

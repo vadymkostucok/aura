@@ -5,7 +5,7 @@ import { Box } from '../Box'
 
 export const Report = () => {
     return (
-        <FlexContainer justifyContent="justify-between" className="px-10 py-10">
+        <FlexContainer justifyContent="justify-between" className="px-10 pt-36">
             <H2>Breaches Report</H2>
             <Box>Coming Soon</Box>
         </FlexContainer>

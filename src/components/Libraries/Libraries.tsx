@@ -14,7 +14,7 @@ const mapConfig = [
 
 export const Libraries = () => {
     return (
-        <FlexContainer direction="flex-col" className="px-10 py-10">
+        <FlexContainer direction="flex-col" className="px-10 pt-36">
             <H2>Library for Vibe Coders</H2>
             <div className="grid grid-cols-3 gap-4">
                 {mapConfig.map((card, index) => (
