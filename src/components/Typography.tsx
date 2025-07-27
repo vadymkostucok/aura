@@ -9,7 +9,7 @@ export function H1({
 }) {
     return (
         <h1
-            className={`${className} font-violet scroll-m-20 text-[186px] tracking-tight`}
+            className={`${className} font-violet scroll-m-20 text-[186px] leading-[1.1] tracking-tight`}
         >
             {children}
         </h1>
@@ -84,7 +84,17 @@ export function P({
     return <p className={`${className} text-[15px] leading-5`}>{children}</p>
 }
 
-export function InlineCode({
+export function TypographySmall({
+    children,
+    className,
+}: {
+    children: ReactNode
+    className?: string
+}) {
+    return <small className={`${className} text-[13px]`}>{children}</small>
+}
+
+export function TypographyDisclaimer({
     children,
     className,
 }: {
@@ -92,9 +102,7 @@ export function InlineCode({
     className?: string
 }) {
     return (
-        <code
-            className={`${className} relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold`}
-        >
+        <code className={`${className} text-[11px] uppercase opacity-70`}>
             {children}
         </code>
     )
@@ -124,16 +132,6 @@ export function TypographyLarge({
     return (
         <div className={`${className} text-lg font-semibold`}>{children}</div>
     )
-}
-
-export function TypographySmall({
-    children,
-    className,
-}: {
-    children: ReactNode
-    className?: string
-}) {
-    return <small className={`${className} text-[13px]`}>{children}</small>
 }
 
 export function TypographyMuted({
