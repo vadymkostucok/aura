@@ -66,3 +66,7 @@ body {
 .font-disket {
     font-family: 'DisketMono', monospace;
 }
+
+.clip-panel-label {
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}

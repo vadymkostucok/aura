@@ -1,26 +1,37 @@
 import React from 'react'
 import { H2 } from '../Typography'
 import { FlexContainer } from '../FlexContainer'
-import { Card } from '../Card'
+import { AboutCard } from './AboutCard'
+
+import happyEmoji from '@/assets/emoji-happy.svg'
+import keyEmoji from '@/assets/key.svg'
+import ghostEmoji from '@/assets/ghost.svg'
 
 const configMap = [
     {
-        index: 1,
-        title: 'Vibe Coders',
-        description:
-            'You’re creating code in seconds. You’re also creating security threats in seconds. Check out the Vibe section in Resources to learn best practices and get free tools to help secure your Vibe code.',
+        index: '01',
+        title: 'Vibe Coders..',
+        icon: happyEmoji,
+        description: [
+            'You’re creating code in seconds. You’re also creating security threats in seconds.',
+            'Check out the Vibe section in Resources to learn best practices and get free tools to help secure your Vibe code.',
+        ],
     },
     {
-        index: 2,
-        title: 'Vibe Coders',
-        description:
-            'You’re creating code in seconds. You’re also creating security threats in seconds. Check out the Vibe section in Resources to learn best practices and get free tools to help secure your Vibe code.',
+        index: '02',
+        title: 'New to Cybersecurity',
+        icon: keyEmoji,
+        description: [
+            'The cybersecurity world is daunting for just about anyone. We’ll teach you the basics, vocabulary, and provide useful tools in the Beginners section in Resources.',
+        ],
     },
     {
-        index: 3,
-        title: 'Vibe Coders',
-        description:
-            'You’re creating code in seconds. You’re also creating security threats in seconds. Check out the Vibe section in Resources to learn best practices and get free tools to help secure your Vibe code.',
+        index: '03',
+        title: 'Want Fed/DoD customers',
+        icon: ghostEmoji,
+        description: [
+            'So you want to sell your technology to federal agencies and the Department of Defense. We’ll give you tools and information to help guide you through the cybersecurity requirements.',
+        ],
     },
 ]
 
@@ -33,14 +44,14 @@ export const About = () => {
                     <span className="text-[#21D7A6]">we got you.</span>
                 </H2>
             </FlexContainer>
-            <FlexContainer gap="gap-10" className="px-10">
+            <FlexContainer gap="gap-5" className="px-5 items-stretch">
                 {configMap.map((card) => (
-                    <Card
+                    <AboutCard
                         key={card.index}
                         index={card.index}
                         title={card.title}
                         description={card.description}
-                        icon=""
+                        icon={card.icon}
                     />
                 ))}
             </FlexContainer>
