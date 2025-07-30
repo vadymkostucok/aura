@@ -5,22 +5,12 @@ import { H1, P, TypographyDisclaimer } from '../Typography'
 import { Box } from '../Box'
 import ArrowsCTA from '@/assets/ArrowsCTA.json'
 import Lottie from 'lottie-react'
+import { BackgroundGrid } from '../BackgroundGrid'
 
 export const Intro = () => {
     return (
         <Box className="overflow-hidden w-full">
-            <div
-                className="absolute inset-0 z-0 pointer-events-none"
-                style={{
-                    backgroundImage: `
-                        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '25px 25px',
-                    backgroundPosition: 'center',
-                }}
-            />
-
+            <BackgroundGrid />
             <FlexContainer direction="flex-col" minHeight="min-h-screen" center>
                 <P className="uppercase text-[#FFF973]">
                     Illuminate your path to cybersecurity mastery
