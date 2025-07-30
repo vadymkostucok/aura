@@ -70,3 +70,7 @@ body {
 .clip-panel-label {
     clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
 }
+
+.clip-panel-label-both {
+    clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+}
