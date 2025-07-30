@@ -11,7 +11,10 @@ import broken from '@/assets/shape.png'
 
 export const Report = () => {
     return (
-        <FlexContainer justifyContent="justify-between" className="px-10 pt-36">
+        <FlexContainer
+            justifyContent="justify-between"
+            className="px-10 pt-36 max-w-[1920px]"
+        >
             <H2>Breaches Report</H2>
             <Box>
                 <FlexContainer

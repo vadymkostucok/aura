@@ -38,7 +38,10 @@ export const VideoScrollWrapper = ({
                 />
             </div>
 
-            <div ref={contentRef} className="absolute top-0 left-0 w-full z-10">
+            <div
+                ref={contentRef}
+                className="absolute top-0 left-0 w-full flex flex-col items-center z-10"
+            >
                 {children}
             </div>
         </div>

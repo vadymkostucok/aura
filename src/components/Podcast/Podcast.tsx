@@ -2,7 +2,6 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2, P } from '../Typography'
-import { Box } from '../Box'
 import { PodcastCard } from './PodcastCard'
 import Lottie from 'lottie-react'
 
@@ -58,9 +57,9 @@ export const Podcast = () => {
                         direction="flex-col"
                         gap="gap-6"
                         center
-                        className="mt-5 border border-[#ffffff10] bg-[#ffffff02] backdrop-blur-lg rounded-[2px]"
+                        className="mt-[35px] border border-[#ffffff10] bg-[#ffffff02] backdrop-blur-lg rounded-[2px]"
                     >
-                        <FlexContainer center className="h-full pt-5">
+                        <FlexContainer center className="h-full pt-[35px]">
                             <Lottie
                                 animationData={Chip}
                                 loop

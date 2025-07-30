@@ -8,7 +8,7 @@ import Lottie from 'lottie-react'
 
 export const Intro = () => {
     return (
-        <Box className="overflow-hidden">
+        <Box className="overflow-hidden w-full">
             <div
                 className="absolute inset-0 z-0 pointer-events-none"
                 style={{

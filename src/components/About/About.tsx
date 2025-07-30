@@ -37,7 +37,12 @@ const configMap = [
 
 export const About = () => {
     return (
-        <FlexContainer direction="flex-col" gap="gap-10" className="pt-36">
+        <FlexContainer
+            width="max-w-[1920px]"
+            direction="flex-col"
+            gap="gap-10"
+            className="pt-36"
+        >
             <FlexContainer center>
                 <H2 className="capitalize">
                     {'Don’t Worry. '}
