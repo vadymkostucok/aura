@@ -14,15 +14,23 @@ export const VideoScrollWrapper = ({
         const el = contentRef.current
         if (!el) return
 
+        let animationFrame: number
+
         const updateHeight = () => {
-            setHeight(el.offsetHeight)
+            if (animationFrame) cancelAnimationFrame(animationFrame)
+            animationFrame = requestAnimationFrame(() => {
+                setHeight(el.offsetHeight)
+            })
         }
 
         const observer = new ResizeObserver(updateHeight)
         observer.observe(el)
         updateHeight()
 
-        return () => observer.disconnect()
+        return () => {
+            observer.disconnect()
+            cancelAnimationFrame(animationFrame)
+        }
     }, [])
 
     return (
@@ -35,6 +43,7 @@ export const VideoScrollWrapper = ({
                     loop
                     muted
                     playsInline
+                    preload="auto"
                 />
             </div>
 
