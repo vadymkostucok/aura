@@ -13,8 +13,8 @@ import earthIcon from '@/assets/earth.svg'
 
 const mapConfig = [
     {
-        type: 'PR-02_£399.00 GBP',
-        complexity: 'junior',
+        type: 'PR-01_FREE',
+        complexity: 'Entry-level',
         title: 'SOC BTL1 Junior',
         subtitle:
             'Lessons available in 9 languages with native text-to-speech (beta)',
@@ -30,23 +30,23 @@ const mapConfig = [
     {
         type: 'PR-02_£399.00 GBP',
         complexity: 'junior',
-        title: 'SOC BTL1 Junior',
+        title: 'BTL1 SOC Cert',
         subtitle:
             'Lessons available in 9 languages with native text-to-speech (beta)',
         description:
-            "Once you've completed all 6 of our introduction courses, you can claim your BTJA certificate of completion here!",
+            'BTL1 is designed to train technical defenders that are capable of defending networks and responding to cyber incidents. The skills and tools you’ll learn in this course will be directly applicable to a range of security roles, and are actively used by defenders around the world.',
         skills: [
-            'Redline',
-            'Indicators of Compromise',
-            'IOC Editor',
-            'Indicators of Attack',
+            'ATT&CK',
+            'Browser History Capturer',
+            'Autopsy',
+            'JumpList Explorer',
         ],
     },
 ]
 
 export const Programs = () => {
     return (
-        <FlexContainer className="px-10 pt-36 gap-32">
+        <FlexContainer className="px-10 pt-36 gap-32 max-w-[1920px]">
             <FlexContainer direction="flex-col" gap="gap-16">
                 <H2>Index of popular cybersecurity programs</H2>
                 <Box className="w-36 h-36">
