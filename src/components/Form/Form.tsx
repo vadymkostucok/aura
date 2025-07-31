@@ -39,6 +39,7 @@ export const Form = () => {
                         width="w-[420px]"
                         direction="flex-col"
                         gap="gap-5"
+                        className="pb-8"
                     >
                         <H5 className="tracking-tight">Social links:</H5>
                         <FlexContainer gap="gap-1">
@@ -127,7 +128,7 @@ export const Form = () => {
                             </FlexContainer>
                             <button
                                 type="submit"
-                                className="bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left px-5 py-2.5 duration-500"
+                                className="bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4  duration-500"
                             >
                                 <FlexContainer
                                     gap="gap-2.5"

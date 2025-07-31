@@ -91,7 +91,7 @@ export const ProgramsCard = ({
                                 </FlexContainer>
                             ))}
                         </div>
-                        <button className="bg-[#fff973] hover:bg-transparent uppercase text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] px-5 py-2.5 duration-500">
+                        <button className="bg-[#fff973] hover:bg-transparent uppercase text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-4 duration-500">
                             <FlexContainer gap="gap-2.5">
                                 <TypographySmall className="font-disket">
                                     learn_more
