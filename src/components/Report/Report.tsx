@@ -1,25 +1,23 @@
 'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2, H3, P } from '../Typography'
-import { Box } from '../Box'
-import Image from 'next/image'
+import { H2, H3, TypographySmall } from '../Typography'
 import Lottie from 'lottie-react'
+import Image from 'next/image'
 
 import Blocks from '@/assets/Blocks.json'
 import broken from '@/assets/shape.png'
+// import logo3D from '@/assets/3DLogo.json'
 
 export const Report = () => {
     return (
-        <FlexContainer
-            justifyContent="justify-between"
-            className="px-10 pt-36 max-w-[1920px]"
-        >
-            <H2>Breaches Report</H2>
-            <Box>
+        <FlexContainer className="px-5 pt-36 max-w-[1920px] gap-36">
+            <H2 className="whitespace-nowrap pt-12">Breaches Report</H2>
+
+            <FlexContainer direction="flex-col" center>
                 <FlexContainer
-                    width="w-auto"
-                    className="px-5 py-2 clip-panel-label-both bg-[#ffffff05] backdrop-blur-lg"
+                    width="w-fit"
+                    className="px-10 py-1.5 clip-panel-label-both bg-[#ffffff05] backdrop-blur-lg"
                     gap="gap-5"
                     center
                 >
@@ -27,26 +25,29 @@ export const Report = () => {
                         animationData={Blocks}
                         loop
                         autoplay
-                        className="h-2.5"
+                        className="h-2.5 opacity-20"
                     />
-                    <P className="uppercase">Breach / cyber danger reports</P>
+                    <TypographySmall className="opacity-60 uppercase">
+                        Breach / cyber danger reports
+                    </TypographySmall>
                     <Lottie
                         animationData={Blocks}
                         loop
                         autoplay
-                        className="h-2.5"
+                        className="h-2.5 opacity-20 rotate-180"
                     />
                 </FlexContainer>
                 <FlexContainer
-                    className="px-32 py-40 bg-[#11000002] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
+                    className="py-40 bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
                     gap="gap-10"
                     center
                 >
                     <H3>Coming</H3>
+                    {/* <Lottie animationData={logo3D} loop autoplay /> */}
                     <Image src={broken} alt="coming soon" />
                     <H3>Soon...</H3>
                 </FlexContainer>
-            </Box>
+            </FlexContainer>
         </FlexContainer>
     )
 }

@@ -25,31 +25,33 @@ export const AboutCard = ({
             <FlexContainer
                 width="max-w-60"
                 gap="gap-2.5"
-                className="clip-panel-label gap-2.5 bg-[#ffffff08] backdrop-blur-lg py-2 pl-4"
+                className="clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
             >
                 <Image src={crossIcon} alt="cross icon" />
-                <TypographySmall className="uppercase">
+                <TypographySmall className="uppercase opacity-60">
                     Panel-{index}
                 </TypographySmall>
             </FlexContainer>
             <FlexContainer
                 direction="flex-col"
                 justifyContent="justify-between"
-                className="rounded-[2px] bg-[#ffffff10] border border-[#ffffff10] backdrop-blur-lg flex-1 pl-4"
+                className="bg-[#ffffff15] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg flex-1 pl-4 pr-2.5"
             >
                 <FlexContainer
-                    alignItems="items-start"
+                    alignItems="items-center"
                     justifyContent="justify-between"
-                    className="py-6 pr-2.5"
+                    className="pt-4 pb-8"
                 >
-                    <H3 className="text-[#FFF973]">{title}</H3>
+                    <H3 className="text-[#FFF973] leading-none tracking-tight">
+                        {title}
+                    </H3>
                     <Image src={icon} alt="Product Icon" />
                 </FlexContainer>
-                <Box className="pr-20">
+                <Box className="pr-[74px] pb-4">
                     {description.map((sentence, index) => (
-                        <P key={index} className="pb-9">
-                            {sentence}
-                        </P>
+                        <React.Fragment key={index}>
+                            <P>{sentence}</P> <br />
+                        </React.Fragment>
                     ))}
                 </Box>
             </FlexContainer>

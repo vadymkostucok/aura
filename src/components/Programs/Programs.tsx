@@ -3,11 +3,11 @@ import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2 } from '../Typography'
 import { ProgramsCard } from './ProgramsCard'
-import Image from 'next/image'
-import shape from '@/assets/shape.png'
 import { Box } from '../Box'
-import Lottie from 'lottie-react'
+import Image from 'next/image'
 
+import Lottie from 'lottie-react'
+import shape from '@/assets/shape.png'
 import Blocks from '@/assets/Blocks.json'
 import earthIcon from '@/assets/earth.svg'
 
@@ -46,29 +46,43 @@ const mapConfig = [
 
 export const Programs = () => {
     return (
-        <FlexContainer className="px-10 pt-36 gap-32 max-w-[1920px]">
-            <FlexContainer direction="flex-col" gap="gap-16">
-                <H2>Index of popular cybersecurity programs</H2>
-                <Box className="w-36 h-36">
+        <FlexContainer className="px-5 pt-36 gap-32 max-w-[1920px]">
+            <FlexContainer
+                width="w-1/2"
+                direction="flex-col"
+                className="gap-24"
+            >
+                <H2 className="pt-12">
+                    Index of popular cybersecurity programs
+                </H2>
+                <Box className="px-2.5 w-40 h-40">
                     <FlexContainer
                         gap="gap-2.5"
                         className="clip-panel-label gap-2.5 bg-[#ffffff08] backdrop-blur-lg py-2 pl-4"
                         alignItems="items-center"
                     >
-                        <Image src={earthIcon} alt="earth icon" />
+                        <Image
+                            src={earthIcon}
+                            alt="earth icon"
+                            className="opacity-60"
+                        />
                         <Lottie
                             animationData={Blocks}
                             loop
                             autoplay
-                            className="h-2.5"
+                            className="h-2.5 opacity-20"
                         />
                     </FlexContainer>
                     <Box className="w-fit bg-[#ffffff02] backdrop-blur-lg border border-[#ffffff10]">
-                        <Image src={shape} alt="coming soon" className="p-5" />
+                        <Image
+                            src={shape}
+                            alt="coming soon"
+                            className="px-5 py-7"
+                        />
                     </Box>
                 </Box>
             </FlexContainer>
-            <FlexContainer direction="flex-col" gap="gap-6">
+            <FlexContainer width="w-1/2" direction="flex-col" gap="gap-6">
                 {mapConfig.map((card, index) => (
                     <ProgramsCard
                         key={index}

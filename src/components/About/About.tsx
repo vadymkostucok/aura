@@ -6,11 +6,13 @@ import { AboutCard } from './AboutCard'
 import happyEmoji from '@/assets/emoji-happy.svg'
 import keyEmoji from '@/assets/key.svg'
 import ghostEmoji from '@/assets/ghost.svg'
+import { BackgroundGrid } from '../BackgroundGrid'
+import { Box } from '../Box'
 
 const configMap = [
     {
         index: '01',
-        title: 'Vibe Coders..',
+        title: 'Vibe Coders...',
         icon: happyEmoji,
         description: [
             'You’re creating code in seconds. You’re also creating security threats in seconds.',
@@ -37,19 +39,18 @@ const configMap = [
 
 export const About = () => {
     return (
-        <FlexContainer
-            width="max-w-[1920px]"
-            direction="flex-col"
-            gap="gap-10"
-            className="pt-36"
-        >
-            <FlexContainer center>
-                <H2 className="capitalize">
-                    {'Don’t Worry. '}
-                    <span className="text-[#21D7A6]">we got you.</span>
-                </H2>
-            </FlexContainer>
-            <FlexContainer gap="gap-5" className="px-5 items-stretch">
+        <FlexContainer width="max-w-[1920px]" direction="flex-col">
+            <Box className="pt-36 pb-20">
+                <BackgroundGrid />
+                <FlexContainer center>
+                    <H2 className="capitalize">
+                        {'Don’t Worry. '}
+                        <span className="text-[#21D7A6]">we got you.</span>
+                    </H2>
+                </FlexContainer>
+            </Box>
+
+            <FlexContainer gap="gap-5" className="px-5 pb-[60px] items-stretch">
                 {configMap.map((card) => (
                     <AboutCard
                         key={card.index}
