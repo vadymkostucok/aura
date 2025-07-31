@@ -27,12 +27,14 @@ export const PodcastCard = ({
             <FlexContainer
                 width="max-w-60"
                 gap="gap-2.5"
-                className="clip-panel-label bg-[#ffffff08] backdrop-blur-lg py-2 pl-4"
+                className="clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
             >
                 <Image src={crossIcon} alt="cross icon" />
-                <TypographySmall>{date}</TypographySmall>
+                <TypographySmall className="uppercase opacity-60">
+                    {date}
+                </TypographySmall>
             </FlexContainer>
-            <FlexContainer className="rounded-[2px] bg-[#ffffff10] border border-[#ffffff10] backdrop-blur-lg p-4">
+            <FlexContainer className="bg-[#ffffff15] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg p-4">
                 <Image
                     src={icon}
                     alt={`Podcast thumbnail: ${title}`}
@@ -43,11 +45,15 @@ export const PodcastCard = ({
                     justifyContent="justify-center"
                     className="px-6"
                 >
-                    <H4 className="text-[#FFF973]">{title}</H4>
+                    <H4 className="text-[#FFF973] tracking-tighter">{title}</H4>
                     <FlexContainer>
-                        <P>{author}</P>
+                        <TypographySmall className="uppercase text-[#fff]">
+                            {author}
+                        </TypographySmall>
                         <span className="px-2 text-white">/</span>
-                        <P className="text-[#21D7A6]">{position}</P>
+                        <TypographySmall className="uppercase text-[#21D7A6]">
+                            {position}
+                        </TypographySmall>
                     </FlexContainer>
                 </FlexContainer>
             </FlexContainer>
