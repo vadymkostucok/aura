@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useRef, useState, useEffect } from 'react'
+import clsx from 'clsx'
 
 export const VideoScrollWrapper = ({
     children,
@@ -9,35 +10,46 @@ export const VideoScrollWrapper = ({
 }) => {
     const contentRef = useRef<HTMLDivElement>(null)
     const [height, setHeight] = useState<number>(0)
+    const [isIntroInView, setIsIntroInView] = useState(true)
 
     useEffect(() => {
         const el = contentRef.current
         if (!el) return
 
-        let animationFrame: number
-
-        const updateHeight = () => {
-            if (animationFrame) cancelAnimationFrame(animationFrame)
-            animationFrame = requestAnimationFrame(() => {
-                setHeight(el.offsetHeight)
-            })
-        }
-
-        const observer = new ResizeObserver(updateHeight)
-        observer.observe(el)
+        const updateHeight = () => setHeight(el.offsetHeight)
+        const resizeObserver = new ResizeObserver(updateHeight)
+        resizeObserver.observe(el)
         updateHeight()
 
-        return () => {
-            observer.disconnect()
-            cancelAnimationFrame(animationFrame)
-        }
+        return () => resizeObserver.disconnect()
     }, [])
+
+    useEffect(() => {
+        const introEl = document.getElementById('intro')
+        if (!introEl) return
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsIntroInView(entry.isIntersecting),
+            {
+                threshold: 0.5,
+                rootMargin: '0px 0px -20% 0px',
+            }
+        )
+
+        observer.observe(introEl)
+        return () => observer.disconnect()
+    }, [])
+
+    const videoClass = clsx(
+        'w-full h-full object-cover transition-opacity duration-700',
+        isIntroInView ? 'opacity-60' : 'opacity-20'
+    )
 
     return (
         <div className="relative isolate" style={{ height }}>
             <div className="sticky top-0 h-screen -z-10">
                 <video
-                    className="w-full h-full object-cover"
+                    className={videoClass}
                     src="/video/background.mp4"
                     autoPlay
                     loop
