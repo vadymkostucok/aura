@@ -9,7 +9,7 @@ export function H1({
 }) {
     return (
         <h1
-            className={`${className} font-violet scroll-m-20 text-[186px] leading-[1.1] tracking-tight`}
+            className={`${className} font-violet scroll-m-20 text-[130px] md:text-[186px] leading-[1.1] tracking-tight`}
         >
             {children}
         </h1>
@@ -76,13 +76,17 @@ export function H5({
 
 export function P({
     children,
+    fontSize = 'text-[14px]',
     className,
 }: {
     children: ReactNode
+    fontSize?: string
     className?: string
 }) {
     return (
-        <p className={`${className} text-[16px] leading-5 opacity-90`}>
+        <p
+            className={`${className} ${fontSize} md:text-[16px] leading-5 opacity-90`}
+        >
             {children}
         </p>
     )
@@ -95,7 +99,11 @@ export function TypographySmall({
     children: ReactNode
     className?: string
 }) {
-    return <small className={`${className} text-[14px]`}>{children}</small>
+    return (
+        <small className={`${className} text-[11px] md:text-[14px]`}>
+            {children}
+        </small>
+    )
 }
 
 export function TypographyDisclaimer({
