@@ -44,7 +44,16 @@ export const Report = () => {
                 >
                     <H3>Coming</H3>
                     {/* <Lottie animationData={logo3D} loop autoplay /> */}
-                    <Image src={broken} alt="coming soon" />
+                    {/* <Image src={broken} alt="coming soon" /> */}
+                    <video
+                        src="/video/3DLogo.mp4"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        className="w-52"
+                    />
                     <H3>Soon...</H3>
                 </FlexContainer>
             </FlexContainer>

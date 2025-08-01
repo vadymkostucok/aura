@@ -74,10 +74,19 @@ export const Programs = () => {
                         />
                     </FlexContainer>
                     <Box className="w-fit bg-[#ffffff02] backdrop-blur-lg border border-[#ffffff10]">
-                        <Image
+                        {/* <Image
                             src={shape}
                             alt="coming soon"
-                            className="px-5 py-7"
+                            className=""
+                        /> */}
+                        <video
+                            src="/video/3DLogo.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            className="w-36 px-5 py-7"
                         />
                     </Box>
                 </Box>
