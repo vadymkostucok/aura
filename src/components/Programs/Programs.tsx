@@ -7,9 +7,9 @@ import { Box } from '../Box'
 import Image from 'next/image'
 
 import Lottie from 'lottie-react'
-import shape from '@/assets/shape.png'
 import Blocks from '@/assets/Blocks.json'
 import earthIcon from '@/assets/earth.svg'
+import logo3D from '@/assets/3DLogo.json'
 
 const mapConfig = [
     {
@@ -74,19 +74,11 @@ export const Programs = () => {
                         />
                     </FlexContainer>
                     <Box className="w-fit bg-[#ffffff02] backdrop-blur-lg border border-[#ffffff10]">
-                        {/* <Image
-                            src={shape}
-                            alt="coming soon"
-                            className=""
-                        /> */}
-                        <video
-                            src="/video/3DLogo.mp4"
-                            autoPlay
+                        <Lottie
+                            animationData={logo3D}
                             loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            className="w-36 px-5 py-7"
+                            autoplay
+                            className="px-5 py-7"
                         />
                     </Box>
                 </Box>

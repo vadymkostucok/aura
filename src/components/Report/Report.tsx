@@ -3,11 +3,9 @@ import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2, H3, TypographySmall } from '../Typography'
 import Lottie from 'lottie-react'
-import Image from 'next/image'
 
 import Blocks from '@/assets/Blocks.json'
-import broken from '@/assets/shape.png'
-// import logo3D from '@/assets/3DLogo.json'
+import logo3D from '@/assets/3DLogo.json'
 
 export const Report = () => {
     return (
@@ -43,9 +41,9 @@ export const Report = () => {
                     center
                 >
                     <H3>Coming</H3>
-                    {/* <Lottie animationData={logo3D} loop autoplay /> */}
+                    <Lottie animationData={logo3D} loop autoplay />
                     {/* <Image src={broken} alt="coming soon" /> */}
-                    <video
+                    {/* <video
                         src="/video/3DLogo.mp4"
                         autoPlay
                         loop
@@ -53,7 +51,7 @@ export const Report = () => {
                         playsInline
                         preload="auto"
                         className="w-52"
-                    />
+                    /> */}
                     <H3>Soon...</H3>
                 </FlexContainer>
             </FlexContainer>
