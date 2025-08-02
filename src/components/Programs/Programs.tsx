@@ -46,16 +46,19 @@ const mapConfig = [
 
 export const Programs = () => {
     return (
-        <FlexContainer className="px-5 pt-36 gap-32 max-w-[1920px]">
+        <FlexContainer
+            direction="flex-col lg:flex-row"
+            className="pt-24 md:pt-36 px-5 gap-10 2xl:gap-32 max-w-[1920px]"
+        >
             <FlexContainer
-                width="w-1/2"
+                width="w-full lg:w-1/2"
                 direction="flex-col"
                 className="gap-24"
             >
-                <H2 className="pt-12">
+                <H2 fontSize="text-5xl" className="md:pt-12">
                     Index of popular cybersecurity programs
                 </H2>
-                <Box className="px-2.5 w-40 h-40">
+                <Box className="hidden lg:block px-2.5 w-40 h-40">
                     <FlexContainer
                         gap="gap-2.5"
                         className="clip-panel-label gap-2.5 bg-[#ffffff08] backdrop-blur-lg py-2 pl-4"
@@ -83,7 +86,11 @@ export const Programs = () => {
                     </Box>
                 </Box>
             </FlexContainer>
-            <FlexContainer width="w-1/2" direction="flex-col" gap="gap-6">
+            <FlexContainer
+                width="w-full lg:w-1/2"
+                direction="flex-col"
+                gap="gap-6"
+            >
                 {mapConfig.map((card, index) => (
                     <ProgramsCard
                         key={index}
