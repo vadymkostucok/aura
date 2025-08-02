@@ -42,9 +42,9 @@ export const About = () => {
         <FlexContainer
             width="w-full md:max-w-[1920px]"
             direction="flex-col"
-            className="overflow-hidden px-5"
+            className="overflow-hidden"
         >
-            <Box className="pt-24 md:pt-36 pb-10 md:pb-20">
+            <Box className="px-5 pt-24 md:pt-36 pb-16 md:pb-20">
                 <BackgroundGrid />
                 <FlexContainer center>
                     <H2 className="capitalize">
@@ -54,7 +54,10 @@ export const About = () => {
                 </FlexContainer>
             </Box>
 
-            <FlexContainer gap="gap-5" className="md:pb-[60px] items-stretch">
+            <FlexContainer
+                gap="gap-5"
+                className="px-5 md:pb-[60px] items-stretch -mt-7 md:-mt-8"
+            >
                 {configMap.map((card) => (
                     <AboutCard
                         key={card.index}
