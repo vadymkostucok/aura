@@ -38,19 +38,20 @@ export const PodcastCard = ({
                 <Image
                     src={icon}
                     alt={`Podcast thumbnail: ${title}`}
-                    className="rounded-[2px] w-24 h-20"
+                    className="rounded-[2px] w-24 h-16 md:w-28 md:h-20"
                 />
                 <FlexContainer
                     direction="flex-col"
+                    gap="gap-1"
                     justifyContent="justify-center"
-                    className="px-6"
+                    className="px-4 md:px-5"
                 >
                     <H4 className="text-[#FFF973] tracking-tighter">{title}</H4>
                     <FlexContainer>
                         <TypographySmall className="uppercase text-[#fff]">
                             {author}
                         </TypographySmall>
-                        <span className="px-2 text-white">/</span>
+                        <TypographySmall className="px-2">/</TypographySmall>
                         <TypographySmall className="uppercase text-[#21D7A6]">
                             {position}
                         </TypographySmall>

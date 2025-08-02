@@ -1,4 +1,3 @@
-export type Direction = 'flex-row' | 'flex-col'
 export type HorizontalAlign =
     | 'justify-start'
     | 'justify-center'
