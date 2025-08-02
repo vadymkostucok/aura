@@ -18,14 +18,16 @@ export function H1({
 
 export function H2({
     children,
+    fontSize = 'text-6xl',
     className,
 }: {
     children: ReactNode
+    fontSize?: string
     className?: string
 }) {
     return (
         <h2
-            className={`${className} font-violet scroll-m-20 text-7xl tracking-tight`}
+            className={`${className} ${fontSize} font-violet scroll-m-20  md:text-7xl tracking-tight`}
         >
             {children}
         </h2>
@@ -34,13 +36,17 @@ export function H2({
 
 export function H3({
     children,
+    fontSize = 'text-[32px]',
     className,
 }: {
     children: ReactNode
+    fontSize?: string
     className?: string
 }) {
     return (
-        <h3 className={`${className} font-violet scroll-m-20 text-[40px]`}>
+        <h3
+            className={`${className} ${fontSize} font-violet scroll-m-20 md:text-[40px]`}
+        >
             {children}
         </h3>
     )
@@ -54,7 +60,9 @@ export function H4({
     className?: string
 }) {
     return (
-        <h4 className={`${className} font-violet scroll-m-20 text-[26px]`}>
+        <h4
+            className={`${className} font-violet scroll-m-20 leading-none text-[19px] md:text-[26px]`}
+        >
             {children}
         </h4>
     )
@@ -76,7 +84,7 @@ export function H5({
 
 export function P({
     children,
-    fontSize = 'text-[14px]',
+    fontSize = 'text-[15px]',
     className,
 }: {
     children: ReactNode
@@ -94,13 +102,15 @@ export function P({
 
 export function TypographySmall({
     children,
+    fontSize = 'text-[11px]',
     className,
 }: {
     children: ReactNode
+    fontSize?: string
     className?: string
 }) {
     return (
-        <small className={`${className} text-[11px] md:text-[14px]`}>
+        <small className={`${className} ${fontSize} md:text-[14px]`}>
             {children}
         </small>
     )
@@ -118,6 +128,18 @@ export function TypographyDisclaimer({
             {children}
         </code>
     )
+}
+
+export function TypographyButton({
+    children,
+    fontSize = 'text-[13px]',
+    className,
+}: {
+    children: ReactNode
+    fontSize?: string
+    className?: string
+}) {
+    return <p className={`${className} ${fontSize} font-disket`}>{children}</p>
 }
 
 export function TypographyLead({
@@ -143,19 +165,5 @@ export function TypographyLarge({
 }) {
     return (
         <div className={`${className} text-lg font-semibold`}>{children}</div>
-    )
-}
-
-export function TypographyMuted({
-    children,
-    className,
-}: {
-    children: ReactNode
-    className?: string
-}) {
-    return (
-        <p className={`${className} text-sm text-muted-foreground`}>
-            {children}
-        </p>
     )
 }
