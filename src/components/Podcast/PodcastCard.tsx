@@ -1,11 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box } from '../Box'
-import { H4, P, TypographySmall } from '../Typography'
+import { H4, TypographySmall } from '../Typography'
 import { FlexContainer } from '../FlexContainer'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 import crossIcon from '@/assets/cross.svg'
+import playIcon from '@/assets/play.svg'
 
 type PodcastCartType = {
     date: string
@@ -34,7 +35,7 @@ export const PodcastCard = ({
                     {date}
                 </TypographySmall>
             </FlexContainer>
-            <FlexContainer className="bg-[#FFFFFF1A] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg p-4">
+            <FlexContainer className="group bg-[#FFFFFF1A] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg p-4">
                 <Image
                     src={icon}
                     alt={`Podcast thumbnail: ${title}`}
@@ -57,6 +58,13 @@ export const PodcastCard = ({
                         </TypographySmall>
                     </FlexContainer>
                 </FlexContainer>
+                <div className="absolute inset-0 bg-gradient-to-l from-[#00000099] to-[#00000000] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end items-center p-4">
+                    <Image
+                        src={playIcon}
+                        alt="play icon"
+                        className="w-16 h-16 cursor-pointer"
+                    />
+                </div>
             </FlexContainer>
         </Box>
     )
