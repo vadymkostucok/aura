@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H1, P, TypographyDisclaimer } from '../Typography'
+import { H1, P, TypographyButton, TypographyDisclaimer } from '../Typography'
 import { Box } from '../Box'
 import ArrowsCTA from '@/assets/ArrowsCTA.json'
 import { BackgroundGrid } from '../BackgroundGrid'
@@ -33,7 +33,7 @@ export const Intro = () => {
                         className="absolute -top-10 right-0"
                     />
                 </H1>
-                <P className="w-[310px] md:w-auto text-center opacity-80">
+                <P className="w-[330px] md:w-auto text-center opacity-80">
                     The cybersecurity world is daunting. <br />
                     We’ll guide you through it, no matter your skill level.
                 </P>
@@ -51,8 +51,10 @@ export const Intro = () => {
                     animationData={ArrowsCTA}
                     className="md:h-32 w-44 md:w-64 absolute bottom-[49px] md:bottom-[15px] left-1/2 -translate-x-1/2"
                 />
-                <button className="absolute bottom-20 md:bottom-16 left-1/2 -translate-x-1/2 font-disket text-sm md:text-lg cursor-pointer hover:text-[#FFF973] duration-500">
-                    Learn More
+                <button className="absolute bottom-20 md:bottom-16 left-1/2 -translate-x-1/2  cursor-pointer hover:text-[#FFF973] duration-500">
+                    <TypographyButton fontSize="text-sm md:text-lg">
+                        Learn More
+                    </TypographyButton>
                 </button>
             </FlexContainer>
         </Box>

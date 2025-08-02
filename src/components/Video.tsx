@@ -31,7 +31,7 @@ export const VideoScrollWrapper = ({
         const observer = new IntersectionObserver(
             ([entry]) => setIsIntroInView(entry.isIntersecting),
             {
-                threshold: 0.5,
+                threshold: 0.1,
                 rootMargin: '0px 0px -20% 0px',
             }
         )
@@ -42,7 +42,7 @@ export const VideoScrollWrapper = ({
 
     const videoClass = clsx(
         'w-full h-full object-cover transition-opacity duration-700',
-        isIntroInView ? 'opacity-60' : 'opacity-20'
+        isIntroInView ? 'opacity-60' : 'opacity-0 md:opacity-20'
     )
 
     return (
