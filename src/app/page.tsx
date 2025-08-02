@@ -4,7 +4,7 @@ import { About } from '@/components/About/About'
 import { Report } from '@/components/Report/Report'
 import { Libraries } from '@/components/Libraries/Libraries'
 import { Programs } from '@/components/Programs/Programs'
-import { Form } from '@/components/Form/Form'
+import { Contact } from '@/components/Contact/Contact'
 import { VideoScrollWrapper } from '@/components/Video'
 import { Header } from '@/components/Header/Header'
 
@@ -20,7 +20,7 @@ export default function Home() {
                 <Libraries />
                 <Programs />
             </VideoScrollWrapper>
-            <Form />
+            <Contact />
         </>
     )
 }
