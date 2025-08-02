@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2, P, TypographySmall } from '../Typography'
+import { H2, P, TypographyButton } from '../Typography'
 import { PodcastCard } from './PodcastCard'
 import Lottie from 'lottie-react'
 
@@ -37,18 +37,24 @@ const configMap = [
 
 export const Podcast = () => {
     return (
-        <FlexContainer center className="px-10 pt-36">
+        <FlexContainer center className="pt-24 lg:pt-36 px-5">
             <FlexContainer
                 width="w-6xl"
                 direction="flex-col"
                 className="gap-12"
             >
-                <H2>The Fast and Curious Podcast</H2>
-                <FlexContainer gap="gap-5">
+                <H2 fontSize="text-5xl" className="text-center">
+                    The Fast and Curious Podcast
+                </H2>
+                <FlexContainer
+                    direction="flex-col lg:flex-row"
+                    className="gap-10 lg:gap-5"
+                >
                     <FlexContainer
-                        width="w-4/6"
+                        width="w-full lg:w-4/6"
                         direction="flex-col"
                         gap="gap-4"
+                        className="order-2 lg:order-1"
                     >
                         {configMap.map((card, index) => (
                             <PodcastCard
@@ -62,25 +68,25 @@ export const Podcast = () => {
                         ))}
                     </FlexContainer>
                     <FlexContainer
-                        width="w-1/2"
+                        width="w-full lg:w-1/2"
                         direction="flex-col"
                         gap="gap-6"
                         center
-                        className="mt-[32px] border border-[#ffffff10] bg-[#ffffff02] backdrop-blur-lg rounded-[2px]"
+                        className="lg:mt-[32px] lg:border lg:border-[#ffffff10] bg-[#ffffff02] backdrop-blur-lg rounded-[2px] order-1 lg:order-2"
                     >
-                        <FlexContainer center className="h-full pt-[15px]">
+                        <FlexContainer center className="h-full lg:pt-[15px]">
                             <Lottie
                                 animationData={Chip}
                                 loop
                                 autoplay
-                                className="w-36"
+                                className="w-24 lg:w-36"
                             />
                         </FlexContainer>
                         <FlexContainer
                             direction="flex-col"
                             center
-                            gap="gap-5"
-                            className="border-t border-[#ffffff10] h-full p-11"
+                            gap="gap-6"
+                            className="lg:border-t border-[#ffffff10] h-full lg:p-11"
                         >
                             <P className="text-center">
                                 Join our community and access our “15 Minutes
@@ -90,9 +96,9 @@ export const Podcast = () => {
                             </P>
                             <button className="uppercase cursor-pointer text-[#FFF973]">
                                 <FlexContainer gap="gap-2.5">
-                                    <TypographySmall className="font-disket">
+                                    <TypographyButton>
                                         learn_more
-                                    </TypographySmall>
+                                    </TypographyButton>
                                     <Lottie
                                         animationData={singleArrow}
                                         autoplay

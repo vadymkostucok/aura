@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import {
-    Direction,
     Gap,
     HorizontalAlign,
     MinHeight,
@@ -9,7 +8,7 @@ import {
 
 type FlexContainerProps = {
     children: ReactNode
-    direction?: Direction
+    direction?: string
     minHeight?: MinHeight
     justifyContent?: HorizontalAlign
     alignItems?: VerticalAlign
