@@ -35,7 +35,7 @@ export const ProgramsCard = ({
             >
                 <FlexContainer
                     gap="gap-2.5"
-                    className="max-w-60 clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
+                    className="max-w-44 md:max-w-60 clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
                     alignItems="items-center"
                 >
                     <Image src={crossIcon} alt="cross icon" />
@@ -47,11 +47,11 @@ export const ProgramsCard = ({
                     animationData={Blocks}
                     loop
                     autoplay
-                    className="opacity-20 h-2.5"
+                    className="hidden md:block opacity-20 h-2.5"
                 />
                 <FlexContainer
                     gap="gap-2.5"
-                    className="max-w-60 clip-panel-label-mirrored bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
+                    className="max-w-44 md:max-w-60 clip-panel-label-mirrored bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
                     alignItems="items-center"
                     justifyContent="justify-end"
                 >
@@ -64,11 +64,14 @@ export const ProgramsCard = ({
             <FlexContainer
                 direction="flex-col"
                 gap="gap-6"
-                className="bg-[#ffffff02] border border-[#ffffff10] px-10 py-14 backdrop-blur-lg"
+                className="bg-[#ffffff02] border border-[#ffffff10] px-5 md:px-10 py-6 md:py-14 backdrop-blur-lg"
             >
                 <FlexContainer direction="flex-col">
-                    <H3 className="leading-none tracking-tight">{title}</H3>
-                    <TypographySmall className="text-[#21D7A6] uppercase">
+                    <H3 className="md:leading-none tracking-tight">{title}</H3>
+                    <TypographySmall
+                        fontSize="text-[13px]"
+                        className="text-[#21D7A6] uppercase"
+                    >
                         {subtitle}
                     </TypographySmall>
                 </FlexContainer>
@@ -76,8 +79,12 @@ export const ProgramsCard = ({
                 <Box>
                     <H5 className="pb-2.5">{"Top skills you'll gain"}</H5>
 
-                    <FlexContainer justifyContent="justify-between">
-                        <div className="grid grid-cols-2 gap-3.5">
+                    <FlexContainer
+                        direction="flex-col md:flex-row"
+                        justifyContent="justify-between"
+                        className="gap-8"
+                    >
+                        <div className="grid grid-cols-2 gap-2.5 md:gap-3.5">
                             {skills.map((skill, index) => (
                                 <FlexContainer
                                     key={index}
@@ -91,7 +98,7 @@ export const ProgramsCard = ({
                                 </FlexContainer>
                             ))}
                         </div>
-                        <button className="bg-[#fff973] hover:bg-transparent uppercase text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-4 duration-500">
+                        <button className="w-fit h-fit bg-[#fff973] hover:bg-transparent text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-3 md:p-4 duration-500">
                             <FlexContainer gap="gap-2.5">
                                 <TypographySmall className="font-disket">
                                     learn_more
@@ -100,7 +107,7 @@ export const ProgramsCard = ({
                                     animationData={singleArrow}
                                     autoplay
                                     loop
-                                    className="w-5"
+                                    className="w-3.5 md:w-5"
                                 />
                             </FlexContainer>
                         </button>
