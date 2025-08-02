@@ -8,17 +8,6 @@ export type HorizontalAlign =
     | ''
 export type VerticalAlign = 'items-start' | 'items-center' | 'items-end' | ''
 
-export type Gap =
-    | 'gap-0'
-    | 'gap-1'
-    | 'gap-2'
-    | 'gap-2.5'
-    | 'gap-4'
-    | 'gap-5'
-    | 'gap-6'
-    | 'gap-10'
-    | 'gap-16'
-
 export type MinHeight =
     | 'min-h-100vh'
     | 'min-h-50vh'

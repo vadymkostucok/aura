@@ -16,7 +16,7 @@ export const Form = () => {
             <FlexContainer
                 direction="flex-col lg:flex-row"
                 justifyContent="justify-center"
-                className="gap-10 2xl:gap-32"
+                gap="gap-10 2xl:gap-32"
             >
                 <FlexContainer
                     width="w-full lg:w-1/2"
@@ -27,7 +27,7 @@ export const Form = () => {
                     <FlexContainer
                         width="lg:w-[420px]"
                         direction="flex-col"
-                        className="gap-5 md:gap-10"
+                        gap="gap-5 md:gap-10"
                     >
                         <H2>
                             Join Our <br />

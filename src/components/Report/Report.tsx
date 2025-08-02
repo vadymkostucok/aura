@@ -9,8 +9,10 @@ import { LottieAnimation } from '../LottieAnimation'
 export const Report = () => {
     return (
         <FlexContainer
+            width="w-full max-w-[1920px]"
             direction="flex-col lg:flex-row"
-            className="pt-24 lg:pt-36 px-5 max-w-[1920px] gap-10 2xl:gap-36"
+            gap="gap-10 2xl:gap-36"
+            className="pt-24 lg:pt-36 px-5 "
         >
             <H2 className="2xl:whitespace-nowrap md:pt-12">Breaches Report</H2>
 
@@ -34,7 +36,8 @@ export const Report = () => {
                     />
                 </FlexContainer>
                 <FlexContainer
-                    className="py-20 md:py-40 gap-5 lg:gap-10 bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
+                    gap="gap-5 lg:gap-10"
+                    className="py-20 md:py-40 bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
                     center
                 >
                     <H3 fontSize="text-[26px]">Coming</H3>

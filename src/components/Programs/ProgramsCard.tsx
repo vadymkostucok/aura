@@ -34,8 +34,9 @@ export const ProgramsCard = ({
                 alignItems="items-center"
             >
                 <FlexContainer
+                    width="w-full max-w-44 md:max-w-60"
                     gap="gap-2.5"
-                    className="max-w-44 md:max-w-60 clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
+                    className=" clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
                     alignItems="items-center"
                 >
                     <Image src={crossIcon} alt="cross icon" />
@@ -48,8 +49,9 @@ export const ProgramsCard = ({
                     className="hidden md:block opacity-20 h-2.5"
                 />
                 <FlexContainer
+                    width="w-full max-w-44 md:max-w-60"
                     gap="gap-2.5"
-                    className="max-w-44 md:max-w-60 clip-panel-label-mirrored bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
+                    className=" clip-panel-label-mirrored bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
                     alignItems="items-center"
                     justifyContent="justify-end"
                 >

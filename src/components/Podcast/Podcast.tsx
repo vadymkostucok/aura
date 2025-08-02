@@ -37,17 +37,13 @@ const configMap = [
 export const Podcast = () => {
     return (
         <FlexContainer center className="pt-24 lg:pt-36 px-5">
-            <FlexContainer
-                width="w-6xl"
-                direction="flex-col"
-                className="gap-12"
-            >
+            <FlexContainer width="w-6xl" direction="flex-col" gap="gap-12">
                 <H2 fontSize="text-5xl" className="text-center">
                     The Fast and Curious Podcast
                 </H2>
                 <FlexContainer
                     direction="flex-col lg:flex-row"
-                    className="gap-10 lg:gap-5"
+                    gap="gap-10 lg:gap-5"
                 >
                     <FlexContainer
                         width="w-full lg:w-4/6"

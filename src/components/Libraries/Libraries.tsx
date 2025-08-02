@@ -37,7 +37,7 @@ export const Libraries = () => {
     return (
         <FlexContainer className="pt-24 md:pt-36 px-5" center>
             <FlexContainer
-                width="w-[1200px]"
+                width="w-full max-w-[1200px]"
                 direction="flex-col"
                 gap="gap-10"
                 center

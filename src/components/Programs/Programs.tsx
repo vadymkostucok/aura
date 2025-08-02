@@ -46,13 +46,15 @@ const mapConfig = [
 export const Programs = () => {
     return (
         <FlexContainer
+            width="w-full max-w-[1920px]"
             direction="flex-col lg:flex-row"
-            className="pt-24 md:pt-36 px-5 gap-10 2xl:gap-32 max-w-[1920px]"
+            gap="gap-10 2xl:gap-32"
+            className="pt-24 md:pt-36 px-5"
         >
             <FlexContainer
                 width="w-full lg:w-1/2"
                 direction="flex-col"
-                className="gap-24"
+                gap="gap-24"
             >
                 <H2 fontSize="text-5xl" className="md:pt-12">
                     Index of popular cybersecurity programs
@@ -60,7 +62,7 @@ export const Programs = () => {
                 <Box className="hidden lg:block px-2.5 w-40 h-40">
                     <FlexContainer
                         gap="gap-2.5"
-                        className="clip-panel-label gap-2.5 bg-[#ffffff08] backdrop-blur-lg py-2 pl-4"
+                        className="clip-panel-label bg-[#ffffff08] backdrop-blur-lg py-2 pl-4"
                         alignItems="items-center"
                     >
                         <Image

@@ -1,10 +1,5 @@
 import { ReactNode } from 'react'
-import {
-    Gap,
-    HorizontalAlign,
-    MinHeight,
-    VerticalAlign,
-} from './types/flexTypes'
+import { HorizontalAlign, MinHeight, VerticalAlign } from './types/flexTypes'
 
 type FlexContainerProps = {
     children: ReactNode
@@ -14,7 +9,7 @@ type FlexContainerProps = {
     alignItems?: VerticalAlign
     width?: string
     center?: boolean
-    gap?: Gap
+    gap?: string
     className?: string
     id?: string
     onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void
