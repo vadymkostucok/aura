@@ -9,8 +9,11 @@ import logo3D from '@/assets/3DLogo.json'
 
 export const Report = () => {
     return (
-        <FlexContainer className="px-5 pt-36 max-w-[1920px] gap-36">
-            <H2 className="whitespace-nowrap pt-12">Breaches Report</H2>
+        <FlexContainer
+            direction="flex-col lg:flex-row"
+            className="pt-24 lg:pt-36 px-5 max-w-[1920px] gap-10 2xl:gap-36"
+        >
+            <H2 className="2xl:whitespace-nowrap md:pt-12">Breaches Report</H2>
 
             <FlexContainer direction="flex-col" center>
                 <FlexContainer
@@ -36,11 +39,10 @@ export const Report = () => {
                     />
                 </FlexContainer>
                 <FlexContainer
-                    className="py-40 bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
-                    gap="gap-10"
+                    className="py-20 md:py-40 gap-5 lg:gap-10 bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
                     center
                 >
-                    <H3>Coming</H3>
+                    <H3 fontSize="text-[26px]">Coming</H3>
                     <Lottie animationData={logo3D} loop autoplay />
                     {/* <Image src={broken} alt="coming soon" /> */}
                     {/* <video
@@ -52,7 +54,7 @@ export const Report = () => {
                         preload="auto"
                         className="w-52"
                     /> */}
-                    <H3>Soon...</H3>
+                    <H3 fontSize="text-[26px]">Soon...</H3>
                 </FlexContainer>
             </FlexContainer>
         </FlexContainer>
