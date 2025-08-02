@@ -1,15 +1,14 @@
-'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2, H3, H5, P, TypographyButton } from '../Typography'
 import { Box } from '../Box'
-import Lottie from 'lottie-react'
 
 import singleArrow from '@/assets/singleArrowBlack.json'
 import { Instagram } from '../svg/Instagram'
 import { Github } from '../svg/Github'
 import { X } from '../svg/X'
 import { Youtube } from '../svg/Youtube'
+import { LottieAnimation } from '../LottieAnimation'
 
 export const Form = () => {
     return (
@@ -139,10 +138,8 @@ export const Form = () => {
                                     justifyContent="justify-between"
                                 >
                                     <TypographyButton>Submit</TypographyButton>
-                                    <Lottie
+                                    <LottieAnimation
                                         animationData={singleArrow}
-                                        autoplay
-                                        loop
                                         className="w-5"
                                     />
                                 </FlexContainer>

@@ -3,12 +3,12 @@ import { FlexContainer } from '../FlexContainer'
 import { H3, H5, P, TypographyDisclaimer, TypographySmall } from '../Typography'
 import { Box } from '../Box'
 import Image from 'next/image'
-import Lottie from 'lottie-react'
 
 import checkIcon from '@/assets/check.svg'
 import crossIcon from '@/assets/altCross.svg'
 import Blocks from '@/assets/Blocks.json'
 import singleArrow from '@/assets/singleArrowBlack.json'
+import { LottieAnimation } from '../LottieAnimation'
 
 type ProgramsCardType = {
     type: string
@@ -43,10 +43,8 @@ export const ProgramsCard = ({
                         {type}
                     </TypographySmall>
                 </FlexContainer>
-                <Lottie
+                <LottieAnimation
                     animationData={Blocks}
-                    loop
-                    autoplay
                     className="hidden md:block opacity-20 h-2.5"
                 />
                 <FlexContainer
@@ -103,10 +101,8 @@ export const ProgramsCard = ({
                                 <TypographySmall className="font-disket">
                                     learn_more
                                 </TypographySmall>
-                                <Lottie
+                                <LottieAnimation
                                     animationData={singleArrow}
-                                    autoplay
-                                    loop
                                     className="w-3.5 md:w-5"
                                 />
                             </FlexContainer>

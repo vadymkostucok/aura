@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2 } from '../Typography'

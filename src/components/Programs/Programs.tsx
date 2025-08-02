@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2 } from '../Typography'
@@ -6,10 +5,10 @@ import { ProgramsCard } from './ProgramsCard'
 import { Box } from '../Box'
 import Image from 'next/image'
 
-import Lottie from 'lottie-react'
 import Blocks from '@/assets/Blocks.json'
 import earthIcon from '@/assets/earth.svg'
 import logo3D from '@/assets/3DLogo.json'
+import { LottieAnimation } from '../LottieAnimation'
 
 const mapConfig = [
     {
@@ -69,18 +68,14 @@ export const Programs = () => {
                             alt="earth icon"
                             className="opacity-60"
                         />
-                        <Lottie
+                        <LottieAnimation
                             animationData={Blocks}
-                            loop
-                            autoplay
                             className="h-2.5 opacity-20"
                         />
                     </FlexContainer>
                     <Box className="w-fit bg-[#ffffff02] backdrop-blur-lg border border-[#ffffff10]">
-                        <Lottie
+                        <LottieAnimation
                             animationData={logo3D}
-                            loop
-                            autoplay
                             className="px-5 py-7"
                         />
                     </Box>

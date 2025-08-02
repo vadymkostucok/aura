@@ -1,11 +1,10 @@
-'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2, H3, TypographySmall } from '../Typography'
-import Lottie from 'lottie-react'
 
 import Blocks from '@/assets/Blocks.json'
 import logo3D from '@/assets/3DLogo.json'
+import { LottieAnimation } from '../LottieAnimation'
 
 export const Report = () => {
     return (
@@ -22,19 +21,15 @@ export const Report = () => {
                     gap="gap-5"
                     center
                 >
-                    <Lottie
+                    <LottieAnimation
                         animationData={Blocks}
-                        loop
-                        autoplay
                         className="h-2.5 opacity-20"
                     />
                     <TypographySmall className="opacity-60 uppercase">
                         Breach / cyber danger reports
                     </TypographySmall>
-                    <Lottie
+                    <LottieAnimation
                         animationData={Blocks}
-                        loop
-                        autoplay
                         className="h-2.5 opacity-20 rotate-180"
                     />
                 </FlexContainer>
@@ -43,7 +38,7 @@ export const Report = () => {
                     center
                 >
                     <H3 fontSize="text-[26px]">Coming</H3>
-                    <Lottie animationData={logo3D} loop autoplay />
+                    <LottieAnimation animationData={logo3D} />
                     {/* <Image src={broken} alt="coming soon" /> */}
                     {/* <video
                         src="/video/3DLogo.mp4"

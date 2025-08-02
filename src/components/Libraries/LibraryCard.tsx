@@ -1,13 +1,12 @@
-'use client'
 import React from 'react'
 import { Box } from '../Box'
 import { FlexContainer } from '../FlexContainer'
 import Image, { StaticImageData } from 'next/image'
 import { H5, TypographySmall } from '../Typography'
-import Lottie from 'lottie-react'
 
 import crossIcon from '@/assets/cross.svg'
 import singleArrow from '@/assets/singleArrow.json'
+import { LottieAnimation } from '../LottieAnimation'
 
 type LibraryCardProps = {
     description: string
@@ -41,10 +40,8 @@ export const LibraryCard = ({ type, description, icon }: LibraryCardProps) => {
                 </FlexContainer>
                 <H5 className="tracking-tight leading-none">{description}</H5>
                 <div className="opacity-0 group-hover:opacity-100 absolute right-0 bottom-0 bg-[#00000080] p-2.5 duration-500">
-                    <Lottie
+                    <LottieAnimation
                         animationData={singleArrow}
-                        loop
-                        autoplay
                         className="w-5"
                     />
                 </div>

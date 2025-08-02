@@ -1,15 +1,14 @@
-'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H2, P, TypographyButton } from '../Typography'
 import { PodcastCard } from './PodcastCard'
-import Lottie from 'lottie-react'
 
 import podcast1 from '@/assets/podcast1.png'
 import podcast2 from '@/assets/podcast2.png'
 import podcast3 from '@/assets/podcast3.png'
 import Chip from '@/assets/Chip.json'
 import singleArrow from '@/assets/singleArrow.json'
+import { LottieAnimation } from '../LottieAnimation'
 
 const configMap = [
     {
@@ -75,10 +74,8 @@ export const Podcast = () => {
                         className="lg:mt-[32px] lg:border lg:border-[#ffffff10] bg-[#ffffff02] backdrop-blur-lg rounded-[2px] order-1 lg:order-2"
                     >
                         <FlexContainer center className="h-full lg:pt-[15px]">
-                            <Lottie
+                            <LottieAnimation
                                 animationData={Chip}
-                                loop
-                                autoplay
                                 className="w-24 lg:w-36"
                             />
                         </FlexContainer>
@@ -99,10 +96,8 @@ export const Podcast = () => {
                                     <TypographyButton>
                                         learn_more
                                     </TypographyButton>
-                                    <Lottie
+                                    <LottieAnimation
                                         animationData={singleArrow}
-                                        autoplay
-                                        loop
                                         className="w-5"
                                     />
                                 </FlexContainer>
