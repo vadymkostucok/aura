@@ -17,10 +17,10 @@ const navigationMap = [
 export const Header = () => {
     return (
         <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50">
-            <FlexContainer className="backdrop-blur-md bg-[#ffffff02]">
+            <FlexContainer className="backdrop-blur-md bg-[#FFFFFF05]">
                 <FlexContainer
                     width="w-auto"
-                    className="px-2.5 md:px-[30px] py-2 md:py-2.5 fade-border rounded-[2px] bg-[#ffffff07] shrink-0 backdrop-blur-md leading-none"
+                    className="px-2.5 md:px-[30px] py-2 md:py-2.5 fade-border rounded-[2px] bg-[#FFFFFF05] shrink-0 backdrop-blur-md leading-none"
                     center
                 >
                     <Logo className="w-14 md:w-20 text-white hover:text-[#21D7A6] duration-500" />

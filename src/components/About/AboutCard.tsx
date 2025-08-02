@@ -29,7 +29,7 @@ export const AboutCard = ({
             <FlexContainer
                 width="max-w-60"
                 gap="gap-2.5"
-                className="clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
+                className="clip-panel-label bg-[#FFFFFF0D] backdrop-blur-md py-1.5 px-4"
             >
                 <Image src={crossIcon} alt="cross icon" />
                 <TypographySmall className="uppercase opacity-60">
@@ -39,7 +39,7 @@ export const AboutCard = ({
             <FlexContainer
                 direction="flex-col"
                 justifyContent="justify-between"
-                className="bg-[#ffffff15] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg flex-1 pl-4 pr-2.5"
+                className="bg-[#FFFFFF1A] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg flex-1 pl-4 pr-2.5"
             >
                 <FlexContainer
                     alignItems="items-center"

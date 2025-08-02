@@ -65,7 +65,7 @@ export const Form = () => {
                     <FlexContainer
                         width="w-full lg:w-[530px]"
                         direction="flex-col"
-                        className="border border-[#ffffff10] rounded-[2px] px-5 py-8"
+                        className="bg-[#FFFFFF1A] lg:bg-[#FFFFFF05] border border-[#ffffff10] rounded-[2px] px-5 py-8"
                     >
                         <H3 className="text-[#FFF973]">Apply Now</H3>
                         <form action="" className="flex flex-col gap-6 pt-5">

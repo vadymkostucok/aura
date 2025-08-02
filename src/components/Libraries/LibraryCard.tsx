@@ -20,7 +20,7 @@ export const LibraryCard = ({ type, description, icon }: LibraryCardProps) => {
             <FlexContainer
                 width="max-w-60"
                 gap="gap-2.5"
-                className="clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
+                className="clip-panel-label bg-[#FFFFFF0D] backdrop-blur-md py-1.5 px-4"
             >
                 <Image src={crossIcon} alt="cross icon" />
                 <TypographySmall className="uppercase opacity-60">
@@ -28,7 +28,7 @@ export const LibraryCard = ({ type, description, icon }: LibraryCardProps) => {
                 </TypographySmall>
             </FlexContainer>
             <FlexContainer
-                className="group p-4 bg-[#ffffff15] hover:bg-[#ffffff05] border border-[#ffffff10] rounded-[2px] hover:text-[#FFF973] backdrop-blur-lg cursor-pointer duration-500"
+                className="group p-4 bg-[#FFFFFF1A] hover:bg-[#ffffff05] border border-[#ffffff10] rounded-[2px] hover:text-[#FFF973] backdrop-blur-lg cursor-pointer duration-500"
                 gap="gap-5"
                 alignItems="items-center"
             >

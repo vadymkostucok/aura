@@ -19,7 +19,7 @@ export const Report = () => {
             <FlexContainer direction="flex-col" center>
                 <FlexContainer
                     width="w-fit"
-                    className="px-10 py-1.5 clip-panel-label-both bg-[#ffffff05] backdrop-blur-lg"
+                    className="px-10 py-1.5 clip-panel-label-both bg-[#FFFFFF0D] backdrop-blur-lg"
                     gap="gap-5"
                     center
                 >

@@ -27,14 +27,14 @@ export const PodcastCard = ({
             <FlexContainer
                 width="max-w-60"
                 gap="gap-2.5"
-                className="clip-panel-label bg-[#ffffff07] backdrop-blur-md py-1.5 px-4"
+                className="clip-panel-label bg-[#FFFFFF0D] backdrop-blur-md py-1.5 px-4"
             >
                 <Image src={crossIcon} alt="cross icon" />
                 <TypographySmall className="uppercase opacity-60">
                     {date}
                 </TypographySmall>
             </FlexContainer>
-            <FlexContainer className="bg-[#ffffff15] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg p-4">
+            <FlexContainer className="bg-[#FFFFFF1A] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg p-4">
                 <Image
                     src={icon}
                     alt={`Podcast thumbnail: ${title}`}
