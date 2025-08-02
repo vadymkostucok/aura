@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2, H3, H5, P, TypographySmall } from '../Typography'
+import { H2, H3, H5, P, TypographyButton } from '../Typography'
 import { Box } from '../Box'
 import Lottie from 'lottie-react'
 
@@ -13,18 +13,22 @@ import { Youtube } from '../svg/Youtube'
 
 export const Form = () => {
     return (
-        <FlexContainer className="px-5 pt-36 pb-48" center>
-            <FlexContainer justifyContent="justify-center" className="gap-32">
+        <FlexContainer className="pt-24 md:pt-36 pb-48 px-5" center>
+            <FlexContainer
+                direction="flex-col lg:flex-row"
+                justifyContent="justify-center"
+                className="gap-10 2xl:gap-32"
+            >
                 <FlexContainer
-                    width="w-1/2"
+                    width="w-full lg:w-1/2"
                     direction="flex-col"
                     alignItems="items-end"
                     justifyContent="justify-between"
                 >
                     <FlexContainer
-                        width="w-[420px]"
+                        width="lg:w-[420px]"
                         direction="flex-col"
-                        gap="gap-10"
+                        className="gap-5 md:gap-10"
                     >
                         <H2>
                             Join Our <br />
@@ -36,10 +40,10 @@ export const Form = () => {
                         </P>
                     </FlexContainer>
                     <FlexContainer
-                        width="w-[420px]"
+                        width="lg:w-[420px]"
                         direction="flex-col"
                         gap="gap-5"
-                        className="pb-8"
+                        className="hidden lg:flex pb-8"
                     >
                         <H5 className="tracking-tight">Social links:</H5>
                         <FlexContainer gap="gap-1">
@@ -58,9 +62,9 @@ export const Form = () => {
                         </FlexContainer>
                     </FlexContainer>
                 </FlexContainer>
-                <FlexContainer width="w-1/2">
+                <FlexContainer width="w-full lg:w-1/2">
                     <FlexContainer
-                        width="w-[530px]"
+                        width="w-full lg:w-[530px]"
                         direction="flex-col"
                         className="border border-[#ffffff10] rounded-[2px] px-5 py-8"
                     >
@@ -128,15 +132,13 @@ export const Form = () => {
                             </FlexContainer>
                             <button
                                 type="submit"
-                                className="bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4  duration-500"
+                                className="bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4 duration-500"
                             >
                                 <FlexContainer
                                     gap="gap-2.5"
                                     justifyContent="justify-between"
                                 >
-                                    <TypographySmall className="font-disket">
-                                        Submit
-                                    </TypographySmall>
+                                    <TypographyButton>Submit</TypographyButton>
                                     <Lottie
                                         animationData={singleArrow}
                                         autoplay
