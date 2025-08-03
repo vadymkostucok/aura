@@ -1,9 +1,12 @@
+'use client'
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { TypographySmall } from '../Typography'
+import { TypographySmall } from '../Typography/Typography'
+import { motion } from 'framer-motion'
 
 import './header.css'
 import { Logo } from '../svg/Logo'
+import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 
 const navigationMap = [
     {
@@ -15,8 +18,15 @@ const navigationMap = [
 ]
 
 export const Header = () => {
+    const isLoaded = useHasLoaderFinished()
+
     return (
-        <header className="fixed top-5 left-1/2 -translate-x-1/2 z-20">
+        <motion.header
+            className="fixed top-5 left-1/2 -translate-x-1/2 z-20"
+            initial={{ opacity: 0, y: -30 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, ease: 'easeOut' }}
+        >
             <FlexContainer className="backdrop-blur-md bg-[#FFFFFF05]">
                 <FlexContainer
                     width="w-auto"
@@ -40,6 +50,6 @@ export const Header = () => {
                     </ul>
                 </nav>
             </FlexContainer>
-        </header>
+        </motion.header>
     )
 }
