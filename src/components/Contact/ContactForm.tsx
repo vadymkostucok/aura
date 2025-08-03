@@ -4,6 +4,7 @@ import { H3, TypographyButton } from '../Typography'
 import { LottieAnimation } from '../LottieAnimation'
 
 import singleArrow from '@/assets/singleArrowBlack.json'
+import singleArrowGreen from '@/assets/singleArrowGreen.json'
 import { Input } from '../Input'
 
 export const ContactForm = () => {
@@ -42,7 +43,7 @@ export const ContactForm = () => {
 
                 <button
                     type="submit"
-                    className="bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4 duration-500"
+                    className="group bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4 duration-500"
                 >
                     <FlexContainer
                         gap="gap-2.5"
@@ -51,7 +52,11 @@ export const ContactForm = () => {
                         <TypographyButton>Submit</TypographyButton>
                         <LottieAnimation
                             animationData={singleArrow}
-                            className="w-5"
+                            className="group-hover:hidden block w-3.5 md:w-5"
+                        />
+                        <LottieAnimation
+                            animationData={singleArrowGreen}
+                            className="group-hover:block hidden w-3.5 md:w-5"
                         />
                     </FlexContainer>
                 </button>

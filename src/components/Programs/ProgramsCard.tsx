@@ -7,7 +7,8 @@ import Image from 'next/image'
 import checkIcon from '@/assets/check.svg'
 import crossIcon from '@/assets/altCross.svg'
 import Blocks from '@/assets/Blocks.json'
-import singleArrow from '@/assets/singleArrowBlack.json'
+import singleArrowYellow from '@/assets/singleArrow.json'
+import singleArrowBlack from '@/assets/singleArrowBlack.json'
 import { LottieAnimation } from '../LottieAnimation'
 
 type ProgramsCardType = {
@@ -98,14 +99,18 @@ export const ProgramsCard = ({
                                 </FlexContainer>
                             ))}
                         </div>
-                        <button className="w-fit h-fit bg-[#fff973] hover:bg-transparent text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-3 md:p-4 duration-500">
+                        <button className="group w-fit h-fit bg-[#fff973] hover:bg-transparent text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-3 md:p-4 duration-500">
                             <FlexContainer gap="gap-2.5">
                                 <TypographySmall className="font-disket">
                                     learn_more
                                 </TypographySmall>
                                 <LottieAnimation
-                                    animationData={singleArrow}
-                                    className="w-3.5 md:w-5"
+                                    animationData={singleArrowBlack}
+                                    className="group-hover:hidden block w-3.5 md:w-5"
+                                />
+                                <LottieAnimation
+                                    animationData={singleArrowYellow}
+                                    className="group-hover:block hidden w-3.5 md:w-5"
                                 />
                             </FlexContainer>
                         </button>
