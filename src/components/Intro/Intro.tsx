@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H1, P, TypographyButton, TypographyDisclaimer } from '../Typography'
+import { H1, P, TypographyDisclaimer } from '../Typography'
+import { TypographyButton } from '../TypographyButton'
 import { Box } from '../Box'
 import { BackgroundGrid } from '../BackgroundGrid'
 import { LottieAnimation } from '../LottieAnimation'
@@ -48,16 +49,16 @@ export const Intro = () => {
                         </TypographyDisclaimer>
                     </FlexContainer>
                 </div>
-                <div className="group absolute bottom-20 md:bottom-16 left-1/2 -translate-x-1/2 cursor-pointer">
+                <div className="group absolute bottom-20 md:bottom-16 left-1/2 -translate-x-1/2">
                     <LottieAnimation
                         animationData={ArrowsCTA}
-                        className="group-hover:hidden block md:h-32 w-44 md:w-64 absolute left-1/2 -translate-x-1/2 -bottom-7.5 md:-bottom-[49px]"
+                        className="pointer-events-none group-hover:hidden block md:h-32 w-44 md:w-64 absolute left-1/2 -translate-x-1/2 -bottom-7.5 md:-bottom-[49px]"
                     />
                     <LottieAnimation
                         animationData={ArrowsCTAYellow}
-                        className="group-hover:block hidden md:h-32 w-44 md:w-64 absolute left-1/2 -translate-x-1/2 -bottom-7.5 md:-bottom-[49px]"
+                        className="pointer-events-none group-hover:block hidden md:h-32 w-44 md:w-64 absolute left-1/2 -translate-x-1/2 -bottom-7.5 md:-bottom-[49px]"
                     />
-                    <button className="group-hover:text-[#FFF973] duration-500">
+                    <button className="group-hover:text-[#FFF973] cursor-pointer duration-500">
                         <TypographyButton fontSize="text-sm md:text-lg">
                             Learn More
                         </TypographyButton>

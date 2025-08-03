@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2, P, TypographyButton } from '../Typography'
+import { H2, P } from '../Typography'
+import { TypographyButton } from '../TypographyButton'
 import { PodcastCard } from './PodcastCard'
 
 import podcast1 from '@/assets/podcast1.png'

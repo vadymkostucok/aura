@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H3, H5, P, TypographyDisclaimer, TypographySmall } from '../Typography'
+import { TypographyButton } from '../TypographyButton'
 import { Box } from '../Box'
 import Image from 'next/image'
 
@@ -101,9 +102,12 @@ export const ProgramsCard = ({
                         </div>
                         <button className="group w-fit h-fit bg-[#fff973] hover:bg-transparent text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-3 md:p-4 duration-500">
                             <FlexContainer gap="gap-2.5">
-                                <TypographySmall className="font-disket">
+                                <TypographyButton
+                                    fontSize="text-[11px] md:text-[14px]"
+                                    className="font-disket"
+                                >
                                     learn_more
-                                </TypographySmall>
+                                </TypographyButton>
                                 <LottieAnimation
                                     animationData={singleArrowBlack}
                                     className="group-hover:hidden block w-3.5 md:w-5"

@@ -130,18 +130,6 @@ export function TypographyDisclaimer({
     )
 }
 
-export function TypographyButton({
-    children,
-    fontSize = 'text-[13px]',
-    className,
-}: {
-    children: ReactNode
-    fontSize?: string
-    className?: string
-}) {
-    return <p className={`${className} ${fontSize} font-disket`}>{children}</p>
-}
-
 export function TypographyLead({
     children,
     className,
