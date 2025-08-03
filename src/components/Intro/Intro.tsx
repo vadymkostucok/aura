@@ -2,11 +2,12 @@ import React from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H1, P, TypographyButton, TypographyDisclaimer } from '../Typography'
 import { Box } from '../Box'
-import ArrowsCTA from '@/assets/ArrowsCTA.json'
 import { BackgroundGrid } from '../BackgroundGrid'
 import { LottieAnimation } from '../LottieAnimation'
 import Image from 'next/image'
 
+import ArrowsCTA from '@/assets/ArrowsCTA.json'
+import ArrowsCTAYellow from '@/assets/ArrowsCTAYellow.json'
 import plusIcon from '@/assets/plus.svg'
 
 export const Intro = () => {
@@ -47,15 +48,21 @@ export const Intro = () => {
                         </TypographyDisclaimer>
                     </FlexContainer>
                 </div>
-                <LottieAnimation
-                    animationData={ArrowsCTA}
-                    className="md:h-32 w-44 md:w-64 absolute bottom-[49px] md:bottom-[15px] left-1/2 -translate-x-1/2"
-                />
-                <button className="absolute bottom-20 md:bottom-16 left-1/2 -translate-x-1/2  cursor-pointer hover:text-[#FFF973] duration-500">
-                    <TypographyButton fontSize="text-sm md:text-lg">
-                        Learn More
-                    </TypographyButton>
-                </button>
+                <div className="group absolute bottom-20 md:bottom-16 left-1/2 -translate-x-1/2 cursor-pointer">
+                    <LottieAnimation
+                        animationData={ArrowsCTA}
+                        className="group-hover:hidden block md:h-32 w-44 md:w-64 absolute left-1/2 -translate-x-1/2 -bottom-7.5 md:-bottom-[49px]"
+                    />
+                    <LottieAnimation
+                        animationData={ArrowsCTAYellow}
+                        className="group-hover:block hidden md:h-32 w-44 md:w-64 absolute left-1/2 -translate-x-1/2 -bottom-7.5 md:-bottom-[49px]"
+                    />
+                    <button className="group-hover:text-[#FFF973] duration-500">
+                        <TypographyButton fontSize="text-sm md:text-lg">
+                            Learn More
+                        </TypographyButton>
+                    </button>
+                </div>
             </FlexContainer>
         </Box>
     )
