@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2 } from '../Typography'
+import { H2 } from '../Typography/Typography'
 import { ProgramsCard } from './ProgramsCard'
 import { Box } from '../Box'
 import Image from 'next/image'

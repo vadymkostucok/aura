@@ -1,5 +1,5 @@
 import React from 'react'
-import { H2 } from '../Typography'
+import { H2 } from '../Typography/Typography'
 import { FlexContainer } from '../FlexContainer'
 import { AboutCard } from './AboutCard'
 

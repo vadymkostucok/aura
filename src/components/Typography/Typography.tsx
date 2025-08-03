@@ -1,21 +1,5 @@
 import { ReactNode } from 'react'
 
-export function H1({
-    children,
-    className,
-}: {
-    children: ReactNode
-    className?: string
-}) {
-    return (
-        <h1
-            className={`${className} font-violet scroll-m-20 text-[130px] md:text-[186px] leading-[1.1] tracking-tight`}
-        >
-            {children}
-        </h1>
-    )
-}
-
 export function H2({
     children,
     fontSize = 'text-6xl',
@@ -79,24 +63,6 @@ export function H5({
         <h5 className={`${className} font-violet scroll-m-20 text-[21px]`}>
             {children}
         </h5>
-    )
-}
-
-export function P({
-    children,
-    fontSize = 'text-[15px]',
-    className,
-}: {
-    children: ReactNode
-    fontSize?: string
-    className?: string
-}) {
-    return (
-        <p
-            className={`${className} ${fontSize} md:text-[16px] leading-5 opacity-90`}
-        >
-            {children}
-        </p>
     )
 }
 

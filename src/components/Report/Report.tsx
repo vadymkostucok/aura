@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2, H3, TypographySmall } from '../Typography'
+import { H2, H3, TypographySmall } from '../Typography/Typography'
 
 import Blocks from '@/assets/Blocks.json'
 import logo3D from '@/assets/3DLogo.json'
@@ -42,16 +42,6 @@ export const Report = () => {
                 >
                     <H3 fontSize="text-[26px]">Coming</H3>
                     <LottieAnimation animationData={logo3D} />
-                    {/* <Image src={broken} alt="coming soon" /> */}
-                    {/* <video
-                        src="/video/3DLogo.mp4"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        preload="auto"
-                        className="w-52"
-                    /> */}
                     <H3 fontSize="text-[26px]">Soon...</H3>
                 </FlexContainer>
             </FlexContainer>

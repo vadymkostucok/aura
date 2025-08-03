@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { FlexContainer } from '../FlexContainer'
-import { H3, P, TypographySmall } from '../Typography'
+import { H3, TypographySmall } from '../Typography/Typography'
+import { P } from '../Typography/P'
 import { Box } from '../Box'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 

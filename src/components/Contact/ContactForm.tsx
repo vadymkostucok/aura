@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H3 } from '../Typography'
-import { TypographyButton } from '../TypographyButton'
+import { H3 } from '../Typography/Typography'
+import { TypographyButton } from '../Typography/TypographyButton'
 import { LottieAnimation } from '../LottieAnimation'
 
 import singleArrow from '@/assets/singleArrowBlack.json'

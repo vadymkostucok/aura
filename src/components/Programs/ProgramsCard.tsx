@@ -1,7 +1,12 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H3, H5, P, TypographyDisclaimer, TypographySmall } from '../Typography'
-import { TypographyButton } from '../TypographyButton'
+import {
+    H3,
+    H5,
+    TypographyDisclaimer,
+    TypographySmall,
+} from '../Typography/Typography'
+import { TypographyButton } from '../Typography/TypographyButton'
 import { Box } from '../Box'
 import Image from 'next/image'
 
@@ -11,6 +16,7 @@ import Blocks from '@/assets/Blocks.json'
 import singleArrowYellow from '@/assets/singleArrow.json'
 import singleArrowBlack from '@/assets/singleArrowBlack.json'
 import { LottieAnimation } from '../LottieAnimation'
+import { P } from '../Typography/P'
 
 type ProgramsCardType = {
     type: string

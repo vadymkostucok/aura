@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2, H5, P } from '../Typography'
+import { H2, H5 } from '../Typography/Typography'
+import { P } from '../Typography/P'
 import { Box } from '../Box'
 
 import { Instagram } from '../svg/Instagram'
