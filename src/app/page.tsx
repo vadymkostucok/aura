@@ -7,10 +7,12 @@ import { Programs } from '@/components/Programs/Programs'
 import { Contact } from '@/components/Contact/Contact'
 import { VideoScrollWrapper } from '@/components/Video'
 import { Header } from '@/components/Header/Header'
+import { Loader } from '@/components/Loader'
 
 export default function Home() {
     return (
         <>
+            <Loader />
             <Header />
             <VideoScrollWrapper>
                 <Intro />

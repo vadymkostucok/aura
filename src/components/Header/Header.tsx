@@ -16,7 +16,7 @@ const navigationMap = [
 
 export const Header = () => {
     return (
-        <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50">
+        <header className="fixed top-5 left-1/2 -translate-x-1/2 z-20">
             <FlexContainer className="backdrop-blur-md bg-[#FFFFFF05]">
                 <FlexContainer
                     width="w-auto"
