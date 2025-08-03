@@ -58,11 +58,11 @@ export const PodcastCard = ({
                         </TypographySmall>
                     </FlexContainer>
                 </FlexContainer>
-                <div className="absolute inset-0 bg-gradient-to-l from-[#00000099] to-[#00000000] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end items-center p-4">
+                <div className="absolute inset-0 bg-gradient-to-l from-[#00000099] to-[#00000000] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-end items-center p-4">
                     <Image
                         src={playIcon}
                         alt="play icon"
-                        className="w-16 h-16 cursor-pointer"
+                        className="w-10 md:w-16 h-10 md:h-16 cursor-pointer"
                     />
                 </div>
             </FlexContainer>
