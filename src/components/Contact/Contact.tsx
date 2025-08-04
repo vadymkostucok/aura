@@ -69,150 +69,157 @@ export const Contact = () => {
     const shouldAnimate = isLoaded && isInView
 
     return (
-        <FlexContainer className="pt-24 md:pt-36 pb-24 md:pb-48 px-5" center>
-            <MotionFlexContainer
-                ref={ref}
-                initial="hidden"
-                animate={shouldAnimate ? 'visible' : 'hidden'}
-                direction="flex-col lg:flex-row"
-                justifyContent="justify-center"
-                gap="gap-10 2xl:gap-32"
+        <>
+            <FlexContainer
+                className="pt-24 md:pt-36 pb-24 md:pb-48 px-5"
+                center
             >
-                <FlexContainer
-                    width="w-full lg:w-1/2"
-                    direction="flex-col"
-                    alignItems="items-end"
-                    justifyContent="justify-between"
+                <MotionFlexContainer
+                    ref={ref}
+                    initial="hidden"
+                    animate={shouldAnimate ? 'visible' : 'hidden'}
+                    direction="flex-col lg:flex-row"
+                    justifyContent="justify-center"
+                    gap="gap-10 2xl:gap-32"
                 >
                     <FlexContainer
-                        width="lg:w-[420px]"
+                        width="w-full lg:w-1/2"
                         direction="flex-col"
-                        gap="gap-5 md:gap-10"
+                        alignItems="items-end"
+                        justifyContent="justify-between"
                     >
-                        <MotionH2
-                            variants={containerVariants}
-                            className="flex flex-wrap gap-x-2"
+                        <FlexContainer
+                            width="lg:w-[420px]"
+                            direction="flex-col"
+                            gap="gap-5 md:gap-10"
                         >
-                            {['Join', 'Our'].map((word, i) => (
-                                <span key={i} className="overflow-hidden block">
+                            <MotionH2
+                                variants={containerVariants}
+                                className="flex flex-wrap gap-x-2"
+                            >
+                                {['Join', 'Our'].map((word, i) => (
+                                    <span
+                                        key={i}
+                                        className="overflow-hidden block"
+                                    >
+                                        <motion.span
+                                            variants={slideUp}
+                                            className="inline-block"
+                                        >
+                                            {word}
+                                        </motion.span>
+                                    </span>
+                                ))}
+                                <br className="w-full" />
+                                <span className="overflow-hidden block">
                                     <motion.span
                                         variants={slideUp}
-                                        className="inline-block"
+                                        className="inline-block text-[#21D7A6]"
                                     >
-                                        {word}
+                                        Community
                                     </motion.span>
                                 </span>
-                            ))}
-                            <br className="w-full" />
+                            </MotionH2>
                             <span className="overflow-hidden block">
-                                <motion.span
+                                <MotionP
                                     variants={slideUp}
-                                    className="inline-block text-[#21D7A6]"
+                                    className="inline-block"
                                 >
-                                    Community
-                                </motion.span>
+                                    Get exclusive access to our live webcasts,
+                                    special events, messaging group, security
+                                    experts, and more.
+                                </MotionP>
                             </span>
-                        </MotionH2>
-                        <span className="overflow-hidden block">
-                            <MotionP
-                                variants={slideUp}
-                                className="inline-block"
+                        </FlexContainer>
+                        <FlexContainer
+                            width="lg:w-[420px]"
+                            direction="flex-col"
+                            gap="gap-5"
+                            className="hidden lg:flex pb-8"
+                        >
+                            <span className="overflow-hidden block">
+                                <motion.h5
+                                    variants={slideUp}
+                                    className="tracking-tight"
+                                >
+                                    Social links:
+                                </motion.h5>
+                            </span>
+                            <MotionFlexContainer
+                                variants={slideUpOpacity}
+                                gap="gap-1"
+                                className="overflow-hidden"
                             >
-                                Get exclusive access to our live webcasts,
-                                special events, messaging group, security
-                                experts, and more.
-                            </MotionP>
-                        </span>
+                                {socialMediaMap.map((media, index) => (
+                                    <Box
+                                        key={index}
+                                        className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973] cursor-pointer"
+                                    >
+                                        {media.logo}
+                                    </Box>
+                                ))}
+                            </MotionFlexContainer>
+                        </FlexContainer>
                     </FlexContainer>
-                    <FlexContainer
-                        width="lg:w-[420px]"
+                    <MotionFlexContainer
                         direction="flex-col"
                         gap="gap-5"
-                        className="hidden lg:flex pb-8"
+                        width="w-full lg:w-1/2 overflow-hidden"
                     >
-                        <span className="overflow-hidden block">
-                            <motion.h5
-                                variants={slideUp}
-                                className="tracking-tight"
-                            >
-                                Social links:
-                            </motion.h5>
-                        </span>
-                        <MotionFlexContainer
-                            variants={slideUpOpacity}
-                            gap="gap-1"
-                            className="overflow-hidden"
-                        >
-                            {socialMediaMap.map((media, index) => (
-                                <Box
-                                    key={index}
-                                    className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973] cursor-pointer"
-                                >
-                                    {media.logo}
-                                </Box>
-                            ))}
-                        </MotionFlexContainer>
-                    </FlexContainer>
-                </FlexContainer>
-                <MotionFlexContainer
-                    direction="flex-col"
-                    gap="gap-5"
-                    width="w-full lg:w-1/2 overflow-hidden"
-                >
-                    <ContactForm
-                        onSubmitSuccess={() => {
-                            setIsSubmitted(true)
-                            setTimeout(() => setIsSubmitted(false), 5000) // auto-hide after 5s
-                        }}
-                    />
-                    {isSubmitted && (
-                        <AnimatePresence>
-                            {isSubmitted && (
-                                <motion.span
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 10 }}
-                                    transition={{ duration: 0.4 }}
-                                    className="flex gap-2 text-[11px] lg:text-[14px] text-[#21D7A6] uppercase px-5 items-center"
-                                >
-                                    <motion.div
-                                        animate={{ rotate: 360 }}
-                                        transition={{
-                                            repeat: Infinity,
-                                            duration: 5,
-                                            ease: 'linear',
-                                        }}
+                        <ContactForm
+                            onSubmitSuccess={() => {
+                                setIsSubmitted(true)
+                                setTimeout(() => setIsSubmitted(false), 5000) // auto-hide after 5s
+                            }}
+                        />
+                        {isSubmitted && (
+                            <AnimatePresence>
+                                {isSubmitted && (
+                                    <motion.span
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: 10 }}
+                                        transition={{ duration: 0.4 }}
+                                        className="flex gap-2 text-[11px] lg:text-[14px] text-[#21D7A6] uppercase px-5 items-center"
                                     >
-                                        <Image
-                                            src={successIcon}
-                                            alt="Success Icon"
-                                            className="w-4 h-4"
-                                        />
-                                    </motion.div>
-                                    Your application has been successfully
-                                    submitted.
-                                </motion.span>
-                            )}
-                        </AnimatePresence>
-                    )}
+                                        <motion.div
+                                            animate={{ rotate: 360 }}
+                                            transition={{
+                                                repeat: Infinity,
+                                                duration: 5,
+                                                ease: 'linear',
+                                            }}
+                                        >
+                                            <Image
+                                                src={successIcon}
+                                                alt="Success Icon"
+                                                className="w-4 h-4"
+                                            />
+                                        </motion.div>
+                                        Your application has been successfully
+                                        submitted.
+                                    </motion.span>
+                                )}
+                            </AnimatePresence>
+                        )}
+                    </MotionFlexContainer>
                 </MotionFlexContainer>
-
-                <MotionFlexContainer
-                    gap="gap-1"
-                    variants={slideUpOpacity}
-                    justifyContent="justify-center"
-                    className="overflow-hidden flex lg:hidden pb-8"
-                >
-                    {socialMediaMap.map((media, index) => (
-                        <Box
-                            key={index}
-                            className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973]"
-                        >
-                            {media.logo}
-                        </Box>
-                    ))}
-                </MotionFlexContainer>
+            </FlexContainer>
+            <MotionFlexContainer
+                gap="gap-1"
+                variants={slideUpOpacity}
+                justifyContent="justify-center"
+                className="overflow-hidden flex lg:hidden pb-2.5"
+            >
+                {socialMediaMap.map((media, index) => (
+                    <Box
+                        key={index}
+                        className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973]"
+                    >
+                        {media.logo}
+                    </Box>
+                ))}
             </MotionFlexContainer>
-        </FlexContainer>
+        </>
     )
 }
