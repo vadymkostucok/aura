@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { TypographyButton } from '../Typography/TypographyButton'
 import { H2 } from '../Typography/H2'
@@ -11,6 +12,8 @@ import podcast3 from '@/assets/podcast3.png'
 import Chip from '@/assets/Chip.json'
 import singleArrow from '@/assets/singleArrow.json'
 import { LottieAnimation } from '../LottieAnimation'
+import { easeOut, motion, useInView } from 'framer-motion'
+import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 
 const configMap = [
     {
@@ -36,18 +39,93 @@ const configMap = [
     },
 ]
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.1,
+            delay: 1,
+        },
+    },
+}
+
+const slideUp = {
+    hidden: { y: '100%' },
+    visible: {
+        y: '0%',
+        transition: {
+            duration: 0.6,
+            ease: easeOut,
+        },
+    },
+}
+
+const opacitySlideUp = {
+    hidden: { y: '50%', opacity: 0 },
+    visible: {
+        y: '0%',
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+            ease: easeOut,
+        },
+    },
+}
+
+const cardContainerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.25,
+            delay: 1,
+        },
+    },
+}
+
+const MotionFlexContainer = motion(FlexContainer)
+const MotionH2 = motion(H2)
+
 export const Podcast = () => {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: '-100px' })
+    const isLoaded = useHasLoaderFinished()
+
+    const shouldAnimate = isLoaded && isInView
+
     return (
         <FlexContainer center className="pt-24 lg:pt-36 px-5">
-            <FlexContainer width="w-6xl" direction="flex-col" gap="gap-12">
-                <H2 fontSize="text-5xl" className="text-center">
-                    The Fast and Curious Podcast
-                </H2>
+            <MotionFlexContainer
+                ref={ref}
+                initial="hidden"
+                animate={shouldAnimate ? 'visible' : 'hidden'}
+                width="w-6xl"
+                direction="flex-col"
+                gap="gap-12"
+            >
+                <MotionH2
+                    variants={containerVariants}
+                    fontSize="text-5xl"
+                    className="flex flex-wrap gap-3 overflow-hidden justify-center lg:justify-start"
+                >
+                    {['The', 'Fast', 'and', 'Curious', 'Podcast'].map(
+                        (word, i) => (
+                            <span key={i} className="overflow-hidden block">
+                                <motion.span
+                                    variants={slideUp}
+                                    className="inline-block"
+                                >
+                                    {word}
+                                </motion.span>
+                            </span>
+                        )
+                    )}
+                </MotionH2>
                 <FlexContainer
                     direction="flex-col lg:flex-row"
                     gap="gap-10 lg:gap-5"
                 >
-                    <FlexContainer
+                    <MotionFlexContainer
+                        variants={cardContainerVariants}
                         width="w-full lg:w-4/6"
                         direction="flex-col"
                         gap="gap-4"
@@ -63,13 +141,14 @@ export const Podcast = () => {
                                 position={card.position}
                             />
                         ))}
-                    </FlexContainer>
-                    <FlexContainer
+                    </MotionFlexContainer>
+                    <MotionFlexContainer
+                        variants={opacitySlideUp}
                         width="w-full lg:w-1/2"
                         direction="flex-col"
                         gap="gap-6"
                         center
-                        className="lg:mt-[32px] lg:border lg:border-[#ffffff10] bg-[#ffffff02] backdrop-blur-lg rounded-[2px] order-1 lg:order-2"
+                        className="lg:mt-[32px] lg:border lg:border-[#ffffff10] md:bg-[#ffffff02] backdrop-blur-lg rounded-[2px] order-1 lg:order-2"
                     >
                         <FlexContainer center className="h-full lg:pt-[15px]">
                             <LottieAnimation
@@ -101,9 +180,9 @@ export const Podcast = () => {
                                 </FlexContainer>
                             </button>
                         </FlexContainer>
-                    </FlexContainer>
+                    </MotionFlexContainer>
                 </FlexContainer>
-            </FlexContainer>
+            </MotionFlexContainer>
         </FlexContainer>
     )
 }

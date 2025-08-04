@@ -45,6 +45,14 @@ const configMap = [
             'So you want to sell your technology to federal agencies and the Department of Defense. We’ll give you tools and information to help guide you through the cybersecurity requirements.',
         ],
     },
+    {
+        index: '04',
+        title: 'IT Cybersecurity trainers',
+        icon: ghostEmoji,
+        description: [
+            'So you want to sell your technology to federal agencies and the Department of Defense. We’ll give you tools and information to help guide you through the cybersecurity requirements.',
+        ],
+    },
 ]
 
 const containerVariants = {
@@ -52,6 +60,7 @@ const containerVariants = {
     visible: {
         transition: {
             staggerChildren: 0.5,
+            delay: 1,
         },
     },
 }
@@ -72,13 +81,14 @@ const MotionH2 = motion(H2)
 
 export const About = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-200px' })
+    const isInView = useInView(ref, { once: true, margin: '-100px' })
     const isLoaded = useHasLoaderFinished()
 
     const shouldAnimate = isLoaded && isInView
 
     return (
         <FlexContainer
+            id="about"
             width="w-full md:max-w-[1920px]"
             direction="flex-col"
             className="overflow-hidden"
@@ -95,15 +105,22 @@ export const About = () => {
                         variants={containerVariants}
                         className="capitalize flex flex-wrap gap-2 overflow-hidden"
                     >
-                        <motion.span variants={slideUp} className="block">
-                            Don’t worry.
-                        </motion.span>
-                        <motion.span
-                            variants={slideUp}
-                            className="block text-[#21D7A6]"
-                        >
-                            we got you.
-                        </motion.span>
+                        <span className="overflow-hidden block">
+                            <motion.span
+                                variants={slideUp}
+                                className="inline-block"
+                            >
+                                Don’t worry.
+                            </motion.span>
+                        </span>
+                        <span className="overflow-hidden block">
+                            <motion.span
+                                variants={slideUp}
+                                className="inline-block text-[#21D7A6]"
+                            >
+                                we got you.
+                            </motion.span>
+                        </span>
                     </MotionH2>
                 </FlexContainer>
             </MotionBox>
