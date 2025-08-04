@@ -10,7 +10,7 @@ import { Github } from '../svg/Github'
 import { X } from '../svg/X'
 import { Youtube } from '../svg/Youtube'
 import { ContactForm } from './ContactForm'
-import { easeOut, motion, useInView } from 'framer-motion'
+import { AnimatePresence, easeOut, motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 import successIcon from '@/assets/successIcon.svg'
 import Image from 'next/image'
@@ -166,27 +166,34 @@ export const Contact = () => {
                         }}
                     />
                     {isSubmitted && (
-                        <motion.span
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            className="flex gap-2 text-[11px] lg:text-[14px] text-[#21D7A6] uppercase px-5 items-center"
-                        >
-                            <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{
-                                    repeat: Infinity,
-                                    duration: 5,
-                                    ease: 'linear',
-                                }}
-                            >
-                                <Image
-                                    src={successIcon}
-                                    alt="Success Icon"
-                                    className="w-4 h-4"
-                                />
-                            </motion.div>
-                            Your application has been successfully submitted.
-                        </motion.span>
+                        <AnimatePresence>
+                            {isSubmitted && (
+                                <motion.span
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                    transition={{ duration: 0.4 }}
+                                    className="flex gap-2 text-[11px] lg:text-[14px] text-[#21D7A6] uppercase px-5 items-center"
+                                >
+                                    <motion.div
+                                        animate={{ rotate: 360 }}
+                                        transition={{
+                                            repeat: Infinity,
+                                            duration: 5,
+                                            ease: 'linear',
+                                        }}
+                                    >
+                                        <Image
+                                            src={successIcon}
+                                            alt="Success Icon"
+                                            className="w-4 h-4"
+                                        />
+                                    </motion.div>
+                                    Your application has been successfully
+                                    submitted.
+                                </motion.span>
+                            )}
+                        </AnimatePresence>
                     )}
                 </MotionFlexContainer>
 
