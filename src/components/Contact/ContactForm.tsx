@@ -13,12 +13,18 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+const friendlyPhoneRegex = /^\+?[0-9\s\-()]{7,20}$/
+
 export const contactFormSchema = z.object({
     fullName: z.string().min(1, 'Full name is required'),
     email: z.string().email('Invalid email address'),
-    phone: z.string().min(6, 'Phone number is required'),
+    phone: z
+        .string()
+        .regex(
+            friendlyPhoneRegex,
+            'Invalid phone number (digits, +, (), - allowed)'
+        ),
 })
-
 export type ContactFormValues = z.infer<typeof contactFormSchema>
 
 const slideUp = {
