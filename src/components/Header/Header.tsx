@@ -36,11 +36,11 @@ export const Header = () => {
                     <Logo className="w-14 md:w-20 text-white hover:text-[#21D7A6] duration-500" />
                 </FlexContainer>
                 <nav className="fade-border rounded-[2px] no-left -ml-[4px]">
-                    <ul className="flex px-1.5 md:px-6">
+                    <ul className="flex px-1 md:px-6">
                         {navigationMap.map((menuItem, index) => (
                             <li
                                 key={index}
-                                className={`leading-none px-3.5 md:px-4 pt-3 md:pt-4 pb-3 md:pb-5 ${menuItem.className}`}
+                                className={`leading-none px-2.5 md:px-4 pt-3 md:pt-4 pb-3 md:pb-5 ${menuItem.className}`}
                             >
                                 <TypographySmall className="cursor-pointer uppercase text-[#f7f7f7] hover:text-[#fff973] duration-500">
                                     {menuItem.title}
