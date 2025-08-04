@@ -21,6 +21,7 @@ const fadeInUp = {
         transition: {
             duration: 0.8,
             ease: easeOut,
+            delay: 0.4,
         },
     },
 }
@@ -32,6 +33,7 @@ const slideUp = {
         transition: {
             duration: 0.6,
             ease: easeOut,
+            delay: 0.4,
         },
     },
 }
@@ -40,7 +42,7 @@ const opacity = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: { duration: 0.9, ease: easeOut },
+        transition: { duration: 0.9, ease: easeOut, delay: 1 },
     },
 }
 
@@ -50,7 +52,7 @@ const MotionBox = motion(Box)
 
 export const Intro = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-200px' })
+    const isInView = useInView(ref, { once: true, margin: '-100px' })
     const isLoaded = useHasLoaderFinished()
 
     const shouldAnimate = isLoaded && isInView
@@ -121,7 +123,15 @@ export const Intro = () => {
                         animationData={ArrowsCTAYellow}
                         className="pointer-events-none group-hover:block hidden md:h-32 w-44 md:w-64 absolute left-1/2 -translate-x-1/2 -bottom-7.5 md:-bottom-[49px]"
                     />
-                    <button className="group-hover:text-[#FFF973] cursor-pointer duration-500">
+                    <button
+                        className="group-hover:text-[#FFF973] cursor-pointer duration-500"
+                        onClick={() => {
+                            const section = document.getElementById('about')
+                            if (section) {
+                                section.scrollIntoView({ behavior: 'smooth' })
+                            }
+                        }}
+                    >
                         <TypographyButton fontSize="text-sm md:text-lg">
                             Learn More
                         </TypographyButton>
