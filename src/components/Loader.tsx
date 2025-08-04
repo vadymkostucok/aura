@@ -1,7 +1,5 @@
 'use client'
-import React from 'react'
-import { useEffect, useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
 import Lottie from 'lottie-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import loader from '@/assets/loader.json'
@@ -24,6 +22,18 @@ export const Loader = () => {
             clearTimeout(finishTimer)
         }
     }, [])
+
+    useEffect(() => {
+        if (isVisible) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = ''
+        }
+
+        return () => {
+            document.body.style.overflow = ''
+        }
+    }, [isVisible])
 
     return (
         <AnimatePresence>
