@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { TypographyDisclaimer } from '../Typography/Typography'
 import { TypographyButton } from '../Typography/TypographyButton'
@@ -8,7 +8,7 @@ import { H1 } from '../Typography/H1'
 import { Box } from '../Box'
 import { BackgroundGrid } from '../BackgroundGrid'
 import { LottieAnimation } from '../LottieAnimation'
-import { easeOut, motion } from 'framer-motion'
+import { easeOut, motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 
 import ArrowsCTA from '@/assets/ArrowsCTA.json'
@@ -49,14 +49,19 @@ const MotionH1 = motion(H1)
 const MotionBox = motion(Box)
 
 export const Intro = () => {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: '-200px' })
     const isLoaded = useHasLoaderFinished()
+
+    const shouldAnimate = isLoaded && isInView
 
     return (
         <MotionBox
+            ref={ref}
             id="intro"
             className="overflow-hidden w-full"
             initial="hidden"
-            animate={isLoaded ? 'visible' : 'hidden'}
+            animate={shouldAnimate ? 'visible' : 'hidden'}
         >
             <BackgroundGrid />
             <FlexContainer direction="flex-col" minHeight="min-h-screen" center>
