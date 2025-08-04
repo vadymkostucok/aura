@@ -5,7 +5,7 @@ import Image from 'next/image'
 import plusIcon from '@/assets/plus.svg'
 
 type H1Props = {
-    children: string // assume string only, since you're animating letters
+    children: string
     className?: string
 }
 

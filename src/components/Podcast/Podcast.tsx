@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2 } from '../Typography/Typography'
 import { TypographyButton } from '../Typography/TypographyButton'
+import { H2 } from '../Typography/H2'
 import { P } from '../Typography/P'
 import { PodcastCard } from './PodcastCard'
 

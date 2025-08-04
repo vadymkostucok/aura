@@ -1,6 +1,5 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2 } from '../Typography/Typography'
 import { ProgramsCard } from './ProgramsCard'
 import { Box } from '../Box'
 import Image from 'next/image'
@@ -9,6 +8,7 @@ import Blocks from '@/assets/Blocks.json'
 import earthIcon from '@/assets/earth.svg'
 import logo3D from '@/assets/3DLogo.json'
 import { LottieAnimation } from '../LottieAnimation'
+import { H2 } from '../Typography/H2'
 
 const mapConfig = [
     {

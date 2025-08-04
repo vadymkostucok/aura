@@ -1,23 +1,5 @@
 import { ReactNode } from 'react'
 
-export function H2({
-    children,
-    fontSize = 'text-6xl',
-    className,
-}: {
-    children: ReactNode
-    fontSize?: string
-    className?: string
-}) {
-    return (
-        <h2
-            className={`${className} ${fontSize} font-violet scroll-m-20  md:text-7xl tracking-tight`}
-        >
-            {children}
-        </h2>
-    )
-}
-
 export function H3({
     children,
     fontSize = 'text-[32px]',

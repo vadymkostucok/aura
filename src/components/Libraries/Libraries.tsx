@@ -1,6 +1,6 @@
 import React from 'react'
+import { H2 } from '../Typography/H2'
 import { FlexContainer } from '../FlexContainer'
-import { H2 } from '../Typography/Typography'
 import { LibraryCard } from './LibraryCard'
 
 import cam from '@/assets/cam.svg'

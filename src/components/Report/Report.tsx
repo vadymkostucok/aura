@@ -1,10 +1,11 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H2, H3, TypographySmall } from '../Typography/Typography'
+import { H3, TypographySmall } from '../Typography/Typography'
 
 import Blocks from '@/assets/Blocks.json'
 import logo3D from '@/assets/3DLogo.json'
 import { LottieAnimation } from '../LottieAnimation'
+import { H2 } from '../Typography/H2'
 
 export const Report = () => {
     return (
