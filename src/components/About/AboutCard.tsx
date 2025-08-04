@@ -22,11 +22,7 @@ export const AboutCard = ({
     index,
 }: AboutCardType) => {
     return (
-        <FlexContainer
-            width="w-full md:w-1/2 xl:w-1/3"
-            direction="flex-col"
-            className="shrink-0 xl:shrink"
-        >
+        <FlexContainer direction="flex-col" className="h-full">
             <FlexContainer
                 width="max-w-60"
                 gap="gap-2.5"
@@ -45,7 +41,7 @@ export const AboutCard = ({
                 <FlexContainer
                     alignItems="items-center"
                     justifyContent="justify-between"
-                    className="md:pt-4 pb-8"
+                    className="pt-4 pb-4 md:pb-8"
                 >
                     <H3 className="text-[#FFF973] leading-none tracking-tight">
                         {title}

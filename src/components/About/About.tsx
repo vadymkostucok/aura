@@ -1,13 +1,23 @@
-import React from 'react'
-import { H2 } from '../Typography/Typography'
+'use client'
+import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { AboutCard } from './AboutCard'
+import { BackgroundGrid } from '../BackgroundGrid'
+import { Box } from '../Box'
+import { H2 } from '../Typography/H2'
+import { easeOut, motion, useInView } from 'framer-motion'
+import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
+
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
 
 import happyEmoji from '@/assets/emoji-happy.svg'
 import keyEmoji from '@/assets/key.svg'
 import ghostEmoji from '@/assets/ghost.svg'
-import { BackgroundGrid } from '../BackgroundGrid'
-import { Box } from '../Box'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 const configMap = [
     {
@@ -37,36 +47,93 @@ const configMap = [
     },
 ]
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.5,
+        },
+    },
+}
+
+const slideUp = {
+    hidden: { y: '100%' },
+    visible: {
+        y: '0%',
+        transition: {
+            duration: 0.6,
+            ease: easeOut,
+        },
+    },
+}
+
+const MotionBox = motion(Box)
+const MotionH2 = motion(H2)
+
 export const About = () => {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: '-200px' })
+    const isLoaded = useHasLoaderFinished()
+
+    const shouldAnimate = isLoaded && isInView
+
     return (
         <FlexContainer
             width="w-full md:max-w-[1920px]"
             direction="flex-col"
             className="overflow-hidden"
         >
-            <Box className="px-5 pt-24 md:pt-36 pb-16 md:pb-20">
-                <BackgroundGrid />
-                <FlexContainer center>
-                    <H2 className="capitalize">
-                        {'Don’t Worry. '}
-                        <span className="text-[#21D7A6]">we got you.</span>
-                    </H2>
-                </FlexContainer>
-            </Box>
-
-            <FlexContainer
-                gap="gap-5"
-                className="px-5 md:pb-[60px] items-stretch -mt-7 md:-mt-8"
+            <MotionBox
+                ref={ref}
+                className="px-5 pt-24 md:pt-36 pb-16 md:pb-20"
+                initial="hidden"
+                animate={shouldAnimate ? 'visible' : 'hidden'}
             >
-                {configMap.map((card) => (
-                    <AboutCard
-                        key={card.index}
-                        index={card.index}
-                        title={card.title}
-                        description={card.description}
-                        icon={card.icon}
-                    />
-                ))}
+                <BackgroundGrid />
+                <FlexContainer center className="overflow-hidden">
+                    <MotionH2
+                        variants={containerVariants}
+                        className="capitalize flex flex-wrap gap-2 overflow-hidden"
+                    >
+                        <motion.span variants={slideUp} className="block">
+                            Don’t worry.
+                        </motion.span>
+                        <motion.span
+                            variants={slideUp}
+                            className="block text-[#21D7A6]"
+                        >
+                            we got you.
+                        </motion.span>
+                    </MotionH2>
+                </FlexContainer>
+            </MotionBox>
+
+            <FlexContainer className="px-5 md:pb-[60px] items-stretch -mt-7 md:-mt-8">
+                <Swiper
+                    modules={[Autoplay]}
+                    spaceBetween={24}
+                    slidesPerView={1}
+                    loop
+                    speed={300}
+                    autoplay={{
+                        delay: 3000,
+                    }}
+                    breakpoints={{
+                        768: { slidesPerView: 2 },
+                        1280: { slidesPerView: 3 },
+                    }}
+                >
+                    {configMap.map((card) => (
+                        <SwiperSlide key={card.index} className="h-full">
+                            <AboutCard
+                                index={card.index}
+                                title={card.title}
+                                description={card.description}
+                                icon={card.icon}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </FlexContainer>
         </FlexContainer>
     )
