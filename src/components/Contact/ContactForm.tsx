@@ -7,39 +7,84 @@ import { LottieAnimation } from '../LottieAnimation'
 import singleArrow from '@/assets/singleArrowBlack.json'
 import singleArrowGreen from '@/assets/singleArrowGreen.json'
 import { Input } from '../Input'
+import { easeOut, motion } from 'framer-motion'
+
+import { z } from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+export const contactFormSchema = z.object({
+    fullName: z.string().min(1, 'Full name is required'),
+    email: z.string().email('Invalid email address'),
+    phone: z.string().min(6, 'Phone number is required'),
+})
+
+export type ContactFormValues = z.infer<typeof contactFormSchema>
+
+const slideUp = {
+    hidden: { y: '100%' },
+    visible: {
+        y: '0%',
+        transition: {
+            duration: 0.6,
+            ease: easeOut,
+        },
+    },
+}
+
+const MotionFlexContainer = motion(FlexContainer)
 
 export const ContactForm = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<ContactFormValues>({
+        resolver: zodResolver(contactFormSchema),
+    })
+
+    const onSubmit = (data: ContactFormValues) => {
+        console.log('Form data:', data)
+    }
+
     return (
-        <FlexContainer
+        <MotionFlexContainer
+            variants={slideUp}
             width="w-full lg:w-[530px]"
             direction="flex-col"
             className="bg-[#FFFFFF1A] lg:bg-[#FFFFFF05] border border-[#ffffff10] rounded-[2px] px-5 py-8"
         >
             <H3 className="text-[#FFF973]">Apply Now</H3>
-            <form action="" className="flex flex-col gap-6 pt-5">
+            <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="flex flex-col gap-6 pt-5"
+            >
                 <Input
                     id="fullName"
                     type="text"
-                    name="fullName"
                     placeholder="Your Full Name"
                     label="Name"
+                    {...register('fullName')}
+                    error={errors.fullName?.message}
                 />
 
                 <Input
                     id="email"
                     type="email"
-                    name="email"
                     placeholder="aura@security.com"
                     label="Email Address"
+                    {...register('email')}
+                    error={errors.email?.message}
                 />
 
                 <Input
                     id="phone"
                     type="tel"
-                    name="phone"
                     placeholder="+31 6 12 34 56 78"
                     label="Phone"
                     hasDisclaimer
+                    {...register('phone')}
+                    error={errors.phone?.message}
                 />
 
                 <button
@@ -62,6 +107,6 @@ export const ContactForm = () => {
                     </FlexContainer>
                 </button>
             </form>
-        </FlexContainer>
+        </MotionFlexContainer>
     )
 }

@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "lottie-react": "^2.4.1",
     "next": "15.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-hook-form": "^7.62.0",
     "swiper": "^11.2.10",
-    "use-scramble": "^2.2.15"
+    "tailwind-merge": "^3.3.1",
+    "use-scramble": "^2.2.15",
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
