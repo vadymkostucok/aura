@@ -34,10 +34,15 @@ const slideUp = {
 
 const MotionFlexContainer = motion(FlexContainer)
 
-export const ContactForm = () => {
+type ContactFormProps = {
+    onSubmitSuccess?: () => void
+}
+
+export const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm<ContactFormValues>({
         resolver: zodResolver(contactFormSchema),
@@ -45,8 +50,9 @@ export const ContactForm = () => {
 
     const onSubmit = (data: ContactFormValues) => {
         console.log('Form data:', data)
+        reset()
+        onSubmitSuccess?.()
     }
-
     return (
         <MotionFlexContainer
             variants={slideUp}

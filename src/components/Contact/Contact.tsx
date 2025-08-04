@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { P } from '../Typography/P'
 import { H2 } from '../Typography/H2'
@@ -12,6 +12,8 @@ import { Youtube } from '../svg/Youtube'
 import { ContactForm } from './ContactForm'
 import { easeOut, motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
+import successIcon from '@/assets/successIcon.svg'
+import Image from 'next/image'
 
 const socialMediaMap = [
     { logo: <Instagram /> },
@@ -58,6 +60,8 @@ const MotionH2 = motion(H2)
 const MotionP = motion(P)
 
 export const Contact = () => {
+    const [isSubmitted, setIsSubmitted] = useState(false)
+
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
     const isLoaded = useHasLoaderFinished()
@@ -142,7 +146,7 @@ export const Contact = () => {
                             {socialMediaMap.map((media, index) => (
                                 <Box
                                     key={index}
-                                    className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973]"
+                                    className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973] cursor-pointer"
                                 >
                                     {media.logo}
                                 </Box>
@@ -150,8 +154,40 @@ export const Contact = () => {
                         </MotionFlexContainer>
                     </FlexContainer>
                 </FlexContainer>
-                <MotionFlexContainer width="w-full lg:w-1/2 overflow-hidden">
-                    <ContactForm />
+                <MotionFlexContainer
+                    direction="flex-col"
+                    gap="gap-5"
+                    width="w-full lg:w-1/2 overflow-hidden"
+                >
+                    <ContactForm
+                        onSubmitSuccess={() => {
+                            setIsSubmitted(true)
+                            setTimeout(() => setIsSubmitted(false), 5000) // auto-hide after 5s
+                        }}
+                    />
+                    {isSubmitted && (
+                        <motion.span
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="flex gap-2 text-[11px] lg:text-[14px] text-[#21D7A6] uppercase px-5 items-center"
+                        >
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{
+                                    repeat: Infinity,
+                                    duration: 5,
+                                    ease: 'linear',
+                                }}
+                            >
+                                <Image
+                                    src={successIcon}
+                                    alt="Success Icon"
+                                    className="w-4 h-4"
+                                />
+                            </motion.div>
+                            Your application has been successfully submitted.
+                        </motion.span>
+                    )}
                 </MotionFlexContainer>
 
                 <MotionFlexContainer

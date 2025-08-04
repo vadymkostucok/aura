@@ -108,19 +108,16 @@ export const Programs = () => {
     const shouldAnimate = isLoaded && isInView
 
     return (
-        <FlexContainer
+        <MotionFlexContainer
+            ref={ref}
+            initial="hidden"
+            animate={shouldAnimate ? 'visible' : 'hidden'}
             width="w-full max-w-[1920px]"
             direction="flex-col lg:flex-row"
             gap="gap-10 2xl:gap-32"
             className="pt-24 md:pt-36 px-5"
         >
-            <MotionFlexContainer
-                ref={ref}
-                initial="hidden"
-                animate={shouldAnimate ? 'visible' : 'hidden'}
-                width="w-full lg:w-1/2"
-                direction="flex-col"
-            >
+            <MotionFlexContainer width="w-full lg:w-1/2" direction="flex-col">
                 <Box className="lg:sticky lg:top-12 lg:mb-[30%]">
                     <MotionH2
                         variants={containerVariants}
@@ -186,6 +183,6 @@ export const Programs = () => {
                     />
                 ))}
             </FlexContainer>
-        </FlexContainer>
+        </MotionFlexContainer>
     )
 }
