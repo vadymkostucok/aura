@@ -8,6 +8,7 @@ import { Contact } from '@/components/Contact/Contact'
 import { VideoScrollWrapper } from '@/components/Video'
 import { Header } from '@/components/Header/Header'
 import { Loader } from '@/components/Loader'
+import { Footer } from '@/components/Footer'
 
 export default function Home() {
     return (
@@ -23,6 +24,7 @@ export default function Home() {
                 <Programs />
             </VideoScrollWrapper>
             <Contact />
+            <Footer />
         </>
     )
 }
