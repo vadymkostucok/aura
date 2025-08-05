@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
 import {
     H3,
@@ -6,7 +6,10 @@ import {
     TypographyDisclaimer,
     TypographySmall,
 } from '../Typography/Typography'
-import { TypographyButton } from '../Typography/TypographyButton'
+import {
+    TypographyButton,
+    TypographyButtonHandle,
+} from '../Typography/TypographyButton'
 import { Box } from '../Box'
 import Image from 'next/image'
 
@@ -39,6 +42,8 @@ export const ProgramsCard = ({
     description,
     skills,
 }: ProgramsCardType) => {
+    const textRef = useRef<TypographyButtonHandle>(null)
+
     return (
         <MotionBox variants={programsCardSlideUp}>
             <FlexContainer
@@ -110,9 +115,15 @@ export const ProgramsCard = ({
                                 </FlexContainer>
                             ))}
                         </div>
-                        <button className="group w-fit h-fit bg-[#fff973] hover:bg-transparent text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-3 md:p-4 duration-500">
+                        <button
+                            onMouseEnter={() => textRef.current?.replay()}
+                            onMouseLeave={() => textRef.current?.replay()}
+                            className="group w-fit h-fit shrink-0 bg-[#fff973] hover:bg-transparent text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-3 md:p-4 duration-500"
+                        >
                             <FlexContainer gap="gap-2.5">
                                 <TypographyButton
+                                    ref={textRef}
+                                    disableInternalHover
                                     fontSize="text-[11px] md:text-[14px]"
                                     className="font-disket"
                                 >

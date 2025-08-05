@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
 import { H3 } from '../Typography/Typography'
-import { TypographyButton } from '../Typography/TypographyButton'
+import {
+    TypographyButton,
+    TypographyButtonHandle,
+} from '../Typography/TypographyButton'
 import { LottieAnimation } from '../LottieAnimation'
 
 import singleArrow from '@/assets/singleArrowBlack.json'
@@ -45,6 +48,8 @@ type ContactFormProps = {
 }
 
 export const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
+    const textRef = useRef<TypographyButtonHandle>(null)
+
     const {
         register,
         handleSubmit,
@@ -100,6 +105,8 @@ export const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
                 />
 
                 <button
+                    onMouseEnter={() => textRef.current?.replay()}
+                    onMouseLeave={() => textRef.current?.replay()}
                     type="submit"
                     className="group bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4 duration-500"
                 >
@@ -107,7 +114,9 @@ export const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
                         gap="gap-2.5"
                         justifyContent="justify-between"
                     >
-                        <TypographyButton>Submit</TypographyButton>
+                        <TypographyButton ref={textRef} disableInternalHover>
+                            Submit
+                        </TypographyButton>
                         <LottieAnimation
                             animationData={singleArrow}
                             className="group-hover:hidden block w-3.5 md:w-5"
