@@ -2,6 +2,7 @@
 import happyEmoji from '@/assets/emoji-happy.svg'
 import keyEmoji from '@/assets/key.svg'
 import ghostEmoji from '@/assets/ghost.svg'
+import heartEmoji from '@/assets/heart.svg'
 
 // podcast
 import podcast1 from '@/assets/podcast1.png'
@@ -43,7 +44,7 @@ export const aboutSectionCards = [
     {
         index: '04',
         title: 'IT Cybersecurity trainers',
-        icon: ghostEmoji,
+        icon: heartEmoji,
         description: [
             'So you want to sell your technology to federal agencies and the Department of Defense. We’ll give you tools and information to help guide you through the cybersecurity requirements.',
         ],
