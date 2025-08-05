@@ -56,13 +56,13 @@ export const PodcastCard = ({
                             {title}
                         </H4>
                         <FlexContainer>
-                            <TypographySmall className="uppercase text-[#fff]">
+                            <TypographySmall className="tracking-tight md:tracking-normal uppercase text-[#fff]">
                                 {author}
                             </TypographySmall>
-                            <TypographySmall className="px-2">
+                            <TypographySmall className="px-1 md:px-2">
                                 /
                             </TypographySmall>
-                            <TypographySmall className="uppercase text-[#21D7A6]">
+                            <TypographySmall className="tracking-tight md:tracking-normal uppercase text-[#21D7A6]">
                                 {position}
                             </TypographySmall>
                         </FlexContainer>
