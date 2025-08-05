@@ -40,10 +40,9 @@ export const Loader = () => {
             {isVisible && (
                 <motion.div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black"
-                    initial={{ rotate: 0, opacity: 1 }}
+                    initial={{ opacity: 1 }}
                     exit={{
                         opacity: 0,
-                        rotate: 360,
                         transition: { duration: 0.4 },
                     }}
                 >
