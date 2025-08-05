@@ -55,6 +55,17 @@ export const aboutSlideUp = {
     },
 }
 
+export const aboutSlideLeft = {
+    hidden: { x: '5%' },
+    visible: {
+        x: '0%',
+        transition: {
+            duration: 0.35,
+            ease: easeOut,
+        },
+    },
+}
+
 // PODCAST
 export const podcastContainerVariants = {
     hidden: {},

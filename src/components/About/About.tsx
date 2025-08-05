@@ -16,11 +16,12 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import {
     aboutContainerVariants,
+    aboutSlideLeft,
     aboutSlideUp,
 } from '../animations/variantsConfig'
 import { aboutSectionCards } from '@/cms/fallbackContent'
 
-const MotionBox = motion(Box)
+const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
 
 export const About = () => {
@@ -31,18 +32,16 @@ export const About = () => {
     const shouldAnimate = isLoaded && isInView
 
     return (
-        <FlexContainer
+        <MotionFlexContainer
+            ref={ref}
+            initial="hidden"
+            animate={shouldAnimate ? 'visible' : 'hidden'}
             id="about"
             width="w-full md:max-w-[1920px]"
             direction="flex-col"
             className="overflow-hidden"
         >
-            <MotionBox
-                ref={ref}
-                className="px-5 pt-24 md:pt-36 pb-16 md:pb-20"
-                initial="hidden"
-                animate={shouldAnimate ? 'visible' : 'hidden'}
-            >
+            <Box className="px-5 pt-24 md:pt-36 pb-16 md:pb-20">
                 <BackgroundGrid />
                 <FlexContainer center className="overflow-hidden">
                     <MotionH2
@@ -67,9 +66,12 @@ export const About = () => {
                         </span>
                     </MotionH2>
                 </FlexContainer>
-            </MotionBox>
+            </Box>
 
-            <FlexContainer className="px-5 md:pb-[60px] items-stretch -mt-7 md:-mt-8">
+            <MotionFlexContainer
+                variants={aboutSlideLeft}
+                className="px-5 md:pb-[60px] items-stretch -mt-7 md:-mt-8"
+            >
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={24}
@@ -95,7 +97,7 @@ export const About = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            </FlexContainer>
-        </FlexContainer>
+            </MotionFlexContainer>
+        </MotionFlexContainer>
     )
 }
