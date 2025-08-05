@@ -10,10 +10,15 @@ import { Github } from '../svg/Github'
 import { X } from '../svg/X'
 import { Youtube } from '../svg/Youtube'
 import { ContactForm } from './ContactForm'
-import { AnimatePresence, easeOut, motion, useInView } from 'framer-motion'
+import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 import successIcon from '@/assets/successIcon.svg'
 import Image from 'next/image'
+import {
+    contactContainerVariants,
+    contactSlideUp,
+    contactSlideUpOpacity,
+} from '../animations/variantsConfig'
 
 const socialMediaMap = [
     { logo: <Instagram /> },
@@ -21,39 +26,6 @@ const socialMediaMap = [
     { logo: <X /> },
     { logo: <Youtube /> },
 ]
-
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.1,
-            delay: 1,
-        },
-    },
-}
-
-const slideUp = {
-    hidden: { y: '100%' },
-    visible: {
-        y: '0%',
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
-
-const slideUpOpacity = {
-    hidden: { y: '100%', opacity: 0 },
-    visible: {
-        y: '0%',
-        opacity: 1,
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
 
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
@@ -94,7 +66,7 @@ export const Contact = () => {
                             gap="gap-5 md:gap-10"
                         >
                             <MotionH2
-                                variants={containerVariants}
+                                variants={contactContainerVariants}
                                 className="flex flex-wrap gap-x-2"
                             >
                                 {['Join', 'Our'].map((word, i) => (
@@ -103,7 +75,7 @@ export const Contact = () => {
                                         className="overflow-hidden block"
                                     >
                                         <motion.span
-                                            variants={slideUp}
+                                            variants={contactSlideUp}
                                             className="inline-block"
                                         >
                                             {word}
@@ -113,7 +85,7 @@ export const Contact = () => {
                                 <br className="w-full" />
                                 <span className="overflow-hidden block">
                                     <motion.span
-                                        variants={slideUp}
+                                        variants={contactSlideUp}
                                         className="inline-block text-[#21D7A6]"
                                     >
                                         Community
@@ -122,7 +94,7 @@ export const Contact = () => {
                             </MotionH2>
                             <span className="overflow-hidden block">
                                 <MotionP
-                                    variants={slideUp}
+                                    variants={contactSlideUp}
                                     className="inline-block"
                                 >
                                     Get exclusive access to our live webcasts,
@@ -139,14 +111,14 @@ export const Contact = () => {
                         >
                             <span className="overflow-hidden block">
                                 <motion.h5
-                                    variants={slideUp}
+                                    variants={contactSlideUp}
                                     className="tracking-tight"
                                 >
                                     Social links:
                                 </motion.h5>
                             </span>
                             <MotionFlexContainer
-                                variants={slideUpOpacity}
+                                variants={contactSlideUpOpacity}
                                 gap="gap-1"
                                 className="overflow-hidden"
                             >
@@ -207,7 +179,7 @@ export const Contact = () => {
             </FlexContainer>
             <MotionFlexContainer
                 gap="gap-1"
-                variants={slideUpOpacity}
+                variants={contactSlideUpOpacity}
                 justifyContent="justify-center"
                 className="overflow-hidden flex lg:hidden pb-2.5"
             >

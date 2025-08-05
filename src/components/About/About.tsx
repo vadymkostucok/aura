@@ -5,7 +5,7 @@ import { AboutCard } from './AboutCard'
 import { BackgroundGrid } from '../BackgroundGrid'
 import { Box } from '../Box'
 import { H2 } from '../Typography/H2'
-import { easeOut, motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -18,6 +18,10 @@ import ghostEmoji from '@/assets/ghost.svg'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import {
+    aboutContainerVariants,
+    aboutSlideUp,
+} from '../animations/variantsConfig'
 
 const configMap = [
     {
@@ -55,27 +59,6 @@ const configMap = [
     },
 ]
 
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.5,
-            delay: 1,
-        },
-    },
-}
-
-const slideUp = {
-    hidden: { y: '100%' },
-    visible: {
-        y: '0%',
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
-
 const MotionBox = motion(Box)
 const MotionH2 = motion(H2)
 
@@ -102,12 +85,12 @@ export const About = () => {
                 <BackgroundGrid />
                 <FlexContainer center className="overflow-hidden">
                     <MotionH2
-                        variants={containerVariants}
+                        variants={aboutContainerVariants}
                         className="capitalize flex flex-wrap gap-2 overflow-hidden"
                     >
                         <span className="overflow-hidden block">
                             <motion.span
-                                variants={slideUp}
+                                variants={aboutSlideUp}
                                 className="inline-block"
                             >
                                 Don’t worry.
@@ -115,7 +98,7 @@ export const About = () => {
                         </span>
                         <span className="overflow-hidden block">
                             <motion.span
-                                variants={slideUp}
+                                variants={aboutSlideUp}
                                 className="inline-block text-[#21D7A6]"
                             >
                                 we got you.

@@ -7,49 +7,14 @@ import Blocks from '@/assets/Blocks.json'
 import logo3D from '@/assets/3DLogo.json'
 import { LottieAnimation } from '../LottieAnimation'
 import { H2 } from '../Typography/H2'
-import { easeOut, motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 import { Box } from '../Box'
-
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.1,
-            delay: 1,
-        },
-    },
-}
-
-const slideUp = {
-    hidden: { y: '100%' },
-    visible: {
-        y: '0%',
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
-
-const growY = {
-    hidden: { scaleY: 0.25, opacity: 0 },
-    visible: {
-        scaleY: 1,
-        opacity: 1,
-        transition: {
-            scaleY: {
-                duration: 0.6,
-                ease: easeOut,
-            },
-            opacity: {
-                duration: 0.3,
-                ease: 'easeOut',
-            },
-            delay: 0.5,
-        },
-    },
-}
+import {
+    reportContainerVariants,
+    reportGrowY,
+    reportSlideUp,
+} from '../animations/variantsConfig'
 
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
@@ -73,13 +38,13 @@ export const Report = () => {
         >
             <Box className="2xl:w-[550px] h-fit overflow-hidden 2xl:shrink-0">
                 <MotionH2
-                    variants={containerVariants}
+                    variants={reportContainerVariants}
                     className="md:pt-12 flex flex-wrap gap-3"
                 >
                     {['Breaches', 'Report'].map((word, i) => (
                         <span key={i} className="overflow-hidden block">
                             <motion.span
-                                variants={slideUp}
+                                variants={reportSlideUp}
                                 className="inline-block"
                             >
                                 {word}
@@ -88,7 +53,11 @@ export const Report = () => {
                     ))}
                 </MotionH2>
             </Box>
-            <MotionFlexContainer variants={growY} direction="flex-col" center>
+            <MotionFlexContainer
+                variants={reportGrowY}
+                direction="flex-col"
+                center
+            >
                 <FlexContainer
                     width="w-fit"
                     className="px-10 py-1.5 clip-panel-label-both bg-[#FFFFFF0D] backdrop-blur-lg"

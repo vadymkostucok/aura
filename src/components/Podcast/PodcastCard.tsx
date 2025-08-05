@@ -7,18 +7,8 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 import crossIcon from '@/assets/cross.svg'
 import playIcon from '@/assets/play.svg'
-import { easeOut, motion } from 'framer-motion'
-
-const slideUp = {
-    hidden: { y: '100%' },
-    visible: {
-        y: '0%',
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
+import { motion } from 'framer-motion'
+import { podcastCardSlideUp } from '../animations/variantsConfig'
 
 const MotionBox = motion(Box)
 
@@ -39,7 +29,7 @@ export const PodcastCard = ({
 }: PodcastCartType) => {
     return (
         <Box className="overflow-hidden">
-            <MotionBox variants={slideUp}>
+            <MotionBox variants={podcastCardSlideUp}>
                 <FlexContainer
                     width="max-w-60"
                     gap="gap-2.5"

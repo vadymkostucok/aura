@@ -12,8 +12,14 @@ import podcast3 from '@/assets/podcast3.png'
 import Chip from '@/assets/Chip.json'
 import singleArrow from '@/assets/singleArrow.json'
 import { LottieAnimation } from '../LottieAnimation'
-import { easeOut, motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
+import {
+    podcastCardContainerVariants,
+    podcastContainerVariants,
+    podcastOpacitySlideUp,
+    podcastSlideUp,
+} from '../animations/variantsConfig'
 
 const configMap = [
     {
@@ -39,49 +45,6 @@ const configMap = [
     },
 ]
 
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.1,
-            delay: 1,
-        },
-    },
-}
-
-const slideUp = {
-    hidden: { y: '100%' },
-    visible: {
-        y: '0%',
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
-
-const opacitySlideUp = {
-    hidden: { y: '50%', opacity: 0 },
-    visible: {
-        y: '0%',
-        opacity: 1,
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
-
-const cardContainerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.25,
-            delay: 1,
-        },
-    },
-}
-
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
 
@@ -103,7 +66,7 @@ export const Podcast = () => {
                 gap="gap-12"
             >
                 <MotionH2
-                    variants={containerVariants}
+                    variants={podcastContainerVariants}
                     fontSize="text-5xl"
                     className="flex flex-wrap gap-3 overflow-hidden justify-center lg:justify-start"
                 >
@@ -111,7 +74,7 @@ export const Podcast = () => {
                         (word, i) => (
                             <span key={i} className="overflow-hidden block">
                                 <motion.span
-                                    variants={slideUp}
+                                    variants={podcastSlideUp}
                                     className="inline-block"
                                 >
                                     {word}
@@ -125,7 +88,7 @@ export const Podcast = () => {
                     gap="gap-10 lg:gap-5"
                 >
                     <MotionFlexContainer
-                        variants={cardContainerVariants}
+                        variants={podcastCardContainerVariants}
                         width="w-full lg:w-4/6"
                         direction="flex-col"
                         gap="gap-4"
@@ -143,7 +106,7 @@ export const Podcast = () => {
                         ))}
                     </MotionFlexContainer>
                     <MotionFlexContainer
-                        variants={opacitySlideUp}
+                        variants={podcastOpacitySlideUp}
                         width="w-full lg:w-1/2"
                         direction="flex-col"
                         gap="gap-6"

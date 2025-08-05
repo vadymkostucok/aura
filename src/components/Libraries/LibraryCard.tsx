@@ -7,7 +7,8 @@ import { H5, TypographySmall } from '../Typography/Typography'
 import crossIcon from '@/assets/cross.svg'
 import singleArrow from '@/assets/singleArrow.json'
 import { LottieAnimation } from '../LottieAnimation'
-import { easeOut, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { libraryCardSlideUp } from '../animations/variantsConfig'
 
 type LibraryCardProps = {
     description: string
@@ -15,23 +16,11 @@ type LibraryCardProps = {
     icon: StaticImageData
 }
 
-const slideUp = {
-    hidden: { y: '25%', opacity: 0.25 },
-    visible: {
-        y: '0%',
-        opacity: 1,
-        transition: {
-            duration: 0.35,
-            ease: easeOut,
-        },
-    },
-}
-
 const MotionBox = motion(Box)
 
 export const LibraryCard = ({ type, description, icon }: LibraryCardProps) => {
     return (
-        <MotionBox variants={slideUp}>
+        <MotionBox variants={libraryCardSlideUp}>
             <FlexContainer
                 width="max-w-60"
                 gap="gap-2.5"

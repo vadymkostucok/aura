@@ -17,21 +17,10 @@ import singleArrowYellow from '@/assets/singleArrow.json'
 import singleArrowBlack from '@/assets/singleArrowBlack.json'
 import { LottieAnimation } from '../LottieAnimation'
 import { P } from '../Typography/P'
-import { easeOut, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { programsCardSlideUp } from '../animations/variantsConfig'
 
 const MotionBox = motion(Box)
-
-const slideUp = {
-    hidden: { y: '100%' },
-    visible: {
-        y: '0%',
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-            delay: 0.1,
-        },
-    },
-}
 
 type ProgramsCardType = {
     type: string
@@ -51,7 +40,7 @@ export const ProgramsCard = ({
     skills,
 }: ProgramsCardType) => {
     return (
-        <MotionBox variants={slideUp}>
+        <MotionBox variants={programsCardSlideUp}>
             <FlexContainer
                 justifyContent="justify-between"
                 alignItems="items-center"

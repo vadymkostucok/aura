@@ -10,8 +10,12 @@ import earthIcon from '@/assets/earth.svg'
 import logo3D from '@/assets/3DLogo.json'
 import { LottieAnimation } from '../LottieAnimation'
 import { H2 } from '../Typography/H2'
-import { easeOut, motion, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
+import {
+    programsContainerVariants,
+    programsSlideUp,
+} from '../animations/variantsConfig'
 
 const mapConfig = [
     {
@@ -76,27 +80,6 @@ const mapConfig = [
     },
 ]
 
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.1,
-            delay: 1,
-        },
-    },
-}
-
-const slideUp = {
-    hidden: { y: '100%' },
-    visible: {
-        y: '0%',
-        transition: {
-            duration: 0.6,
-            ease: easeOut,
-        },
-    },
-}
-
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
 
@@ -120,7 +103,7 @@ export const Programs = () => {
             <MotionFlexContainer width="w-full lg:w-1/2" direction="flex-col">
                 <Box className="lg:sticky lg:top-12 lg:mb-[30%]">
                     <MotionH2
-                        variants={containerVariants}
+                        variants={programsContainerVariants}
                         fontSize="text-5xl"
                         className="lg:pt-12 lg:pb-24 flex flex-wrap gap-3 overflow-hidden"
                     >
@@ -133,7 +116,7 @@ export const Programs = () => {
                         ].map((word, i) => (
                             <span key={i} className="overflow-hidden block">
                                 <motion.span
-                                    variants={slideUp}
+                                    variants={programsSlideUp}
                                     className="inline-block"
                                 >
                                     {word}
