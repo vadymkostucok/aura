@@ -99,3 +99,81 @@ export const librarySectionCards = [
         icon: cam,
     },
 ]
+
+export const programsSectionCards = [
+    {
+        type: 'PR-01_FREE',
+        complexity: 'Entry-level',
+        title: 'Google Cybersecurity Program',
+        subtitle:
+            'Lessons available in 9 languages with native text-to-speech (beta)',
+        description:
+            "Once you've completed all 6 of our introduction courses, you can claim your BTJA certificate of completion here!",
+        skills: [
+            'Redline',
+            'Indicators of Compromise',
+            'IOC Editor',
+            'Indicators of Attack',
+        ],
+    },
+    {
+        type: 'PR-02_£399.00 GBP',
+        complexity: 'junior',
+        title: 'BTL1 SOC Cert',
+        subtitle:
+            'Lessons available in 9 languages with native text-to-speech (beta)',
+        description:
+            'BTL1 is designed to train technical defenders that are capable of defending networks and responding to cyber incidents. The skills and tools you’ll learn in this course will be directly applicable to a range of security roles, and are actively used by defenders around the world.',
+        skills: [
+            'ATT&CK',
+            'Browser History Capturer',
+            'Autopsy',
+            'JumpList Explorer',
+        ],
+    },
+    {
+        type: 'PR-03_FREE',
+        complexity: 'Entry-level',
+        title: 'SOC BTL1 Junior',
+        subtitle:
+            'Lessons available in 9 languages with native text-to-speech (beta)',
+        description:
+            'Start your journey into network penetration testing by earning the Practical Junior Penetration Tester certification. Perform a pentest at an associate level to earn the certification and demonstrate your expertise to employers.',
+        skills: [
+            'Redline',
+            'Indicators of Compromise',
+            'IOC Editor',
+            'Indicators of Attack',
+        ],
+    },
+    {
+        type: 'PR-04_£399.00 GBP',
+        complexity: 'junior',
+        title: 'TCM PJPT',
+        subtitle:
+            'Lessons available in 9 languages with native text-to-speech (beta)',
+        description:
+            'BTL1 is designed to train technical defenders that are capable of defending networks and responding to cyber incidents. The skills and tools you’ll learn in this course will be directly applicable to a range of security roles, and are actively used by defenders around the world.',
+        skills: [
+            'ATT&CK',
+            'Browser History Capturer',
+            'Autopsy',
+            'JumpList Explorer',
+        ],
+    },
+    {
+        type: 'PR-05_£399.00 GBP',
+        complexity: 'junior',
+        title: 'TryHackMe SAL1',
+        subtitle:
+            'Lessons available in 9 languages with native text-to-speech (beta)',
+        description:
+            'Stand out with Security Analyst Level 1 (SAL1). An entry-level, hands-on security analyst certification built by industry experts. Prove your skills, showcase real-world experience, and launch your cyber security career.',
+        skills: [
+            'Verifiable certificate',
+            'Instant results',
+            'Gain a competitive edge',
+            'Share achievement with future employers',
+        ],
+    },
+]

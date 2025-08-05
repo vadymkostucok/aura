@@ -16,69 +16,7 @@ import {
     programsContainerVariants,
     programsSlideUp,
 } from '../animations/variantsConfig'
-
-const mapConfig = [
-    {
-        type: 'PR-01_FREE',
-        complexity: 'Entry-level',
-        title: 'SOC BTL1 Junior',
-        subtitle:
-            'Lessons available in 9 languages with native text-to-speech (beta)',
-        description:
-            "Once you've completed all 6 of our introduction courses, you can claim your BTJA certificate of completion here!",
-        skills: [
-            'Redline',
-            'Indicators of Compromise',
-            'IOC Editor',
-            'Indicators of Attack',
-        ],
-    },
-    {
-        type: 'PR-02_£399.00 GBP',
-        complexity: 'junior',
-        title: 'BTL1 SOC Cert',
-        subtitle:
-            'Lessons available in 9 languages with native text-to-speech (beta)',
-        description:
-            'BTL1 is designed to train technical defenders that are capable of defending networks and responding to cyber incidents. The skills and tools you’ll learn in this course will be directly applicable to a range of security roles, and are actively used by defenders around the world.',
-        skills: [
-            'ATT&CK',
-            'Browser History Capturer',
-            'Autopsy',
-            'JumpList Explorer',
-        ],
-    },
-    {
-        type: 'PR-01_FREE',
-        complexity: 'Entry-level',
-        title: 'SOC BTL1 Junior',
-        subtitle:
-            'Lessons available in 9 languages with native text-to-speech (beta)',
-        description:
-            "Once you've completed all 6 of our introduction courses, you can claim your BTJA certificate of completion here!",
-        skills: [
-            'Redline',
-            'Indicators of Compromise',
-            'IOC Editor',
-            'Indicators of Attack',
-        ],
-    },
-    {
-        type: 'PR-02_£399.00 GBP',
-        complexity: 'junior',
-        title: 'BTL1 SOC Cert',
-        subtitle:
-            'Lessons available in 9 languages with native text-to-speech (beta)',
-        description:
-            'BTL1 is designed to train technical defenders that are capable of defending networks and responding to cyber incidents. The skills and tools you’ll learn in this course will be directly applicable to a range of security roles, and are actively used by defenders around the world.',
-        skills: [
-            'ATT&CK',
-            'Browser History Capturer',
-            'Autopsy',
-            'JumpList Explorer',
-        ],
-    },
-]
+import { programsSectionCards } from '@/cms/fallbackContent'
 
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
@@ -154,7 +92,7 @@ export const Programs = () => {
                 direction="flex-col"
                 gap="gap-6"
             >
-                {mapConfig.map((card, index) => (
+                {programsSectionCards.map((card, index) => (
                     <ProgramsCard
                         key={index}
                         type={card.type}
