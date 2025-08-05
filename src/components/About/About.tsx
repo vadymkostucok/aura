@@ -75,7 +75,7 @@ export const About = () => {
                     spaceBetween={24}
                     slidesPerView={1}
                     loop
-                    speed={300}
+                    speed={700}
                     autoplay={{
                         delay: 3000,
                     }}
