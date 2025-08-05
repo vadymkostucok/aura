@@ -3,11 +3,6 @@ import React, { useRef } from 'react'
 import { H2 } from '../Typography/H2'
 import { FlexContainer } from '../FlexContainer'
 import { LibraryCard } from './LibraryCard'
-
-import cam from '@/assets/cam.svg'
-import link from '@/assets/link.svg'
-import save from '@/assets/save.svg'
-import check from '@/assets/checkAlt.svg'
 import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 import {
@@ -15,38 +10,14 @@ import {
     librariesContainerVariants,
     librariesSlideUp,
 } from '../animations/variantsConfig'
-
-const mapConfig = [
-    { description: 'Cybersecurity 101', type: 'video', icon: cam },
-    {
-        description: 'Cybersecurity for new Vibe Coders',
-        type: 'video',
-        icon: cam,
-    },
-    { description: 'Viber Coder Security', type: 'checklist', icon: check },
-    {
-        description: 'Prompts to ensure your code is secure',
-        type: 'pdf document',
-        icon: save,
-    },
-    {
-        description: 'Security libraries for Vibe Coders',
-        type: 'links',
-        icon: link,
-    },
-    {
-        description: 'Intro to Compliance for Vibe Coders',
-        type: 'video',
-        icon: cam,
-    },
-]
+import { librarySectionCards } from '@/cms/fallbackContent'
 
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
 
 export const Libraries = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-100px' })
+    const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
 
     const shouldAnimate = isLoaded && isInView
@@ -82,7 +53,7 @@ export const Libraries = () => {
                     variants={librariesCardContainerVariants}
                     className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
                 >
-                    {mapConfig.map((card, index) => (
+                    {librarySectionCards.map((card, index) => (
                         <LibraryCard
                             key={index}
                             type={card.type}

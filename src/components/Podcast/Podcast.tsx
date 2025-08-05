@@ -6,9 +6,6 @@ import { H2 } from '../Typography/H2'
 import { P } from '../Typography/P'
 import { PodcastCard } from './PodcastCard'
 
-import podcast1 from '@/assets/podcast1.png'
-import podcast2 from '@/assets/podcast2.png'
-import podcast3 from '@/assets/podcast3.png'
 import Chip from '@/assets/Chip.json'
 import singleArrow from '@/assets/singleArrow.json'
 import { LottieAnimation } from '../LottieAnimation'
@@ -20,37 +17,14 @@ import {
     podcastOpacitySlideUp,
     podcastSlideUp,
 } from '../animations/variantsConfig'
-
-const configMap = [
-    {
-        date: 'July 26, 2025',
-        icon: podcast1,
-        title: 'Securing Vibe Coded Apps',
-        author: 'Colin Gounden',
-        position: 'CEO of Via Science',
-    },
-    {
-        date: 'July 26, 2025',
-        icon: podcast2,
-        title: 'How do I know my Vibe app is secure?',
-        author: 'Colin Gounden',
-        position: 'CEO of Via Science',
-    },
-    {
-        date: 'July 26, 2025',
-        icon: podcast3,
-        title: 'Securing Vibe Coded Apps',
-        author: 'Colin Gounden',
-        position: 'CEO of Via Science',
-    },
-]
+import { podcastSectionCards } from '@/cms/fallbackContent'
 
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
 
 export const Podcast = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-100px' })
+    const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
 
     const shouldAnimate = isLoaded && isInView
@@ -94,7 +68,7 @@ export const Podcast = () => {
                         gap="gap-4"
                         className="order-2 lg:order-1"
                     >
-                        {configMap.map((card, index) => (
+                        {podcastSectionCards.map((card, index) => (
                             <PodcastCard
                                 key={index}
                                 date={card.date}
