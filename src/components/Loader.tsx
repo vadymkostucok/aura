@@ -40,15 +40,34 @@ export const Loader = () => {
             {isVisible && (
                 <motion.div
                     className="fixed inset-0 z-50 flex items-center justify-center bg-black"
-                    initial={{ opacity: 1 }}
-                    exit={{ opacity: 0, transition: { duration: 0.4 } }}
+                    initial={{ rotate: 0, opacity: 1 }}
+                    exit={{
+                        opacity: 0,
+                        rotate: 360,
+                        transition: { duration: 0.4 },
+                    }}
                 >
                     <motion.div
                         initial={{ scale: 1, opacity: 0 }}
-                        animate={{ scale: showLottie ? 1 : 0, opacity: 1 }}
+                        animate={{
+                            scale: showLottie ? 1 : 0,
+                            opacity: 1,
+                        }}
                         transition={{ duration: 0.25, ease: 'easeInOut' }}
                     >
-                        <Lottie animationData={loader} loop={false} autoplay />
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{
+                                duration: 12,
+                                ease: 'linear',
+                            }}
+                        >
+                            <Lottie
+                                animationData={loader}
+                                loop={false}
+                                autoplay
+                            />
+                        </motion.div>
                     </motion.div>
                 </motion.div>
             )}
