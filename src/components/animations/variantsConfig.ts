@@ -184,7 +184,7 @@ export const librariesCardContainerVariants = {
 }
 
 export const libraryCardSlideUp = {
-    hidden: { y: '25%', opacity: 0.25 },
+    hidden: { y: '25%', opacity: 0.5 },
     visible: {
         y: '0%',
         opacity: 1,
