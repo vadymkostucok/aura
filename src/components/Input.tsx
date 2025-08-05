@@ -52,7 +52,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     ref={ref}
                     placeholder={placeholder}
                     className={twMerge(
-                        'bg-[#ffffff09] p-4 outline-none border border-transparent transition-colors duration-300',
+                        'bg-[#ffffff09] focus:bg-[#FFFFFF26] p-4 outline-none border border-transparent transition-colors duration-300',
                         error && 'border-[#F72B68]'
                     )}
                     {...inputProps}
