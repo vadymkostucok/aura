@@ -85,7 +85,7 @@ const MotionH2 = motion(H2)
 
 export const Programs = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: '-100px' })
+    const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
 
     const shouldAnimate = isLoaded && isInView
