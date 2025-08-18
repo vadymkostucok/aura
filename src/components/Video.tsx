@@ -50,7 +50,7 @@ export const VideoScrollWrapper = ({
             <div className="sticky top-0 h-screen -z-10">
                 <img
                     src="/image/static_background.jpg"
-                    alt="background image"
+                    alt="static background image"
                     className={videoClass}
                 />
             </div>
