@@ -42,20 +42,16 @@ export const VideoScrollWrapper = ({
 
     const videoClass = clsx(
         'w-full h-full object-cover transition-opacity duration-700',
-        isIntroInView ? 'opacity-60' : 'opacity-0 md:opacity-20'
+        isIntroInView ? 'opacity-15' : 'opacity-0 md:opacity-5'
     )
 
     return (
         <div className="relative isolate" style={{ height }}>
             <div className="sticky top-0 h-screen -z-10">
-                <video
+                <img
+                    src="/image/static_background.jpg"
+                    alt="background image"
                     className={videoClass}
-                    src="/video/background.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
                 />
             </div>
 
