@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
+import { H3 } from '../Typography/H3'
 import {
-    H3,
     H5,
     TypographyDisclaimer,
     TypographySmall,

@@ -18,85 +18,257 @@ import check from '@/assets/checkAlt.svg'
 export const aboutSectionCards = [
     {
         index: '01',
-        title: 'Vibe Coders...',
+        title: 'CMMC Resources & Documentation',
         icon: happyEmoji,
-        description: [
-            'You’re creating code in seconds. You’re also creating security threats in seconds.',
-            'Check out the Vibe section in Resources to learn best practices and get free tools to help secure your Vibe code.',
-        ],
+        description: ["The DoD's official CMMC hub."],
+        company: 'U.S. Department of Defense',
+        website: 'dodcio.defense.gov',
     },
     {
         index: '02',
-        title: 'New to Cybersecurity',
+        title: 'NIST SP 800-171, Protecting...',
         icon: keyEmoji,
-        description: [
-            'The cybersecurity world is daunting for just about anyone. We’ll teach you the basics, vocabulary, and provide useful tools in the Beginners section in Resources.',
-        ],
+        description: ['CMMC uses these guidelines on how to protect CUI.'],
+        company: 'National Institute of Standards',
+        website: 'csrc.nist.gov',
     },
     {
         index: '03',
-        title: 'Want Fed/DoD customers',
+        title: 'NIST SP 800-171, Assessing...',
         icon: ghostEmoji,
-        description: [
-            'So you want to sell your technology to federal agencies and the Department of Defense. We’ll give you tools and information to help guide you through the cybersecurity requirements.',
-        ],
+        description: ['How to test 800-171 requirements.'],
+        company: 'National Institute of Standards',
+        website: 'csrc.nist.gov',
     },
     {
         index: '04',
-        title: 'IT Cybersecurity trainers',
+        title: 'FedRAMP',
         icon: heartEmoji,
-        description: [
-            'So you want to sell your technology to federal agencies and the Department of Defense. We’ll give you tools and information to help guide you through the cybersecurity requirements.',
-        ],
+        description: ['Official GSA site for federal cloud security program.'],
+        company: 'FedRAMP',
+        website: 'fedramp.gov',
     },
 ]
 
-export const podcastSectionCards = [
+export const podcastSectionNewsCards = [
     {
         date: 'July 26, 2025',
-        icon: podcast1,
-        title: 'Securing Vibe Coded Apps',
-        author: 'Colin Gounden',
-        position: 'CEO of Via Science',
+        title: 'On-prem Sharepoint vulnerabilities actively exploited',
     },
+]
+
+export const podcastSectionEventsCards = [
     {
-        date: 'July 26, 2025',
-        icon: podcast2,
-        title: 'How do I know my Vibe app is secure?',
-        author: 'Colin Gounden',
-        position: 'CEO of Via Science',
-    },
-    {
-        date: 'July 26, 2025',
-        icon: podcast3,
-        title: 'Securing Vibe Coded Apps',
-        author: 'Colin Gounden',
-        position: 'CEO of Via Science',
+        date: 'Aug 22, 2025',
+        title: 'CUI Hotline: Live Q&A with Experts',
     },
 ]
 
 export const librarySectionCards = [
-    { description: 'Cybersecurity 101', type: 'video', icon: cam },
+    // ----
     {
-        description: 'Cybersecurity for new Vibe Coders',
+        title: 'Why Implement Zero Trust',
+        description:
+            'Old by cybersecurity standards, but still great - a crisp, analogy-filled explainer of core zero trust principles.',
+        company: 'IBM Technology',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Jun 29, 2022',
         type: 'video',
         icon: cam,
     },
-    { description: 'Viber Coder Security', type: 'checklist', icon: check },
     {
-        description: 'Prompts to ensure your code is secure',
+        title: 'Why Implement Zero Trust',
+        description:
+            'Old by cybersecurity standards, but still great - a crisp, analogy-filled explainer of core zero trust principles.',
+        company: 'IBM Technology',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Jun 29, 2022',
+        type: 'video',
+        icon: cam,
+    },
+    // ----
+
+    // ----
+    {
+        title: "Exclusive: U.S. Navy Cyber Warfare Engineer interview VIA's CEO to...",
+        description:
+            "Web3's role in DoD cybersecurity (hint: decentralization minimizing the data shared are key).",
+        company: 'VIA',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Dec 8, 2023',
+        type: 'video',
+        icon: cam,
+    },
+    {
+        title: "Exclusive: U.S. Navy Cyber Warfare Engineer interview VIA's CEO to...",
+        description:
+            "Web3's role in DoD cybersecurity (hint: decentralization minimizing the data shared are key).",
+        company: 'VIA',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Dec 8, 2023',
+        type: 'video',
+        icon: cam,
+    },
+    // ----
+
+    // ----
+    {
+        title: 'OWASP GenAI Security Project',
+        description:
+            'Comprehensive, engineering-focused hub on generative AI risks - including a Top 10 - and how to mitigate them.',
+        company: 'OWASP',
+        platform: 'genai.owasp.org',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: check,
+    },
+    {
+        title: 'OWASP GenAI Security Project',
+        description:
+            'Comprehensive, engineering-focused hub on generative AI risks - including a Top 10 - and how to mitigate them.',
+        company: 'OWASP',
+        platform: 'genai.owasp.org',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: check,
+    },
+    // ----
+
+    // ----
+    {
+        title: 'Zero knowledge proofs: Computer Scientist Explains One Concept in 5...',
+        description:
+            'Zero-knowledge proofs let you prove a claim without revealing extra details. This video explains them with simple, fun examples.',
+        company: 'WIRED',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Dec 8, 2023',
         type: 'pdf document',
         icon: save,
     },
     {
-        description: 'Security libraries for Vibe Coders',
-        type: 'links',
-        icon: link,
+        title: 'Zero knowledge proofs: Computer Scientist Explains One Concept in 5...',
+        description:
+            'Zero-knowledge proofs let you prove a claim without revealing extra details. This video explains them with simple, fun examples.',
+        company: 'WIRED',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Dec 8, 2023',
+        type: 'pdf document',
+        icon: save,
+    },
+    // ----
+
+    // ----
+    {
+        title: 'OWASP GenAI Security Project',
+        description:
+            'Comprehensive, engineering-focused hub on generative AI risks - including a Top 10 - and how to mitigate them.',
+        company: 'OWASP',
+        platform: 'genai.owasp.org',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: check,
     },
     {
-        description: 'Intro to Compliance for Vibe Coders',
+        title: '7 Steps To CMMC Compliance',
+        description:
+            "Takes some effort to wade through, but it's comprehensive, current, and includes both infographic and videos.",
+        company: 'Summit 7',
+        platform: 'summit7.us',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: check,
+    },
+    // ----
+
+    // ----
+    {
+        title: '7 Steps To CMMC Compliance',
+        description:
+            "Takes some effort to wade through, but it's comprehensive, current, and includes both infographic and videos.",
+        company: 'Summit 7',
+        platform: 'summit7.us',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: cam,
+    },
+    {
+        title: '7 Steps To CMMC Compliance',
+        description:
+            "Takes some effort to wade through, but it's comprehensive, current, and includes both infographic and videos.",
+        company: 'Summit 7',
+        platform: 'summit7.us',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: cam,
+    },
+    // ----
+
+    // ----
+    {
+        title: 'Why Implement Zero Trust',
+        description:
+            "Brand new to the DoD's Zero Trust approach? Read this overview first-published when Zero Trust Strategy was launched, but largely still relevant.",
+        company: 'IBM Technology',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Jun 29, 2022',
+        type: 'checklist',
+        icon: cam,
+    },
+    {
+        title: 'Why Implement Zero Trust',
+        description:
+            "Brand new to the DoD's Zero Trust approach? Read this overview first-published when Zero Trust Strategy was launched, but largely still relevant.",
+        company: 'IBM Technology',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Jun 29, 2022',
+        type: 'checklist',
+        icon: cam,
+    },
+    // ----
+
+    // ----
+    {
+        title: 'Why Implement Zero Trust',
+        description:
+            'Old by cybersecurity standards, but still great - a crisp, analogy-filled explainer of core zero trust principles.',
+        company: 'IBM Technology',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Jun 29, 2022',
         type: 'video',
         icon: cam,
+    },
+    {
+        title: 'Why Implement Zero Trust',
+        description:
+            'Old by cybersecurity standards, but still great - a crisp, analogy-filled explainer of core zero trust principles.',
+        company: 'IBM Technology',
+        platform: 'youtube.com',
+        info: 'Video | 7min | Jun 29, 2022',
+        type: 'video',
+        icon: cam,
+    },
+    // ----
+
+    // ----
+    {
+        title: 'OWASP GenAI Security Project',
+        description:
+            'Comprehensive, engineering-focused hub on generative AI risks - including a Top 10 - and how to mitigate them.',
+        company: 'OWASP',
+        platform: 'genai.owasp.org',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: check,
+    },
+    {
+        title: '7 Steps To CMMC Compliance',
+        description:
+            "Takes some effort to wade through, but it's comprehensive, current, and includes both infographic and videos.",
+        company: 'Summit 7',
+        platform: 'summit7.us',
+        info: 'Resource Hub',
+        type: 'checklist',
+        icon: check,
     },
 ]
 

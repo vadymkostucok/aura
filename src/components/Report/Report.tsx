@@ -1,10 +1,9 @@
 'use client'
 import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H3, TypographySmall } from '../Typography/Typography'
+import { TypographySmall } from '../Typography/Typography'
 
 import Blocks from '@/assets/Blocks.json'
-import logo3D from '@/assets/3DLogo.json'
 import { LottieAnimation } from '../LottieAnimation'
 import { H2 } from '../Typography/H2'
 import { motion, useInView } from 'framer-motion'
@@ -15,12 +14,19 @@ import {
     reportGrowY,
     reportSlideUp,
 } from '../animations/variantsConfig'
+import { P } from '../Typography/P'
+import {
+    TypographyButton,
+    TypographyButtonHandle,
+} from '../Typography/TypographyButton'
 
 const MotionFlexContainer = motion(FlexContainer)
 const MotionH2 = motion(H2)
+const MotionP = motion(P)
 
 export const Report = () => {
     const ref = useRef(null)
+    const textRef = useRef<TypographyButtonHandle>(null)
     const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
 
@@ -36,12 +42,27 @@ export const Report = () => {
             gap="gap-10 2xl:gap-36"
             className="pt-24 lg:pt-36 px-5"
         >
-            <Box className="2xl:w-[550px] h-fit overflow-hidden 2xl:shrink-0">
+            <FlexContainer
+                width="w-full 2xl:w-[700px]"
+                direction="flex-col"
+                gap="gap-5"
+                className="h-fit overflow-hidden 2xl:shrink-0"
+            >
                 <MotionH2
                     variants={reportContainerVariants}
-                    className="md:pt-12 flex flex-wrap gap-3"
+                    className="md:pt-12 flex flex-wrap justify-center lg:justify-start gap-3"
                 >
-                    {['Breaches', 'Report'].map((word, i) => (
+                    {[
+                        'Protect',
+                        'sensitive',
+                        'data',
+                        '-',
+                        'then',
+                        'get',
+                        'back',
+                        'to',
+                        'building.',
+                    ].map((word, i) => (
                         <span key={i} className="overflow-hidden block">
                             <motion.span
                                 variants={reportSlideUp}
@@ -52,7 +73,34 @@ export const Report = () => {
                         </span>
                     ))}
                 </MotionH2>
-            </Box>
+                <div className="overflow-hidden">
+                    <MotionP
+                        className="pb-2.5 text-center lg:text-start"
+                        variants={reportSlideUp}
+                    >
+                        {
+                            "VIA Zero Trust Fabric (ZTF) helps you tackle your gnarliest access and authorization challenges in a way that's post-quantum secure and user friendly."
+                        }
+                    </MotionP>
+                </div>
+                <div className="overflow-hidden flex justify-center lg:justify-start">
+                    <motion.button
+                        variants={reportSlideUp}
+                        onMouseEnter={() => textRef.current?.replay()}
+                        onMouseLeave={() => textRef.current?.replay()}
+                        className="group w-fit h-fit shrink-0 bg-[#fff973] hover:bg-transparent text-black hover:text-[#fff973] hover:border hover:border-[#fff973] rounded-[2px] p-3 md:p-4 duration-500"
+                    >
+                        <TypographyButton
+                            ref={textRef}
+                            disableInternalHover
+                            fontSize="text-[11px] md:text-[14px]"
+                            className="font-disket"
+                        >
+                            See ZTF in Action
+                        </TypographyButton>
+                    </motion.button>
+                </div>
+            </FlexContainer>
             <MotionFlexContainer
                 variants={reportGrowY}
                 direction="flex-col"
@@ -69,7 +117,7 @@ export const Report = () => {
                         className="h-2.5 opacity-20"
                     />
                     <TypographySmall className="opacity-60 uppercase">
-                        Breach / cyber danger reports
+                        Animated Video
                     </TypographySmall>
                     <LottieAnimation
                         animationData={Blocks}
@@ -78,12 +126,10 @@ export const Report = () => {
                 </FlexContainer>
                 <FlexContainer
                     gap="gap-5 lg:gap-10"
-                    className="py-20 md:py-40 bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
+                    className="py-28 lg:py-0 h-auto md:h-full bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
                     center
                 >
-                    <H3 fontSize="text-[26px]">Coming</H3>
-                    <LottieAnimation animationData={logo3D} />
-                    <H3 fontSize="text-[26px]">Soon...</H3>
+                    {''}
                 </FlexContainer>
             </MotionFlexContainer>
         </MotionFlexContainer>

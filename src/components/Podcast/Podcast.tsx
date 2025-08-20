@@ -17,10 +17,18 @@ import {
     podcastOpacitySlideUp,
     podcastSlideUp,
 } from '../animations/variantsConfig'
-import { podcastSectionCards } from '@/cms/fallbackContent'
+import {
+    podcastSectionEventsCards,
+    podcastSectionNewsCards,
+} from '@/cms/fallbackContent'
+import { Box } from '../Box'
+import { H3 } from '../Typography/H3'
 
 const MotionFlexContainer = motion(FlexContainer)
+const MotionBox = motion(Box)
 const MotionH2 = motion(H2)
+const MotionH3 = motion(H3)
+const MotionP = motion(P)
 
 export const Podcast = () => {
     const ref = useRef(null)
@@ -35,17 +43,17 @@ export const Podcast = () => {
                 ref={ref}
                 initial="hidden"
                 animate={shouldAnimate ? 'visible' : 'hidden'}
-                width="w-6xl"
+                width="w-4xl"
                 direction="flex-col"
                 gap="gap-12"
             >
-                <MotionH2
-                    variants={podcastContainerVariants}
-                    fontSize="text-5xl"
-                    className="flex flex-wrap gap-3 overflow-hidden justify-center lg:justify-start"
-                >
-                    {['The', 'Fast', 'and', 'Curious', 'Podcast'].map(
-                        (word, i) => (
+                <MotionBox>
+                    <MotionH2
+                        variants={podcastContainerVariants}
+                        fontSize="text-5xl"
+                        className="flex flex-wrap gap-3 overflow-hidden justify-center pb-5"
+                    >
+                        {['Weekly', 'brief'].map((word, i) => (
                             <span key={i} className="overflow-hidden block">
                                 <motion.span
                                     variants={podcastSlideUp}
@@ -54,71 +62,94 @@ export const Podcast = () => {
                                     {word}
                                 </motion.span>
                             </span>
-                        )
-                    )}
-                </MotionH2>
-                <FlexContainer
-                    direction="flex-col lg:flex-row"
-                    gap="gap-10 lg:gap-5"
-                >
-                    <MotionFlexContainer
-                        variants={podcastCardContainerVariants}
-                        width="w-full lg:w-4/6"
-                        direction="flex-col"
-                        gap="gap-4"
-                        className="order-2 lg:order-1"
+                        ))}
+                    </MotionH2>
+                    <MotionBox
+                        variants={podcastContainerVariants}
+                        className="overflow-hidden"
                     >
-                        {podcastSectionCards.map((card, index) => (
+                        <MotionP
+                            variants={podcastSlideUp}
+                            className="text-center"
+                        >
+                            Headlines, events, and memes worth your time this
+                            week.
+                        </MotionP>
+                    </MotionBox>
+                </MotionBox>
+                <MotionFlexContainer
+                    variants={podcastCardContainerVariants}
+                    direction="flex-col"
+                    gap="gap-4"
+                >
+                    <MotionBox>
+                        <MotionH3 variants={podcastOpacitySlideUp}>
+                            News
+                        </MotionH3>
+                        {podcastSectionNewsCards.map((card, index) => (
                             <PodcastCard
                                 key={index}
                                 date={card.date}
-                                icon={card.icon}
                                 title={card.title}
-                                author={card.author}
-                                position={card.position}
                             />
                         ))}
-                    </MotionFlexContainer>
-                    <MotionFlexContainer
-                        variants={podcastOpacitySlideUp}
-                        width="w-full lg:w-1/2"
-                        direction="flex-col"
-                        gap="gap-6"
-                        center
-                        className="lg:mt-[32px] lg:border lg:border-[#ffffff10] md:bg-[#ffffff02] backdrop-blur-lg rounded-[2px] order-1 lg:order-2"
-                    >
-                        <FlexContainer center className="h-full lg:pt-[15px]">
-                            <LottieAnimation
-                                animationData={Chip}
-                                className="w-24 lg:w-36"
+                    </MotionBox>
+
+                    <MotionBox>
+                        <MotionH3 variants={podcastOpacitySlideUp}>
+                            Events
+                        </MotionH3>
+                        {podcastSectionEventsCards.map((card, index) => (
+                            <PodcastCard
+                                key={index}
+                                date={card.date}
+                                title={card.title}
                             />
-                        </FlexContainer>
-                        <FlexContainer
+                        ))}
+                    </MotionBox>
+                    <MotionBox
+                        className="lg:mt-[32px]"
+                        variants={podcastCardContainerVariants}
+                    >
+                        <MotionH3 variants={podcastOpacitySlideUp}>
+                            Laughs
+                        </MotionH3>
+
+                        <MotionFlexContainer
+                            variants={podcastOpacitySlideUp}
                             direction="flex-col"
-                            center
                             gap="gap-6"
-                            className="lg:border-t border-[#ffffff10] h-full lg:p-11"
+                            center
+                            className="lg:border lg:border-[#ffffff10] md:bg-[#ffffff02] backdrop-blur-lg rounded-[2px]"
                         >
-                            <P className="text-center">
-                                Join our community and access our “15 Minutes
-                                With…” webcasts LIVE. Each webcast covers a
-                                pressing topic by an expert, who with take
-                                questions from the audience.
-                            </P>
-                            <button className="uppercase cursor-pointer text-[#FFF973]">
-                                <FlexContainer gap="gap-2.5">
-                                    <TypographyButton>
-                                        learn_more
-                                    </TypographyButton>
-                                    <LottieAnimation
-                                        animationData={singleArrow}
-                                        className="w-5"
-                                    />
-                                </FlexContainer>
-                            </button>
-                        </FlexContainer>
-                    </MotionFlexContainer>
-                </FlexContainer>
+                            <FlexContainer center className="h-full pt-10 pb-5">
+                                <LottieAnimation
+                                    animationData={Chip}
+                                    className="w-24 lg:w-36"
+                                />
+                            </FlexContainer>
+                            <FlexContainer
+                                direction="flex-col"
+                                center
+                                gap="gap-6"
+                                className="lg:border-t border-[#ffffff10] h-full lg:p-11"
+                            >
+                                <P className="text-center">Meme of the week</P>
+                                <button className="uppercase cursor-pointer text-[#FFF973]">
+                                    <FlexContainer gap="gap-2.5">
+                                        <TypographyButton>
+                                            learn_more
+                                        </TypographyButton>
+                                        <LottieAnimation
+                                            animationData={singleArrow}
+                                            className="w-5"
+                                        />
+                                    </FlexContainer>
+                                </button>
+                            </FlexContainer>
+                        </MotionFlexContainer>
+                    </MotionBox>
+                </MotionFlexContainer>
             </MotionFlexContainer>
         </FlexContainer>
     )

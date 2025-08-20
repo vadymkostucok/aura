@@ -50,93 +50,51 @@ export const Contact = () => {
                     ref={ref}
                     initial="hidden"
                     animate={shouldAnimate ? 'visible' : 'hidden'}
-                    direction="flex-col lg:flex-row"
+                    direction="flex-col"
                     justifyContent="justify-center"
-                    gap="gap-10 2xl:gap-32"
+                    gap="gap-5"
                 >
-                    <FlexContainer
-                        width="w-full lg:w-1/2"
-                        direction="flex-col"
-                        alignItems="items-end"
-                        justifyContent="justify-between"
-                    >
-                        <FlexContainer
-                            width="lg:w-[420px]"
-                            direction="flex-col"
-                            gap="gap-5 md:gap-10"
+                    <FlexContainer direction="flex-col" gap="gap-5" center>
+                        <MotionH2
+                            variants={contactContainerVariants}
+                            className="flex flex-wrap justify-center gap-x-2"
                         >
-                            <MotionH2
-                                variants={contactContainerVariants}
-                                className="flex flex-wrap gap-x-2"
-                            >
-                                {['Join', 'Our'].map((word, i) => (
-                                    <span
-                                        key={i}
-                                        className="overflow-hidden block"
-                                    >
-                                        <motion.span
-                                            variants={contactSlideUp}
-                                            className="inline-block"
-                                        >
-                                            {word}
-                                        </motion.span>
-                                    </span>
-                                ))}
-                                <br className="w-full" />
-                                <span className="overflow-hidden block">
+                            {['Join', 'our'].map((word, i) => (
+                                <span key={i} className="overflow-hidden block">
                                     <motion.span
                                         variants={contactSlideUp}
-                                        className="inline-block text-[#21D7A6]"
+                                        className="inline-block"
                                     >
-                                        Community
+                                        {word}
                                     </motion.span>
                                 </span>
-                            </MotionH2>
+                            ))}
+                            <br className="w-full" />
                             <span className="overflow-hidden block">
-                                <MotionP
+                                <motion.span
                                     variants={contactSlideUp}
-                                    className="inline-block"
+                                    className="inline-block text-[#21D7A6]"
                                 >
-                                    Get exclusive access to our live webcasts,
-                                    special events, messaging group, security
-                                    experts, and more.
-                                </MotionP>
+                                    mailing list
+                                </motion.span>
                             </span>
-                        </FlexContainer>
-                        <FlexContainer
-                            width="lg:w-[420px]"
-                            direction="flex-col"
-                            gap="gap-5"
-                            className="hidden lg:flex pb-8"
-                        >
-                            <span className="overflow-hidden block">
-                                <motion.h5
-                                    variants={contactSlideUp}
-                                    className="tracking-tight"
-                                >
-                                    Social links:
-                                </motion.h5>
-                            </span>
-                            <MotionFlexContainer
-                                variants={contactSlideUpOpacity}
-                                gap="gap-1"
-                                className="overflow-hidden"
+                        </MotionH2>
+                        <span className="overflow-hidden">
+                            <MotionP
+                                variants={contactSlideUp}
+                                className="inline-block text-center"
                             >
-                                {socialMediaMap.map((media, index) => (
-                                    <Box
-                                        key={index}
-                                        className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973] cursor-pointer"
-                                    >
-                                        {media.logo}
-                                    </Box>
-                                ))}
-                            </MotionFlexContainer>
-                        </FlexContainer>
+                                {
+                                    "Get exclusive access to live webinars, expert Q&A's, and other invite-only events."
+                                }
+                            </MotionP>
+                        </span>
                     </FlexContainer>
                     <MotionFlexContainer
                         direction="flex-col"
                         gap="gap-5"
-                        width="w-full lg:w-1/2 overflow-hidden"
+                        width="w-full"
+                        center
                     >
                         <ContactForm
                             onSubmitSuccess={() => {
@@ -180,13 +138,12 @@ export const Contact = () => {
             <MotionFlexContainer
                 gap="gap-1"
                 variants={contactSlideUpOpacity}
-                justifyContent="justify-center"
-                className="overflow-hidden flex lg:hidden pb-2.5"
+                className="overflow-hidden px-4 pb-2.5"
             >
                 {socialMediaMap.map((media, index) => (
                     <Box
                         key={index}
-                        className="group fade-border rounded-full p-4 flex items-center duration-500 hover:border-[#fff973]"
+                        className="group fade-border rounded-full p-4 flex cursor-pointer items-center duration-500 hover:border-[#fff973]"
                     >
                         {media.logo}
                     </Box>

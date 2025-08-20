@@ -9,7 +9,7 @@ import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, Navigation } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -20,9 +20,13 @@ import {
     aboutSlideUp,
 } from '../animations/variantsConfig'
 import { aboutSectionCards } from '@/cms/fallbackContent'
+import { P } from '../Typography/P'
+import { AboutInfographic } from './AboutInfographic'
+import { H3 } from '../Typography/H3'
 
 const MotionFlexContainer = motion(FlexContainer)
-const MotionH2 = motion(H2)
+const MotionBox = motion(Box)
+const MotionP = motion(P)
 
 export const About = () => {
     const ref = useRef(null)
@@ -38,66 +42,90 @@ export const About = () => {
             animate={shouldAnimate ? 'visible' : 'hidden'}
             id="about"
             width="w-full md:max-w-[1920px]"
+            gap="gap-10"
             direction="flex-col"
             className="overflow-hidden"
         >
             <Box className="px-5 pt-24 md:pt-36 pb-16 md:pb-20">
-                <BackgroundGrid />
-                <FlexContainer center className="overflow-hidden">
-                    <MotionH2
-                        variants={aboutContainerVariants}
-                        className="capitalize flex flex-wrap gap-2 overflow-hidden"
-                    >
+                <MotionFlexContainer
+                    variants={aboutContainerVariants}
+                    direction="flex-col"
+                    gap="gap-5"
+                    center
+                    className="overflow-hidden"
+                >
+                    <H2 className="capitalize flex text-center overflow-hidden">
                         <span className="overflow-hidden block">
                             <motion.span
                                 variants={aboutSlideUp}
                                 className="inline-block"
                             >
-                                Don’t worry.
+                                The TL;DR on DoD Certs and Docs
                             </motion.span>
                         </span>
-                        <span className="overflow-hidden block">
-                            <motion.span
-                                variants={aboutSlideUp}
-                                className="inline-block text-[#21D7A6]"
-                            >
-                                we got you.
-                            </motion.span>
-                        </span>
-                    </MotionH2>
-                </FlexContainer>
+                    </H2>
+                    <span className="overflow-hidden block">
+                        <MotionP
+                            variants={aboutSlideUp}
+                            className="max-w-lg text-center"
+                        >
+                            Start here to get your bearings. Then dive into the
+                            official docs (snacks recommended).
+                        </MotionP>
+                    </span>
+                    <AboutInfographic />
+                </MotionFlexContainer>
             </Box>
 
-            <MotionFlexContainer
+            <MotionBox
                 variants={aboutSlideLeft}
-                className="px-5 md:pb-[60px] items-stretch -mt-7 md:-mt-8"
+                className="px-5 md:pb-[60px] -mt-[54px] md:-mt-15"
             >
-                <Swiper
-                    modules={[Autoplay]}
-                    spaceBetween={24}
-                    slidesPerView={1}
-                    loop
-                    speed={700}
-                    autoplay={{
-                        delay: 3000,
-                    }}
-                    breakpoints={{
-                        768: { slidesPerView: 2 },
-                        1280: { slidesPerView: 3 },
-                    }}
+                <FlexContainer
+                    justifyContent="justify-between"
+                    alignItems="items-center"
+                    className="py-5"
                 >
-                    {aboutSectionCards.map((card) => (
-                        <SwiperSlide key={card.index} className="h-full">
-                            <AboutCard
-                                index={card.index}
-                                title={card.title}
-                                description={card.description}
-                                icon={card.icon}
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </MotionFlexContainer>
+                    <H3>Subheading</H3>
+                    <FlexContainer width="w-auto" className="flex h-11 gap-12">
+                        <button className="swiper-button-prev" />
+                        <button className="swiper-button-next" />
+                    </FlexContainer>
+                </FlexContainer>
+                <FlexContainer className="items-stretch">
+                    <Swiper
+                        modules={[Autoplay, Navigation]}
+                        spaceBetween={24}
+                        slidesPerView={1}
+                        loop
+                        speed={700}
+                        autoplay={{
+                            delay: 3000,
+                        }}
+                        navigation={{
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        }}
+                        breakpoints={{
+                            768: { slidesPerView: 2 },
+                            1280: { slidesPerView: 3 },
+                        }}
+                    >
+                        {aboutSectionCards.map((card) => (
+                            <SwiperSlide key={card.index} className="h-full">
+                                <AboutCard
+                                    index={card.index}
+                                    title={card.title}
+                                    company={card.company}
+                                    website={card.website}
+                                    description={card.description}
+                                    icon={card.icon}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </FlexContainer>
+            </MotionBox>
         </MotionFlexContainer>
     )
 }

@@ -59,3 +59,9 @@ body {
 .clip-panel-label-both {
     clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: relative !important; /* remove absolute positioning */
+    color: #fff973 !important;
+}

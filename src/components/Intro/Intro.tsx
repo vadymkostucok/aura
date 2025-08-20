@@ -1,26 +1,25 @@
 'use client'
 import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { TypographyDisclaimer } from '../Typography/Typography'
 import { TypographyButton } from '../Typography/TypographyButton'
 import { P } from '../Typography/P'
-import { H1 } from '../Typography/H1'
 import { Box } from '../Box'
 import { BackgroundGrid } from '../BackgroundGrid'
 import { LottieAnimation } from '../LottieAnimation'
 import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
-
 import ArrowsCTA from '@/assets/ArrowsCTA.json'
 import ArrowsCTAYellow from '@/assets/ArrowsCTAYellow.json'
 import {
+    introContainerVariants,
     introFadeInUp,
     introOpacity,
     introSlideUp,
 } from '../animations/variantsConfig'
+import { H2 } from '../Typography/H2'
 
 const MotionP = motion(P)
-const MotionH1 = motion(H1)
+const MotionH2 = motion(H2)
 const MotionBox = motion(Box)
 
 export const Intro = () => {
@@ -39,54 +38,56 @@ export const Intro = () => {
             animate={shouldAnimate ? 'visible' : 'hidden'}
         >
             <BackgroundGrid />
-            <FlexContainer direction="flex-col" minHeight="min-h-screen" center>
-                <div className="overflow-hidden">
-                    <MotionP
-                        variants={introSlideUp}
-                        fontSize="text-[13px]"
-                        className="w-[280px] md:w-auto text-center uppercase text-[#FFF973] opacity-100"
-                    >
-                        Illuminate your path to cybersecurity mastery
-                    </MotionP>
-                </div>
-                <MotionH1
-                    variants={introFadeInUp}
-                    className="relative uppercase"
+            <FlexContainer
+                direction="flex-col"
+                minHeight="min-h-screen"
+                gap="gap-5"
+                center
+            >
+                <MotionH2
+                    variants={introContainerVariants}
+                    className="flex flex-wrap justify-center gap-3 md:max-w-[1100px]"
                 >
-                    Aura
-                </MotionH1>
-                <Box className="w-[330px] md:w-auto">
+                    {[
+                        'Building',
+                        'DoD',
+                        'cloud',
+                        'or',
+                        'edge',
+                        'software?',
+                    ].map((word, i) => (
+                        <span key={i} className="overflow-hidden block">
+                            <motion.span
+                                variants={introFadeInUp}
+                                className="inline-block"
+                            >
+                                {word}
+                            </motion.span>
+                        </span>
+                    ))}
+                    <br />
+                    {['Skip', 'the', 'overwhelm'].map((word, i) => (
+                        <span key={i} className="overflow-hidden block">
+                            <motion.span
+                                variants={introFadeInUp}
+                                className="inline-block"
+                            >
+                                {word}
+                            </motion.span>
+                        </span>
+                    ))}
+                </MotionH2>
+                <Box className="w-full md:w-[450px]">
                     <div className="overflow-hidden">
                         <MotionP
                             variants={introSlideUp}
                             className="text-center opacity-80"
                         >
-                            The cybersecurity world is daunting.
-                        </MotionP>
-                    </div>
-                    <div className="overflow-hidden">
-                        <MotionP
-                            variants={introSlideUp}
-                            className="text-center opacity-80"
-                        >
-                            We’ll guide you through it, no matter your skill
-                            level.
+                            Our curated, tech-focused resources help you ship
+                            fast, stay secure, and be compliant
                         </MotionP>
                     </div>
                 </Box>
-                <motion.div
-                    variants={introOpacity}
-                    className="hidden md:block absolute bottom-0 left-0 w-full p-5"
-                >
-                    <FlexContainer justifyContent="justify-between">
-                        <TypographyDisclaimer>
-                            ©2025_aura security
-                        </TypographyDisclaimer>
-                        <TypographyDisclaimer>
-                            [Scroll to discover]
-                        </TypographyDisclaimer>
-                    </FlexContainer>
-                </motion.div>
                 <motion.div
                     variants={introOpacity}
                     className="group absolute bottom-20 md:bottom-16 left-1/2 -translate-x-1/2"

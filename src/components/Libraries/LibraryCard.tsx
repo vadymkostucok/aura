@@ -9,16 +9,27 @@ import singleArrow from '@/assets/singleArrow.json'
 import { LottieAnimation } from '../LottieAnimation'
 import { motion } from 'framer-motion'
 import { libraryCardSlideUp } from '../animations/variantsConfig'
+import { P } from '../Typography/P'
 
 type LibraryCardProps = {
+    title: string
     description: string
+    company: string
+    platform: string
+    info: string
     type: string
-    icon: StaticImageData
 }
 
 const MotionBox = motion(Box)
 
-export const LibraryCard = ({ type, description, icon }: LibraryCardProps) => {
+export const LibraryCard = ({
+    type,
+    title,
+    description,
+    company,
+    platform,
+    info,
+}: LibraryCardProps) => {
     return (
         <MotionBox variants={libraryCardSlideUp}>
             <FlexContainer
@@ -32,17 +43,25 @@ export const LibraryCard = ({ type, description, icon }: LibraryCardProps) => {
                 </TypographySmall>
             </FlexContainer>
             <FlexContainer
+                direction="flex-col"
                 className="group p-4 bg-[#FFFFFF1A] hover:bg-[#ffffff05] border border-[#ffffff10] rounded-[2px] hover:text-[#FFF973] backdrop-blur-lg cursor-pointer duration-500"
                 gap="gap-5"
-                alignItems="items-center"
             >
-                <FlexContainer
-                    width="w-auto"
-                    className="shrink-0 bg-[#00000080] py-3 md:py-4 px-5 md:px-6"
-                >
-                    <Image src={icon} alt={type} className="w-10 md:w-14" />
-                </FlexContainer>
-                <H5 className="tracking-tight leading-none">{description}</H5>
+                <Box>
+                    <H5 className="tracking-tight leading-none pb-2.5">
+                        {title}
+                    </H5>
+                    <P>{description}</P>
+                </Box>
+                <Box>
+                    <P>
+                        <span className="font-bold">{company}</span>
+                        <span className="px-1">|</span>
+                        <span className="underline">{platform}</span>
+                    </P>
+                    <P opacity="opacity-50">{info}</P>
+                </Box>
+
                 <div className="opacity-0 group-hover:opacity-100 absolute right-0 bottom-0 bg-[#00000080] p-2.5 duration-500">
                     <LottieAnimation
                         animationData={singleArrow}

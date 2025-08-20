@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { FlexContainer } from '../FlexContainer'
-import { H3 } from '../Typography/Typography'
 import {
     TypographyButton,
     TypographyButtonHandle,
@@ -67,55 +66,34 @@ export const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
     return (
         <MotionFlexContainer
             variants={slideUp}
-            width="w-full lg:w-[530px]"
+            width="w-full lg:w-[550px]"
             direction="flex-col"
-            className="bg-[#FFFFFF1A] lg:bg-[#FFFFFF05] border border-[#ffffff10] rounded-[2px] px-5 py-8"
         >
-            <H3 className="text-[#FFF973]">Apply Now</H3>
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="flex flex-col gap-6 pt-5"
+                className="flex gap-6 pt-5 items-start"
             >
-                <Input
-                    id="fullName"
-                    type="text"
-                    placeholder="Your Full Name"
-                    label="Name"
-                    {...register('fullName')}
-                    error={errors.fullName?.message}
-                />
-
                 <Input
                     id="email"
                     type="email"
-                    placeholder="aura@security.com"
-                    label="Email Address"
+                    placeholder="via@security.com"
+                    label="Email"
                     {...register('email')}
                     error={errors.email?.message}
-                />
-
-                <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="+31 6 12 34 56 78"
-                    label="Phone"
-                    hasDisclaimer
-                    {...register('phone')}
-                    error={errors.phone?.message}
                 />
 
                 <button
                     onMouseEnter={() => textRef.current?.replay()}
                     onMouseLeave={() => textRef.current?.replay()}
                     type="submit"
-                    className="group bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4 duration-500"
+                    className="group shrink-0 bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4.5 mt-[26.5px] mb-0.5 duration-500"
                 >
                     <FlexContainer
                         gap="gap-2.5"
                         justifyContent="justify-between"
                     >
                         <TypographyButton ref={textRef} disableInternalHover>
-                            Submit
+                            Sign Up
                         </TypographyButton>
                         <LottieAnimation
                             animationData={singleArrow}

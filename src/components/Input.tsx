@@ -43,7 +43,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             <FlexContainer direction="flex-col" gap="gap-2.5">
                 <label htmlFor={name} className="uppercase text-[11px]">
                     {label}
-                    <span className="text-[#21D7A6]">*</span>
                 </label>
                 <input
                     id={id}

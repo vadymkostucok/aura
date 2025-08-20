@@ -7,11 +7,11 @@ export const H2 = forwardRef<
         fontSize?: string
         className?: string
     }
->(({ children, fontSize = 'text-6xl', className }, ref) => {
+>(({ children, fontSize = 'text-5xl md:text-6xl', className }, ref) => {
     return (
         <h2
             ref={ref}
-            className={`${className} ${fontSize} font-violet scroll-m-20 md:text-7xl tracking-tight`}
+            className={`${className} ${fontSize} font-violet scroll-m-20 tracking-tight`}
         >
             {children}
         </h2>

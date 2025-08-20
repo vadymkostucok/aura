@@ -1,14 +1,22 @@
 import { easeOut } from 'framer-motion'
 
 // INTRO
-export const introFadeInUp = {
-    hidden: { y: 30 },
+export const introContainerVariants = {
+    hidden: {},
     visible: {
-        y: 0,
+        transition: {
+            staggerChildren: 0.05,
+        },
+    },
+}
+
+export const introFadeInUp = {
+    hidden: { y: '100%' },
+    visible: {
+        y: '0%',
         transition: {
             duration: 0.8,
             ease: easeOut,
-            delay: 0.4,
         },
     },
 }
@@ -20,7 +28,6 @@ export const introSlideUp = {
         transition: {
             duration: 0.6,
             ease: easeOut,
-            delay: 0.4,
         },
     },
 }
@@ -38,7 +45,7 @@ export const aboutContainerVariants = {
     hidden: {},
     visible: {
         transition: {
-            staggerChildren: 0.5,
+            staggerChildren: 0.25,
             delay: 1,
         },
     },
@@ -195,7 +202,7 @@ export const librariesCardContainerVariants = {
 }
 
 export const libraryCardSlideUp = {
-    hidden: { y: '25%', opacity: 0.5 },
+    hidden: { y: '25%', opacity: 0 },
     visible: {
         y: '0%',
         opacity: 1,

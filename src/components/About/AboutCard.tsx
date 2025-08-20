@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { FlexContainer } from '../FlexContainer'
-import { H3, TypographySmall } from '../Typography/Typography'
+import { H4, TypographySmall } from '../Typography/Typography'
 import { P } from '../Typography/P'
 import { Box } from '../Box'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
@@ -11,6 +11,8 @@ import crossIcon from '@/assets/cross.svg'
 type AboutCardType = {
     title: string
     description: string[]
+    company: string
+    website: string
     icon: StaticImport
     index: string
 }
@@ -18,7 +20,8 @@ type AboutCardType = {
 export const AboutCard = ({
     title,
     description,
-    icon,
+    company,
+    website,
     index,
 }: AboutCardType) => {
     return (
@@ -41,20 +44,28 @@ export const AboutCard = ({
                 <FlexContainer
                     alignItems="items-center"
                     justifyContent="justify-between"
-                    className="pt-4 pb-4 md:pb-8"
+                    className="pt-5 pb-5 md:pb-8"
                 >
-                    <H3 className="text-[#FFF973] leading-none tracking-tight">
+                    <H4 className="text-[#FFF973] h-[48px] leading-none tracking-tight truncate">
                         {title}
-                    </H3>
-                    <Image src={icon} alt="Product Icon" />
+                    </H4>
                 </FlexContainer>
-                <Box className="pr-[74px] md:pb-4">
+                <FlexContainer
+                    direction="flex-col"
+                    justifyContent="justify-between"
+                    gap="gap-2.5"
+                    className="pb-5 h-full"
+                >
                     {description.map((sentence, index) => (
                         <React.Fragment key={index}>
                             <P>{sentence}</P> <br />
                         </React.Fragment>
                     ))}
-                </Box>
+                    <Box>
+                        <P className="font-bold truncate">{company}</P>
+                        <P>{website}</P>
+                    </Box>
+                </FlexContainer>
             </FlexContainer>
         </FlexContainer>
     )
