@@ -19,7 +19,6 @@ import {
     aboutSlideLeft,
     aboutSlideUp,
 } from '../animations/variantsConfig'
-import { aboutSectionCards } from '@/cms/fallbackContent'
 import { P } from '../Typography/P'
 import { AboutInfographic } from './AboutInfographic'
 import { H3 } from '../Typography/H3'
@@ -51,12 +50,13 @@ export const About = ({ cardsData }: AboutProps) => {
             initial="hidden"
             animate={shouldAnimate ? 'visible' : 'hidden'}
             id="about"
-            width="w-full md:max-w-[1920px]"
             gap="gap-10"
             direction="flex-col"
-            className="overflow-hidden"
+            className="overflow-hidden relative"
+            center
         >
-            <Box className="px-5 pt-24 md:pt-36 pb-16 md:pb-20">
+            <BackgroundGrid className="h-[78%]" />
+            <Box className="w-full md:max-w-[1920px] px-5 pt-24 md:pt-36 pb-16 md:pb-20">
                 <MotionFlexContainer
                     variants={aboutContainerVariants}
                     direction="flex-col"
@@ -89,7 +89,7 @@ export const About = ({ cardsData }: AboutProps) => {
 
             <MotionBox
                 variants={aboutSlideLeft}
-                className="px-5 md:pb-[60px] -mt-[54px] md:-mt-15"
+                className="w-full md:max-w-[1920px] px-5 md:pb-[60px] -mt-[54px] md:-mt-15"
             >
                 <FlexContainer
                     justifyContent="justify-between"

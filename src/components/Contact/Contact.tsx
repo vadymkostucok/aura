@@ -43,7 +43,8 @@ export const Contact = () => {
     return (
         <>
             <FlexContainer
-                className="pt-24 md:pt-64 pb-24 md:pb-48 px-5"
+                minHeight="min-h-screen"
+                className="pt-24 md:pt-64 pb-24 md:pb-48 px-5 md:min-h-auto"
                 center
             >
                 <MotionFlexContainer

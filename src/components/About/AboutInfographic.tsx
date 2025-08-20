@@ -5,7 +5,6 @@ import { FlexContainer } from '../FlexContainer'
 import { TypographySmall } from '../Typography/Typography'
 import { motion } from 'framer-motion'
 import Blocks from '@/assets/Blocks.json'
-import logo3D from '@/assets/3DLogo.json'
 import { H3 } from '../Typography/H3'
 
 const MotionFlexContainer = motion(FlexContainer)
@@ -29,7 +28,7 @@ export const AboutInfographic = () => {
                     className="h-2.5 opacity-20"
                 />
                 <TypographySmall className="opacity-60 uppercase">
-                    Breach / cyber danger reports
+                    Infographic
                 </TypographySmall>
                 <LottieAnimation
                     animationData={Blocks}
@@ -41,9 +40,7 @@ export const AboutInfographic = () => {
                 className="py-20 md:py-40 bg-[#11000005] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg text-[#FFF973] uppercase"
                 center
             >
-                <H3 fontSize="text-[26px]">Coming</H3>
-                <LottieAnimation animationData={logo3D} />
-                <H3 fontSize="text-[26px]">Soon...</H3>
+                <H3 fontSize="text-[26px]">Infographic</H3>
             </FlexContainer>
         </MotionFlexContainer>
     )
