@@ -17,7 +17,7 @@ type PodcastCartType = {
 
 export const PodcastCard = ({ date, title }: PodcastCartType) => {
     return (
-        <Box className="overflow-hidden">
+        <Box className="overflow-hidden pb-5">
             <MotionBox variants={podcastCardSlideUp}>
                 <FlexContainer
                     width="max-w-60"

@@ -30,7 +30,12 @@ const MotionH2 = motion(H2)
 const MotionH3 = motion(H3)
 const MotionP = motion(P)
 
-export const Podcast = () => {
+type PodcastProps = {
+    newsData: Array<{ date: string; title: string }>
+    eventsData: Array<{ date: string; title: string }>
+}
+
+export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
@@ -86,7 +91,7 @@ export const Podcast = () => {
                         <MotionH3 variants={podcastOpacitySlideUp}>
                             News
                         </MotionH3>
-                        {podcastSectionNewsCards.map((card, index) => (
+                        {newsData.map((card, index) => (
                             <PodcastCard
                                 key={index}
                                 date={card.date}
@@ -99,7 +104,7 @@ export const Podcast = () => {
                         <MotionH3 variants={podcastOpacitySlideUp}>
                             Events
                         </MotionH3>
-                        {podcastSectionEventsCards.map((card, index) => (
+                        {eventsData.map((card, index) => (
                             <PodcastCard
                                 key={index}
                                 date={card.date}

@@ -10,7 +10,6 @@ import {
     librariesContainerVariants,
     librariesSlideUp,
 } from '../animations/variantsConfig'
-import { librarySectionCards } from '@/cms/fallbackContent'
 import { P } from '../Typography/P'
 
 const MotionFlexContainer = motion(FlexContainer)
@@ -19,18 +18,29 @@ const MotionP = motion(P)
 
 const CARDS_PER_PAGE = 6
 
-export const Libraries = () => {
+type LibrariesProps = {
+    cardsData: Array<{
+        title: string
+        description: string
+        company: string
+        platform: string
+        info: string
+        type: string
+    }>
+}
+
+export const Libraries = ({ cardsData }: LibrariesProps) => {
     const [currentPage, setCurrentPage] = useState(1)
 
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
 
-    const totalPages = Math.ceil(librarySectionCards.length / CARDS_PER_PAGE)
+    const totalPages = Math.ceil(cardsData.length / CARDS_PER_PAGE)
 
     const startIndex = (currentPage - 1) * CARDS_PER_PAGE
     const endIndex = startIndex + CARDS_PER_PAGE
-    const visibleCards = librarySectionCards.slice(startIndex, endIndex)
+    const visibleCards = cardsData.slice(startIndex, endIndex)
 
     const shouldAnimate = isLoaded && isInView
 

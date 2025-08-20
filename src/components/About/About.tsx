@@ -28,7 +28,17 @@ const MotionFlexContainer = motion(FlexContainer)
 const MotionBox = motion(Box)
 const MotionP = motion(P)
 
-export const About = () => {
+type AboutProps = {
+    cardsData: Array<{
+        index: string
+        title: string
+        description: string
+        company: string
+        website: string
+    }>
+}
+
+export const About = ({ cardsData }: AboutProps) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
@@ -111,7 +121,7 @@ export const About = () => {
                             1280: { slidesPerView: 3 },
                         }}
                     >
-                        {aboutSectionCards.map((card) => (
+                        {cardsData.map((card) => (
                             <SwiperSlide key={card.index} className="h-full">
                                 <AboutCard
                                     index={card.index}
