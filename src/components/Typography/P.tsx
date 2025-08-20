@@ -6,6 +6,7 @@ export const P = forwardRef<
         children: ReactNode
         fontSize?: string
         opacity?: string
+        role?: string
         className?: string
     }
 >(
@@ -14,6 +15,7 @@ export const P = forwardRef<
             children,
             fontSize = 'text-[15px] md:text-[16px]',
             opacity = 'opacity-90',
+            role,
             className,
             ...props
         },
@@ -22,6 +24,7 @@ export const P = forwardRef<
         return (
             <p
                 ref={ref}
+                role={role}
                 className={`${className} ${fontSize} ${opacity} leading-5`}
                 {...props}
             >

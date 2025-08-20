@@ -56,7 +56,9 @@ export const AboutCard = ({
                 >
                     <P>{description}</P> <br />
                     <Box>
-                        <P className="font-bold truncate">{company}</P>
+                        <P role="button" className="font-bold truncate">
+                            {company}
+                        </P>
                         <P>{website}</P>
                     </Box>
                 </FlexContainer>
