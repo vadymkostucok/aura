@@ -8,7 +8,6 @@ import { LottieAnimation } from '../LottieAnimation'
 import { H2 } from '../Typography/H2'
 import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
-import { Box } from '../Box'
 import {
     reportContainerVariants,
     reportGrowY,

@@ -37,10 +37,7 @@ export const Header = () => {
                 </FlexContainer>
                 <nav className="w-full md:w-fit fade-border rounded-[2px] no-left -ml-[4px]">
                     <ul className="flex px-1 md:px-6 justify-center">
-                        <li
-                            role="none"
-                            className="leading-none px-2.5 md:px-4 pt-3 md:pt-3.5 pb-3 md:pb-4.5"
-                        >
+                        <li className="leading-none px-2.5 md:px-4 pt-3 md:pt-3.5 pb-3 md:pb-4.5">
                             <TypographySmall className="cursor-pointer uppercase whitespace-nowrap text-[#f7f7f7] hover:text-[#fff973] duration-500">
                                 Banner for event announcements
                             </TypographySmall>

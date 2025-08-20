@@ -7,6 +7,7 @@ export const P = forwardRef<
         fontSize?: string
         opacity?: string
         role?: string
+        tabIndex?: number
         className?: string
     }
 >(
@@ -16,6 +17,7 @@ export const P = forwardRef<
             fontSize = 'text-[15px] md:text-[16px]',
             opacity = 'opacity-90',
             role,
+            tabIndex,
             className,
             ...props
         },
@@ -25,6 +27,7 @@ export const P = forwardRef<
             <p
                 ref={ref}
                 role={role}
+                tabIndex={tabIndex}
                 className={`${className} ${fontSize} ${opacity} leading-5`}
                 {...props}
             >

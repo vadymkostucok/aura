@@ -45,6 +45,7 @@ export const LibraryCard = ({
             <FlexContainer
                 direction="flex-col"
                 role="button"
+                tabIndex={0}
                 className="group p-4 bg-[#FFFFFF1A] hover:bg-[#ffffff05] border border-[#ffffff10] rounded-[2px] hover:text-[#FFF973] backdrop-blur-lg cursor-pointer duration-500"
                 gap="gap-5"
             >

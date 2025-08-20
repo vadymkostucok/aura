@@ -56,7 +56,11 @@ export const AboutCard = ({
                 >
                     <P>{description}</P> <br />
                     <Box>
-                        <P role="button" className="font-bold truncate">
+                        <P
+                            role="button"
+                            tabIndex={0}
+                            className="font-bold truncate"
+                        >
                             {company}
                         </P>
                         <P>{website}</P>

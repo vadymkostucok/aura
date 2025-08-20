@@ -17,10 +17,6 @@ import {
     podcastOpacitySlideUp,
     podcastSlideUp,
 } from '../animations/variantsConfig'
-import {
-    podcastSectionEventsCards,
-    podcastSectionNewsCards,
-} from '@/cms/fallbackContent'
 import { Box } from '../Box'
 import { H3 } from '../Typography/H3'
 
