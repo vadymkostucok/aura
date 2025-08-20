@@ -4,16 +4,14 @@ import { FlexContainer } from '../FlexContainer'
 import { H4, TypographySmall } from '../Typography/Typography'
 import { P } from '../Typography/P'
 import { Box } from '../Box'
-import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 import crossIcon from '@/assets/cross.svg'
 
 type AboutCardType = {
     title: string
-    description: string[]
+    description: string
     company: string
     website: string
-    icon: StaticImport
     index: string
 }
 
@@ -56,11 +54,7 @@ export const AboutCard = ({
                     gap="gap-2.5"
                     className="pb-5 h-full"
                 >
-                    {description.map((sentence, index) => (
-                        <React.Fragment key={index}>
-                            <P>{sentence}</P> <br />
-                        </React.Fragment>
-                    ))}
+                    <P>{description}</P> <br />
                     <Box>
                         <P className="font-bold truncate">{company}</P>
                         <P>{website}</P>

@@ -40,7 +40,7 @@ export const Report = () => {
             width="w-full max-w-[1920px]"
             direction="flex-col lg:flex-row"
             gap="gap-10 2xl:gap-36"
-            className="pt-24 lg:pt-36 px-5"
+            className="py-24 lg:py-36 px-5"
         >
             <FlexContainer
                 width="w-full 2xl:w-[700px]"

@@ -49,7 +49,7 @@ export const Libraries = () => {
                     variants={librariesContainerVariants}
                     className="flex flex-wrap gap-3 overflow-hidden justify-center"
                 >
-                    {['Resources', 'to', 'help', 'you', 'build,', 'faster'].map(
+                    {['Resources', 'to', 'help', 'you', 'build,'].map(
                         (word, i) => (
                             <span key={i} className="overflow-hidden block">
                                 <motion.span
@@ -61,6 +61,16 @@ export const Libraries = () => {
                             </span>
                         )
                     )}
+                    {['faster'].map((word, i) => (
+                        <span key={i} className="overflow-hidden block">
+                            <motion.span
+                                variants={librariesSlideUp}
+                                className="inline-block text-[#21D7A6]"
+                            >
+                                {word}
+                            </motion.span>
+                        </span>
+                    ))}
                 </MotionH2>
                 <div className="overflow-hidden">
                     <MotionP

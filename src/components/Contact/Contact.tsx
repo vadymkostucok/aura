@@ -43,7 +43,7 @@ export const Contact = () => {
     return (
         <>
             <FlexContainer
-                className="pt-24 md:pt-36 pb-24 md:pb-48 px-5"
+                className="pt-24 md:pt-64 pb-24 md:pb-48 px-5"
                 center
             >
                 <MotionFlexContainer

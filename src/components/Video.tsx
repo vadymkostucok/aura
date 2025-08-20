@@ -41,8 +41,8 @@ export const VideoScrollWrapper = ({
     }, [])
 
     const videoClass = clsx(
-        'w-full h-full object-cover transition-opacity duration-700 blur-xs',
-        isIntroInView ? 'opacity-15' : 'opacity-0 md:opacity-5'
+        'w-full h-full object-cover transition-opacity duration-700',
+        isIntroInView ? 'opacity-10' : 'opacity-0 md:opacity-3'
     )
 
     return (

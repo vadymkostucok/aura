@@ -19,32 +19,28 @@ export const aboutSectionCards = [
     {
         index: '01',
         title: 'CMMC Resources & Documentation',
-        icon: happyEmoji,
-        description: ["The DoD's official CMMC hub."],
+        description: "The DoD's official CMMC hub.",
         company: 'U.S. Department of Defense',
         website: 'dodcio.defense.gov',
     },
     {
         index: '02',
         title: 'NIST SP 800-171, Protecting...',
-        icon: keyEmoji,
-        description: ['CMMC uses these guidelines on how to protect CUI.'],
+        description: 'CMMC uses these guidelines on how to protect CUI.',
         company: 'National Institute of Standards',
         website: 'csrc.nist.gov',
     },
     {
         index: '03',
         title: 'NIST SP 800-171, Assessing...',
-        icon: ghostEmoji,
-        description: ['How to test 800-171 requirements.'],
+        description: 'How to test 800-171 requirements.',
         company: 'National Institute of Standards',
         website: 'csrc.nist.gov',
     },
     {
         index: '04',
         title: 'FedRAMP',
-        icon: heartEmoji,
-        description: ['Official GSA site for federal cloud security program.'],
+        description: 'Official GSA site for federal cloud security program.',
         company: 'FedRAMP',
         website: 'fedramp.gov',
     },
@@ -74,7 +70,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Jun 29, 2022',
         type: 'video',
-        icon: cam,
     },
     {
         title: 'Why Implement Zero Trust',
@@ -84,7 +79,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Jun 29, 2022',
         type: 'video',
-        icon: cam,
     },
     // ----
 
@@ -97,7 +91,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Dec 8, 2023',
         type: 'video',
-        icon: cam,
     },
     {
         title: "Exclusive: U.S. Navy Cyber Warfare Engineer interview VIA's CEO to...",
@@ -107,7 +100,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Dec 8, 2023',
         type: 'video',
-        icon: cam,
     },
     // ----
 
@@ -120,7 +112,6 @@ export const librarySectionCards = [
         platform: 'genai.owasp.org',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: check,
     },
     {
         title: 'OWASP GenAI Security Project',
@@ -130,7 +121,6 @@ export const librarySectionCards = [
         platform: 'genai.owasp.org',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: check,
     },
     // ----
 
@@ -143,7 +133,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Dec 8, 2023',
         type: 'pdf document',
-        icon: save,
     },
     {
         title: 'Zero knowledge proofs: Computer Scientist Explains One Concept in 5...',
@@ -153,7 +142,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Dec 8, 2023',
         type: 'pdf document',
-        icon: save,
     },
     // ----
 
@@ -166,7 +154,6 @@ export const librarySectionCards = [
         platform: 'genai.owasp.org',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: check,
     },
     {
         title: '7 Steps To CMMC Compliance',
@@ -176,7 +163,6 @@ export const librarySectionCards = [
         platform: 'summit7.us',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: check,
     },
     // ----
 
@@ -189,7 +175,6 @@ export const librarySectionCards = [
         platform: 'summit7.us',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: cam,
     },
     {
         title: '7 Steps To CMMC Compliance',
@@ -199,7 +184,6 @@ export const librarySectionCards = [
         platform: 'summit7.us',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: cam,
     },
     // ----
 
@@ -212,7 +196,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Jun 29, 2022',
         type: 'checklist',
-        icon: cam,
     },
     {
         title: 'Why Implement Zero Trust',
@@ -222,7 +205,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Jun 29, 2022',
         type: 'checklist',
-        icon: cam,
     },
     // ----
 
@@ -235,7 +217,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Jun 29, 2022',
         type: 'video',
-        icon: cam,
     },
     {
         title: 'Why Implement Zero Trust',
@@ -245,7 +226,6 @@ export const librarySectionCards = [
         platform: 'youtube.com',
         info: 'Video | 7min | Jun 29, 2022',
         type: 'video',
-        icon: cam,
     },
     // ----
 
@@ -258,7 +238,6 @@ export const librarySectionCards = [
         platform: 'genai.owasp.org',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: check,
     },
     {
         title: '7 Steps To CMMC Compliance',
@@ -268,7 +247,6 @@ export const librarySectionCards = [
         platform: 'summit7.us',
         info: 'Resource Hub',
         type: 'checklist',
-        icon: check,
     },
 ]
 

@@ -119,7 +119,6 @@ export const About = () => {
                                     company={card.company}
                                     website={card.website}
                                     description={card.description}
-                                    icon={card.icon}
                                 />
                             </SwiperSlide>
                         ))}
