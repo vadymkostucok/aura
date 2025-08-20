@@ -8,17 +8,36 @@ import { VideoScrollWrapper } from '@/components/Video'
 import { Header } from '@/components/Header/Header'
 import { Loader } from '@/components/Loader'
 import { Footer } from '@/components/Footer'
+import { retryBuilderFetch } from '@/utils/retryBuilderFetch'
 
-export default function Home() {
+export default async function Home() {
+    const about = await retryBuilderFetch('about-cards', {
+        userAttributes: { urlPath: '/' },
+    })
+    const resources = await retryBuilderFetch('resources-cards', {
+        userAttributes: { urlPath: '/' },
+    })
+    const news = await retryBuilderFetch('news-cards', {
+        userAttributes: { urlPath: '/' },
+    })
+    const events = await retryBuilderFetch('events-cards', {
+        userAttributes: { urlPath: '/' },
+    })
+
+    const aboutCards = about?.data?.cards ?? []
+    const resourcesCards = resources?.data?.cards ?? []
+    const newsCards = news?.data?.cards ?? []
+    const eventCards = events?.data?.cards ?? []
+
     return (
         <>
             <Loader />
             <Header />
             <VideoScrollWrapper>
                 <Intro />
-                <About />
-                <Libraries />
-                <Podcast />
+                <About cardsData={aboutCards} />
+                <Libraries cardsData={resourcesCards} />
+                <Podcast newsData={newsCards} eventsData={eventCards} />
                 <Report />
             </VideoScrollWrapper>
             <Contact />
