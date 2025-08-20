@@ -116,7 +116,7 @@ export const Report = () => {
                         className="h-2.5 opacity-20"
                     />
                     <TypographySmall className="opacity-60 uppercase">
-                        Animated Video
+                        Video
                     </TypographySmall>
                     <LottieAnimation
                         animationData={Blocks}
