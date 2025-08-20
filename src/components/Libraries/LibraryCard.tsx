@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '../Box'
 import { FlexContainer } from '../FlexContainer'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import { H5, TypographySmall } from '../Typography/Typography'
 
 import crossIcon from '@/assets/cross.svg'

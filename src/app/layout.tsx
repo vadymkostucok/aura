@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-    title: 'Aura',
-    description: 'Generated for vibe coders',
+    title: 'VIA',
+    description: 'Cybersecurity',
 }
 
 export default function RootLayout({
