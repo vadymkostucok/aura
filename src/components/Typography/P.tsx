@@ -12,7 +12,7 @@ export const P = forwardRef<
     (
         {
             children,
-            fontSize = 'text-[15px]',
+            fontSize = 'text-[15px] md:text-[16px]',
             opacity = 'opacity-90',
             className,
             ...props
@@ -22,7 +22,7 @@ export const P = forwardRef<
         return (
             <p
                 ref={ref}
-                className={`${className} ${fontSize} ${opacity} md:text-[16px] leading-5`}
+                className={`${className} ${fontSize} ${opacity} leading-5`}
                 {...props}
             >
                 {children}

@@ -48,9 +48,9 @@ export const LibraryCard = ({
                 gap="gap-5"
             >
                 <Box>
-                    <H5 className="tracking-tight leading-none pb-2.5">
+                    <span className="block font-violet scroll-m-20 text-[21px] tracking-tight leading-none pb-2.5">
                         {title}
-                    </H5>
+                    </span>
                     <P>{description}</P>
                 </Box>
                 <Box>

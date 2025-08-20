@@ -71,7 +71,7 @@ export const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
         >
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="flex gap-6 pt-5 items-start"
+                className="flex md:gap-6 flex-col md:flex-row pt-5 items-center md:items-start"
             >
                 <Input
                     id="email"
@@ -86,7 +86,7 @@ export const ContactForm = ({ onSubmitSuccess }: ContactFormProps) => {
                     onMouseEnter={() => textRef.current?.replay()}
                     onMouseLeave={() => textRef.current?.replay()}
                     type="submit"
-                    className="group shrink-0 bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4.5 mt-[26.5px] mb-0.5 duration-500"
+                    className="group shrink-0 bg-[#21D7A6] hover:bg-transparent uppercase text-black hover:text-[#21D7A6] hover:border hover:border-[#21D7A6] rounded-[2px] text-left p-4.5 mt-[27.5px] mb-0.5 duration-500"
                 >
                     <FlexContainer
                         gap="gap-2.5"

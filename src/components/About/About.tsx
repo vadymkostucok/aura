@@ -98,8 +98,14 @@ export const About = ({ cardsData }: AboutProps) => {
                 >
                     <H3>Subheading</H3>
                     <FlexContainer width="w-auto" className="flex h-11 gap-12">
-                        <button className="swiper-button-prev" />
-                        <button className="swiper-button-next" />
+                        <button
+                            className="swiper-button-prev"
+                            aria-label="Previous slide"
+                        />
+                        <button
+                            className="swiper-button-next"
+                            aria-label="Next slide"
+                        />
                     </FlexContainer>
                 </FlexContainer>
                 <FlexContainer className="items-stretch">
