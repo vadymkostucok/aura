@@ -13,6 +13,7 @@ type FlexContainerProps = {
     gap?: string
     className?: string
     id?: string
+    role?: string
     onClick?: (e?: React.MouseEvent<HTMLDivElement>) => void
 }
 
@@ -28,6 +29,7 @@ export const FlexContainer = forwardRef<HTMLDivElement, FlexContainerProps>(
             center = false,
             gap = 'gap-0',
             className = '',
+            role,
             id,
             onClick,
         },
@@ -52,6 +54,7 @@ export const FlexContainer = forwardRef<HTMLDivElement, FlexContainerProps>(
             <div
                 ref={ref}
                 id={id}
+                role={role}
                 onClick={onClick}
                 className={combinedClasses}
             >

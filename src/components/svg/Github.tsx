@@ -8,6 +8,7 @@ export const Github = ({ className }: GithubProps) => {
     return (
         <svg
             className={`${className} w-5 text-white group-hover:text-[#fff973] duration-500`}
+            role="none"
             width="20"
             height="20"
             viewBox="0 0 20 20"

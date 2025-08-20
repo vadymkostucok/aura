@@ -2,7 +2,7 @@ import React from 'react'
 import { Box } from '../Box'
 import { FlexContainer } from '../FlexContainer'
 import Image from 'next/image'
-import { H5, TypographySmall } from '../Typography/Typography'
+import { TypographySmall } from '../Typography/Typography'
 
 import crossIcon from '@/assets/cross.svg'
 import singleArrow from '@/assets/singleArrow.json'
@@ -44,11 +44,16 @@ export const LibraryCard = ({
             </FlexContainer>
             <FlexContainer
                 direction="flex-col"
+                role="button"
                 className="group p-4 bg-[#FFFFFF1A] hover:bg-[#ffffff05] border border-[#ffffff10] rounded-[2px] hover:text-[#FFF973] backdrop-blur-lg cursor-pointer duration-500"
                 gap="gap-5"
             >
                 <Box>
-                    <span className="block font-violet scroll-m-20 text-[21px] tracking-tight leading-none pb-2.5">
+                    <span
+                        aria-level={5}
+                        role="heading"
+                        className="block font-violet scroll-m-20 text-[21px] tracking-tight leading-none pb-2.5"
+                    >
                         {title}
                     </span>
                     <P>{description}</P>

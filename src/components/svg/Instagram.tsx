@@ -8,6 +8,7 @@ export const Instagram = ({ className }: InstagramProps) => {
     return (
         <svg
             className={`${className} w-5 text-white group-hover:text-[#fff973] duration-500`}
+            role="none"
             width="18"
             height="18"
             viewBox="0 0 18 18"

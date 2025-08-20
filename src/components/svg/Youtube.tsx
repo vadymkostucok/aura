@@ -8,6 +8,7 @@ export const Youtube = ({ className }: YoutubeProps) => {
     return (
         <svg
             className={`${className} w-5 text-white group-hover:text-[#fff973] duration-500`}
+            role="none"
             width="19"
             height="13"
             viewBox="0 0 19 13"

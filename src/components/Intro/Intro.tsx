@@ -16,10 +16,10 @@ import {
     introOpacity,
     introSlideUp,
 } from '../animations/variantsConfig'
-import { H2 } from '../Typography/H2'
+import { H1 } from '../Typography/H1'
 
 const MotionP = motion(P)
-const MotionH2 = motion(H2)
+const MotionH1 = motion(H1)
 const MotionBox = motion(Box)
 
 export const Intro = () => {
@@ -44,7 +44,7 @@ export const Intro = () => {
                 gap="gap-5"
                 center
             >
-                <MotionH2
+                <MotionH1
                     variants={introContainerVariants}
                     className="flex flex-wrap justify-center gap-3 md:max-w-[1100px]"
                 >
@@ -76,7 +76,7 @@ export const Intro = () => {
                             </motion.span>
                         </span>
                     ))}
-                </MotionH2>
+                </MotionH1>
                 <Box className="w-full md:w-[450px]">
                     <div className="overflow-hidden">
                         <MotionP

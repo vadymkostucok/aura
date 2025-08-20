@@ -46,7 +46,7 @@ export const VideoScrollWrapper = ({
     )
 
     return (
-        <div className="relative isolate" style={{ height }}>
+        <div className="relative isolate" role="none" style={{ height }}>
             <div className="sticky top-0 h-screen -z-10">
                 <img
                     src="/image/static_background.jpg"

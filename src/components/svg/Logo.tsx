@@ -7,6 +7,7 @@ type LogoProps = {
 export const Logo = ({ className }: LogoProps) => {
     return (
         <svg
+            role="none"
             width="81"
             height="28"
             viewBox="0 0 81 28"

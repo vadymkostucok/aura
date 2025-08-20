@@ -8,6 +8,7 @@ export const X = ({ className }: XProps) => {
     return (
         <svg
             className={`${className} w-5 text-white group-hover:text-[#fff973] duration-500`}
+            role="none"
             width="18"
             height="16"
             viewBox="0 0 18 16"
