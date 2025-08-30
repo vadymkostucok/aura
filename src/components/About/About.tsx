@@ -50,7 +50,7 @@ export const About = ({ cardsData }: AboutProps) => {
             initial="hidden"
             animate={shouldAnimate ? 'visible' : 'hidden'}
             id="about"
-            gap="gap-10"
+            // gap="gap-10"
             direction="flex-col"
             className="overflow-hidden relative"
             center
@@ -77,13 +77,14 @@ export const About = ({ cardsData }: AboutProps) => {
                     <span className="overflow-hidden block">
                         <MotionP
                             variants={aboutSlideUp}
+                            fontSize="text-[15px] md:text-[18px]"
                             className="max-w-lg text-center"
                         >
                             Start here to get your bearings. Then dive into the
                             official docs (snacks recommended).
                         </MotionP>
                     </span>
-                    <AboutInfographic />
+                    {/* <AboutInfographic /> */}
                 </MotionFlexContainer>
             </Box>
 

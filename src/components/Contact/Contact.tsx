@@ -83,6 +83,7 @@ export const Contact = () => {
                         <span className="overflow-hidden">
                             <MotionP
                                 variants={contactSlideUp}
+                                fontSize="text-[15px] md:text-[18px]"
                                 className="inline-block text-center"
                             >
                                 {

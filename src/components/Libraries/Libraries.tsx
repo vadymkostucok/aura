@@ -21,11 +21,12 @@ const CARDS_PER_PAGE = 6
 type LibrariesProps = {
     cardsData: Array<{
         title: string
+        link: string
+        author: string
         description: string
-        company: string
-        platform: string
         info: string
         type: string
+        tag: string
     }>
 }
 
@@ -85,6 +86,7 @@ export const Libraries = ({ cardsData }: LibrariesProps) => {
                 <div className="overflow-hidden">
                     <MotionP
                         variants={librariesSlideUp}
+                        fontSize="text-[15px] md:text-[18px]"
                         className="text-center"
                     >
                         Your most pressing compliance questions answered and a
@@ -95,21 +97,22 @@ export const Libraries = ({ cardsData }: LibrariesProps) => {
                 <FlexContainer direction="flex-col">
                     <motion.div
                         variants={librariesCardContainerVariants}
-                        className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 pt-5"
+                        className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-5 pt-5"
                     >
                         {visibleCards.map((card, index) => (
                             <LibraryCard
                                 key={index}
                                 type={card.type}
                                 title={card.title}
+                                link={card.link}
+                                author={card.author}
                                 description={card.description}
-                                company={card.company}
-                                platform={card.platform}
                                 info={card.info}
+                                tag={card.tag}
                             />
                         ))}
                     </motion.div>
-                    <div className="flex justify-center gap-2 mt-6">
+                    <div className="flex justify-center gap-2 mt-14">
                         {Array.from({ length: totalPages }, (_, i) => (
                             <button
                                 key={i}

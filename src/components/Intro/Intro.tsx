@@ -46,7 +46,7 @@ export const Intro = () => {
             >
                 <MotionH1
                     variants={introContainerVariants}
-                    className="flex flex-wrap justify-center gap-3 md:max-w-[1100px]"
+                    className="flex flex-wrap justify-center gap-3 md:max-w-[1200px]"
                 >
                     {[
                         'Building',
@@ -66,7 +66,7 @@ export const Intro = () => {
                         </span>
                     ))}
                     <br />
-                    {['Skip', 'the', 'overwhelm'].map((word, i) => (
+                    {['Skip', 'the', 'overwhelm.'].map((word, i) => (
                         <span key={i} className="overflow-hidden block">
                             <motion.span
                                 variants={introFadeInUp}
@@ -77,14 +77,15 @@ export const Intro = () => {
                         </span>
                     ))}
                 </MotionH1>
-                <Box className="w-full md:w-[450px]">
+                <Box className="w-full md:w-[500px]">
                     <div className="overflow-hidden">
                         <MotionP
                             variants={introSlideUp}
+                            fontSize="text-[15px] md:text-[18px]"
                             className="text-center opacity-80"
                         >
                             Our curated, tech-focused resources help you ship
-                            fast, stay secure, and be compliant
+                            fast, stay secure, and be compliant.
                         </MotionP>
                     </div>
                 </Box>

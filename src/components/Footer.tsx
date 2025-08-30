@@ -5,7 +5,9 @@ export const Footer = () => {
     return (
         <footer className="flex p-5 gap-1.5">
             <TypographyDisclaimer className="underline cursor-pointer">
-                Privacy Policy
+                <a href="https://www.solvewithvia.com/privacy/">
+                    Privacy Policy
+                </a>
             </TypographyDisclaimer>
             <TypographyDisclaimer>|</TypographyDisclaimer>
             <TypographyDisclaimer>

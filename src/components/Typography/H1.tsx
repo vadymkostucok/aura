@@ -7,7 +7,7 @@ export const H1 = forwardRef<
         fontSize?: string
         className?: string
     }
->(({ children, fontSize = 'text-5xl md:text-6xl', className }, ref) => {
+>(({ children, fontSize = 'text-5xl md:text-7xl', className }, ref) => {
     return (
         <h1
             ref={ref}

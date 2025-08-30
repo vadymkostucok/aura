@@ -5,10 +5,13 @@ import { TypographyButton } from '../Typography/TypographyButton'
 import { H2 } from '../Typography/H2'
 import { P } from '../Typography/P'
 import { PodcastCard } from './PodcastCard'
+import { Box } from '../Box'
+import { H3 } from '../Typography/H3'
 
-import Chip from '@/assets/Chip.json'
+// import Chip from '@/assets/Chip.json'
 import singleArrow from '@/assets/singleArrow.json'
 import { LottieAnimation } from '../LottieAnimation'
+import eventPicture from '@/assets/event.png'
 import { motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
 import {
@@ -17,8 +20,8 @@ import {
     podcastOpacitySlideUp,
     podcastSlideUp,
 } from '../animations/variantsConfig'
-import { Box } from '../Box'
-import { H3 } from '../Typography/H3'
+
+import Image from 'next/image'
 
 const MotionFlexContainer = motion(FlexContainer)
 const MotionBox = motion(Box)
@@ -71,6 +74,7 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
                     >
                         <MotionP
                             variants={podcastSlideUp}
+                            fontSize="text-[15px] md:text-[18px]"
                             className="text-center"
                         >
                             Headlines, events, and memes worth your time this
@@ -85,7 +89,7 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
                 >
                     <MotionBox>
                         <MotionH3 variants={podcastOpacitySlideUp}>
-                            News
+                            In the news
                         </MotionH3>
                         {newsData.map((card, index) => (
                             <PodcastCard
@@ -98,7 +102,7 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
 
                     <MotionBox>
                         <MotionH3 variants={podcastOpacitySlideUp}>
-                            Events
+                            Worth your time
                         </MotionH3>
                         {eventsData.map((card, index) => (
                             <PodcastCard
@@ -108,12 +112,13 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
                             />
                         ))}
                     </MotionBox>
+
                     <MotionBox
                         className="lg:mt-[32px]"
                         variants={podcastCardContainerVariants}
                     >
                         <MotionH3 variants={podcastOpacitySlideUp}>
-                            Laughs
+                            Events you can’t miss
                         </MotionH3>
 
                         <MotionFlexContainer
@@ -123,10 +128,15 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
                             center
                             className="lg:border lg:border-[#ffffff10] md:bg-[#ffffff02] backdrop-blur-lg rounded-[2px]"
                         >
-                            <FlexContainer center className="h-full pt-10 pb-5">
-                                <LottieAnimation
+                            <FlexContainer className="h-full pt-10 pb-5" center>
+                                {/* <LottieAnimation
                                     animationData={Chip}
                                     className="w-24 lg:w-36"
+                                /> */}
+                                <Image
+                                    src={eventPicture}
+                                    alt="upcoming Q&A event"
+                                    className="w-[450px]"
                                 />
                             </FlexContainer>
                             <FlexContainer
@@ -135,7 +145,10 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
                                 gap="gap-6"
                                 className="lg:border-t border-[#ffffff10] h-full lg:p-11"
                             >
-                                <P className="text-center">Meme of the week</P>
+                                <P className="text-center">
+                                    To learn more about upcoming event, click
+                                    the button below
+                                </P>
                                 <button className="uppercase cursor-pointer text-[#FFF973]">
                                     <FlexContainer gap="gap-2.5">
                                         <TypographyButton>

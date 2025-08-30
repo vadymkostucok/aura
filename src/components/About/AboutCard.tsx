@@ -6,6 +6,7 @@ import { P } from '../Typography/P'
 import { Box } from '../Box'
 
 import crossIcon from '@/assets/cross.svg'
+import { getDomain } from '@/utils/getDomain'
 
 type AboutCardType = {
     title: string
@@ -63,7 +64,7 @@ export const AboutCard = ({
                         >
                             {company}
                         </P>
-                        <P>{website}</P>
+                        <P>{getDomain(website)}</P>
                     </Box>
                 </FlexContainer>
             </FlexContainer>
