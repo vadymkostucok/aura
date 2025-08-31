@@ -7,6 +7,8 @@ import { FlexContainer } from '../FlexContainer'
 import crossIcon from '@/assets/cross.svg'
 import { motion } from 'framer-motion'
 import { podcastCardSlideUp } from '../animations/variantsConfig'
+import { P } from '../Typography/P'
+import { getDomain } from '@/utils/getDomain'
 
 const MotionBox = motion(Box)
 
@@ -42,9 +44,7 @@ export const PodcastCard = ({ date, title, link }: PodcastCartType) => {
                                 {title}
                             </H4>
                             <FlexContainer>
-                                <TypographySmall className="tracking-tight md:tracking-normal uppercase opacity-50">
-                                    {'Source | URL'}
-                                </TypographySmall>
+                                <P>{getDomain(link)}</P>
                             </FlexContainer>
                         </FlexContainer>
                         <div className="absolute inset-0 bg-gradient-to-l from-[#00000099] to-[#00000000] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-end items-center p-4" />

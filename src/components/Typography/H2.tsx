@@ -6,16 +6,23 @@ export const H2 = forwardRef<
         children: ReactNode
         fontSize?: string
         className?: string
+        id?: string
     }
->(({ children, fontSize = 'text-5xl md:text-6xl', className }, ref) => {
-    return (
-        <h2
-            ref={ref}
-            className={`${className} ${fontSize} font-violet scroll-m-20 tracking-tight`}
-        >
-            {children}
-        </h2>
-    )
-})
+>(
+    (
+        { children, fontSize = 'text-5xl md:text-6xl', className, id = '' },
+        ref
+    ) => {
+        return (
+            <h2
+                id={id}
+                ref={ref}
+                className={`${className} ${fontSize} font-violet scroll-m-20 tracking-tight`}
+            >
+                {children}
+            </h2>
+        )
+    }
+)
 
 H2.displayName = 'H2'

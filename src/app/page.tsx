@@ -34,13 +34,17 @@ export default async function Home() {
             <Loader />
             <Header />
             <VideoScrollWrapper>
-                <Intro />
-                <About cardsData={aboutCards} />
-                <Libraries cardsData={resourcesCards} />
-                <Podcast newsData={newsCards} eventsData={eventCards} />
-                <Report />
+                <main className="w-full">
+                    <Intro />
+                    <About cardsData={aboutCards} />
+                    <Libraries cardsData={resourcesCards} />
+                    <Podcast newsData={newsCards} eventsData={eventCards} />
+                    <Report />
+                </main>
             </VideoScrollWrapper>
-            <Contact />
+            <section role="region" aria-labelledby="contact-heading">
+                <Contact />
+            </section>
             <Footer />
         </>
     )

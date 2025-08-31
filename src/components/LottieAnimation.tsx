@@ -5,11 +5,13 @@ import React from 'react'
 type LottieAnimationProps = {
     animationData: unknown
     className?: string
+    ariaLabel?: string
 }
 
 export const LottieAnimation = ({
     animationData,
     className = '',
+    ariaLabel,
 }: LottieAnimationProps) => {
     return (
         <>
@@ -18,6 +20,9 @@ export const LottieAnimation = ({
                 loop
                 autoplay
                 className={className}
+                role={ariaLabel ? 'img' : 'presentation'}
+                aria-hidden={ariaLabel ? undefined : true}
+                aria-label={ariaLabel}
             />
         </>
     )

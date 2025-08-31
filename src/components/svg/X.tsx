@@ -6,7 +6,7 @@ type XProps = {
 
 export const X = ({ className }: XProps) => {
     return (
-        <a href="https://twitter.com/SolvewithVIA">
+        <a href="https://twitter.com/SolvewithVIA" aria-label="X">
             <svg
                 className={`${className} w-5 text-white group-hover:text-[#fff973] duration-500`}
                 role="none"

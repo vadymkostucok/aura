@@ -31,7 +31,6 @@ export const Header = () => {
                     <Image
                         src={viaLogo}
                         alt="VIA logo"
-                        role="none"
                         className="w-14 md:w-20"
                     />
                 </FlexContainer>

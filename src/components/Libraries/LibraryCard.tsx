@@ -75,9 +75,7 @@ export const LibraryCard = ({
                             <span className="px-2">|</span>
                             <span className="underline">{getDomain(link)}</span>
                         </P>
-                        <P opacity="opacity-50" className="mt-2.5">
-                            {info}
-                        </P>
+                        <P className="mt-2.5">{info}</P>
                     </Box>
 
                     <div className="opacity-0 group-hover:opacity-100 absolute right-0 bottom-0 bg-[#00000080] p-2.5 duration-500">

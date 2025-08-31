@@ -59,6 +59,7 @@ export const Contact = () => {
                         <MotionH2
                             variants={contactContainerVariants}
                             className="flex flex-wrap justify-center gap-x-2"
+                            id="contact-heading"
                         >
                             {['Join', 'our'].map((word, i) => (
                                 <span key={i} className="overflow-hidden block">
