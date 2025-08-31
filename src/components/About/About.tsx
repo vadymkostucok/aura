@@ -33,7 +33,7 @@ type AboutProps = {
         title: string
         description: string
         company: string
-        website: string
+        link: string
     }>
 }
 
@@ -134,7 +134,7 @@ export const About = ({ cardsData }: AboutProps) => {
                                     index={card.index}
                                     title={card.title}
                                     company={card.company}
-                                    website={card.website}
+                                    link={card.link}
                                     description={card.description}
                                 />
                             </SwiperSlide>

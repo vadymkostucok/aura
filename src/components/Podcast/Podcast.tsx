@@ -30,8 +30,8 @@ const MotionH3 = motion(H3)
 const MotionP = motion(P)
 
 type PodcastProps = {
-    newsData: Array<{ date: string; title: string }>
-    eventsData: Array<{ date: string; title: string }>
+    newsData: Array<{ date: string; title: string; link: string }>
+    eventsData: Array<{ date: string; title: string; link: string }>
 }
 
 export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
@@ -96,6 +96,7 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
                                 key={index}
                                 date={card.date}
                                 title={card.title}
+                                link={card.link}
                             />
                         ))}
                     </MotionBox>
@@ -109,6 +110,7 @@ export const Podcast = ({ newsData, eventsData }: PodcastProps) => {
                                 key={index}
                                 date={card.date}
                                 title={card.title}
+                                link={card.link}
                             />
                         ))}
                     </MotionBox>

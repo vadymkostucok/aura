@@ -49,8 +49,6 @@ export const Libraries = ({ cardsData }: LibrariesProps) => {
             ? cardsData
             : cardsData.filter((card) => card.tag === activeTag)
 
-    console.log(tags)
-
     const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE)
     const startIndex = (currentPage - 1) * CARDS_PER_PAGE
     const endIndex = startIndex + CARDS_PER_PAGE

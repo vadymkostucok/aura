@@ -12,7 +12,7 @@ type AboutCardType = {
     title: string
     description: string
     company: string
-    website: string
+    link: string
     index: string
 }
 
@@ -20,7 +20,7 @@ export const AboutCard = ({
     title,
     description,
     company,
-    website,
+    link,
     index,
 }: AboutCardType) => {
     return (
@@ -35,39 +35,41 @@ export const AboutCard = ({
                     Panel-{index}
                 </TypographySmall>
             </FlexContainer>
-            <FlexContainer
-                direction="flex-col"
-                justifyContent="justify-between"
-                className="bg-[#FFFFFF1A] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg flex-1 pl-4 pr-2.5"
-            >
-                <FlexContainer
-                    alignItems="items-center"
-                    justifyContent="justify-between"
-                    className="pt-5 pb-5 md:pb-8"
-                >
-                    <H4 className="text-[#FFF973] h-[48px] leading-none tracking-tight truncate">
-                        {title}
-                    </H4>
-                </FlexContainer>
+            <a href={link} target="_blank">
                 <FlexContainer
                     direction="flex-col"
                     justifyContent="justify-between"
-                    gap="gap-2.5"
-                    className="pb-5 h-full"
+                    className="bg-[#FFFFFF1A] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg flex-1 pl-4 pr-2.5"
                 >
-                    <P>{description}</P> <br />
-                    <Box>
-                        <P
-                            role="button"
-                            tabIndex={0}
-                            className="font-bold truncate"
-                        >
-                            {company}
-                        </P>
-                        <P>{getDomain(website)}</P>
-                    </Box>
+                    <FlexContainer
+                        alignItems="items-center"
+                        justifyContent="justify-between"
+                        className="pt-5 pb-5 md:pb-8"
+                    >
+                        <H4 className="text-[#FFF973] h-[48px] leading-none tracking-tight truncate">
+                            {title}
+                        </H4>
+                    </FlexContainer>
+                    <FlexContainer
+                        direction="flex-col"
+                        justifyContent="justify-between"
+                        gap="gap-2.5"
+                        className="pb-5 h-full"
+                    >
+                        <P>{description}</P> <br />
+                        <Box>
+                            <P
+                                role="button"
+                                tabIndex={0}
+                                className="font-bold truncate"
+                            >
+                                {company}
+                            </P>
+                            <P>{getDomain(link)}</P>
+                        </Box>
+                    </FlexContainer>
                 </FlexContainer>
-            </FlexContainer>
+            </a>
         </FlexContainer>
     )
 }
