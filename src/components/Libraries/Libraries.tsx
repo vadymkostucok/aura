@@ -33,7 +33,7 @@ type LibrariesProps = {
 
 export const Libraries = ({ cardsData }: LibrariesProps) => {
     const [currentPage, setCurrentPage] = useState(1)
-    const [activeTag, setActiveTag] = useState<string>('all')
+    const [activeTag, setActiveTag] = useState<string>('All')
 
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
@@ -49,10 +49,15 @@ export const Libraries = ({ cardsData }: LibrariesProps) => {
             ? cardsData
             : cardsData.filter((card) => card.tag === activeTag)
 
-    const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE)
+    const sortedCards = [...filteredCards].sort((a, b) => {
+        if (a.new === b.new) return 0
+        return a.new ? -1 : 1
+    })
+
+    const totalPages = Math.ceil(sortedCards.length / CARDS_PER_PAGE)
     const startIndex = (currentPage - 1) * CARDS_PER_PAGE
     const endIndex = startIndex + CARDS_PER_PAGE
-    const visibleCards = filteredCards.slice(startIndex, endIndex)
+    const visibleCards = sortedCards.slice(startIndex, endIndex)
 
     const shouldAnimate = isLoaded && isInView
 
