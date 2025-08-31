@@ -19,7 +19,7 @@ type LibraryCardProps = {
     description: string
     info: string
     type: string
-    tag: string
+    newCard?: boolean
 }
 
 const MotionBox = motion(Box)
@@ -31,7 +31,7 @@ export const LibraryCard = ({
     description,
     info,
     type,
-    tag,
+    newCard,
 }: LibraryCardProps) => {
     return (
         <MotionBox variants={libraryCardSlideUp}>
@@ -49,17 +49,24 @@ export const LibraryCard = ({
                 <FlexContainer
                     direction="flex-col"
                     tabIndex={0}
-                    className="group h-full p-4 bg-[#FFFFFF1A] hover:bg-[#ffffff05] border border-[#ffffff10] rounded-[2px] hover:text-[#FFF973] backdrop-blur-lg cursor-pointer duration-500"
+                    className="group h-full p-4 bg-[#FFFFFF1A] hover:bg-[#ffffff05] border border-[#ffffff10] rounded-[2px] hover:text-[#FFF973] cursor-pointer backdrop-blur-lg duration-500"
                     gap="gap-5"
                 >
                     <Box className="flex-1">
-                        <span
-                            aria-level={5}
-                            role="heading"
-                            className="block font-violet scroll-m-20 text-[21px] tracking-tight leading-none pb-2.5"
-                        >
-                            {title}
-                        </span>
+                        <FlexContainer justifyContent="justify-between">
+                            <span
+                                aria-level={5}
+                                role="heading"
+                                className="block font-violet scroll-m-20 text-[21px] tracking-tight leading-none pb-2.5 whitespace-nowrap text-ellipsis overflow-hidden"
+                            >
+                                {title}
+                            </span>
+                            {newCard && (
+                                <span className="block font-violet scroll-m-20 text-[12px] p-1 mb-2.5 w-fit shrink-0 border rounded-full">
+                                    New
+                                </span>
+                            )}
+                        </FlexContainer>
                         <P>{description}</P>
                     </Box>
                     <Box>

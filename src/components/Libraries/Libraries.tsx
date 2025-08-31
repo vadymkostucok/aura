@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 import { H2 } from '../Typography/H2'
 import { FlexContainer } from '../FlexContainer'
 import { LibraryCard } from './LibraryCard'
@@ -27,21 +27,34 @@ type LibrariesProps = {
         info: string
         type: string
         tag: string
+        new: boolean
     }>
 }
 
 export const Libraries = ({ cardsData }: LibrariesProps) => {
     const [currentPage, setCurrentPage] = useState(1)
+    const [activeTag, setActiveTag] = useState<string>('all')
 
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-30% 0px -30% 0px' })
     const isLoaded = useHasLoaderFinished()
 
-    const totalPages = Math.ceil(cardsData.length / CARDS_PER_PAGE)
+    const tags = useMemo(() => {
+        const unique = Array.from(new Set(cardsData.map((c) => c.tag)))
+        return ['All', ...unique]
+    }, [cardsData])
 
+    const filteredCards =
+        activeTag === 'All'
+            ? cardsData
+            : cardsData.filter((card) => card.tag === activeTag)
+
+    console.log(tags)
+
+    const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE)
     const startIndex = (currentPage - 1) * CARDS_PER_PAGE
     const endIndex = startIndex + CARDS_PER_PAGE
-    const visibleCards = cardsData.slice(startIndex, endIndex)
+    const visibleCards = filteredCards.slice(startIndex, endIndex)
 
     const shouldAnimate = isLoaded && isInView
 
@@ -95,6 +108,28 @@ export const Libraries = ({ cardsData }: LibrariesProps) => {
                     </MotionP>
                 </div>
                 <FlexContainer direction="flex-col">
+                    <FlexContainer
+                        gap="gap-3"
+                        justifyContent="justify-center"
+                        className="flex-wrap mt-8"
+                    >
+                        {tags.map((tag) => (
+                            <button
+                                key={tag}
+                                onClick={() => {
+                                    setActiveTag(tag)
+                                    setCurrentPage(1)
+                                }}
+                                className={`px-4 py-2 rounded-md text-sm cursor-pointer duration-300 ${
+                                    activeTag === tag
+                                        ? 'bg-[#FFF973] text-black'
+                                        : 'bg-[#FFFFFF1A] text-white hover:bg-[#ffffff05] hover:text-[#FFF973]'
+                                }`}
+                            >
+                                {tag}
+                            </button>
+                        ))}
+                    </FlexContainer>
                     <motion.div
                         variants={librariesCardContainerVariants}
                         className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-5 pt-5"
@@ -108,7 +143,7 @@ export const Libraries = ({ cardsData }: LibrariesProps) => {
                                 author={card.author}
                                 description={card.description}
                                 info={card.info}
-                                tag={card.tag}
+                                newCard={card.new}
                             />
                         ))}
                     </motion.div>
@@ -120,7 +155,7 @@ export const Libraries = ({ cardsData }: LibrariesProps) => {
                                 className={`px-3 py-1 rounded duration-500 cursor-pointer ${
                                     currentPage === i + 1
                                         ? 'bg-[#FFF973] text-black'
-                                        : 'bg-[#FFFFFF1A] text-white hover:bg-gray-600 hover:text-[#FFF973]'
+                                        : 'bg-[#FFFFFF1A] text-white hover:bg-[#ffffff05] hover:text-[#FFF973]'
                                 }`}
                             >
                                 {i + 1}
