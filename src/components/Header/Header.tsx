@@ -14,13 +14,13 @@ export const Header = () => {
 
     return (
         <motion.header
-            className="w-full md:w-fit absolute top-5 left-1/2 -translate-x-1/2 z-20 px-4 md:px-4"
+            className="w-full xl:w-fit absolute top-5 left-1/2 -translate-x-1/2 z-20 px-4 md:px-4"
             initial={{ opacity: 0, y: -30 }}
             animate={isLoaded ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, ease: 'easeOut' }}
         >
             <FlexContainer
-                width="w-full md:w-fit"
+                width="w-full xl:w-fit"
                 className=" backdrop-blur-md bg-[#FFFFFF05]"
             >
                 <FlexContainer
@@ -35,11 +35,13 @@ export const Header = () => {
                         className="w-14 md:w-20"
                     />
                 </FlexContainer>
-                <nav className="w-full md:w-fit fade-border rounded-[2px] no-left -ml-[4px]">
+                <nav className="w-full xl:w-fit fade-border rounded-[2px] no-left -ml-[4px]">
                     <ul className="flex px-1 md:px-6 justify-center">
                         <li className="leading-none px-2.5 md:px-4 pt-3 md:pt-3.5 pb-3 md:pb-4.5">
-                            <TypographySmall className="cursor-pointer uppercase whitespace-nowrap text-[#f7f7f7] hover:text-[#fff973] duration-500">
-                                Banner for event announcements
+                            <TypographySmall className="cursor-pointer uppercase xl:whitespace-nowrap text-[#f7f7f7] hover:text-[#fff973] duration-500">
+                                Exclusive event: Q&A with a voice that shapes
+                                defense. Sign up for our mailing to be the first
+                                to know.
                             </TypographySmall>
                         </li>
                     </ul>
