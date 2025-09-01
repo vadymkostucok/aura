@@ -6,9 +6,8 @@ import { H2 } from '../Typography/H2'
 import { Box } from '../Box'
 
 import { Instagram } from '../svg/Instagram'
-import { Github } from '../svg/Github'
 import { X } from '../svg/X'
-import { Youtube } from '../svg/Youtube'
+import { LinkedIn } from '../svg/LinkedIn'
 import { ContactForm } from './ContactForm'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useHasLoaderFinished } from '@/hooks/useHasLoaderFinished'
@@ -22,9 +21,8 @@ import {
 
 const socialMediaMap = [
     { logo: <Instagram /> },
-    { logo: <Github /> },
     { logo: <X /> },
-    { logo: <Youtube /> },
+    { logo: <LinkedIn /> },
 ]
 
 const MotionFlexContainer = motion(FlexContainer)
