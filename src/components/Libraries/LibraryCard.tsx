@@ -55,8 +55,8 @@ export const LibraryCard = ({
                     <Box className="flex-1">
                         <FlexContainer justifyContent="justify-between">
                             <span
-                                aria-level={5}
                                 role="heading"
+                                aria-level={3}
                                 className="block font-violet scroll-m-20 text-[21px] tracking-tight leading-none pb-2.5 whitespace-nowrap text-ellipsis overflow-hidden"
                             >
                                 {title}
