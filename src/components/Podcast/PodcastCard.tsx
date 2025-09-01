@@ -32,7 +32,7 @@ export const PodcastCard = ({ date, title, link }: PodcastCartType) => {
                         {date}
                     </TypographySmall>
                 </FlexContainer>
-                <a href={link} target="_blank">
+                <a href={link}>
                     <FlexContainer className="group bg-[#FFFFFF1A] border border-[#ffffff10] rounded-[2px] backdrop-blur-lg py-4 cursor-pointer">
                         <FlexContainer
                             direction="flex-col"

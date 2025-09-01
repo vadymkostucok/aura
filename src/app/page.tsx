@@ -42,7 +42,7 @@ export default async function Home() {
                     <Report />
                 </main>
             </VideoScrollWrapper>
-            <section role="region" aria-labelledby="contact-heading">
+            <section aria-labelledby="contact-heading">
                 <Contact />
             </section>
             <Footer />

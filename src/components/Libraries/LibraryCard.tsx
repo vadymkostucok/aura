@@ -45,7 +45,7 @@ export const LibraryCard = ({
                     {type}
                 </TypographySmall>
             </FlexContainer>
-            <a href={link} target="_blank">
+            <a href={link}>
                 <FlexContainer
                     direction="flex-col"
                     tabIndex={0}

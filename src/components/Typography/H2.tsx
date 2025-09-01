@@ -15,7 +15,7 @@ export const H2 = forwardRef<
     ) => {
         return (
             <h2
-                id={id}
+                {...(id ? { id } : {})}
                 ref={ref}
                 className={`${className} ${fontSize} font-violet scroll-m-20 tracking-tight`}
             >

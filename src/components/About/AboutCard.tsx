@@ -35,7 +35,7 @@ export const AboutCard = ({
                     Panel-{index}
                 </TypographySmall>
             </FlexContainer>
-            <a href={link} target="_blank">
+            <a href={link}>
                 <FlexContainer
                     direction="flex-col"
                     justifyContent="justify-between"

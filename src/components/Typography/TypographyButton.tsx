@@ -42,14 +42,14 @@ export const TypographyButton = forwardRef<
         useImperativeHandle(ref, () => ({ replay }))
 
         return (
-            <p
+            <span
                 ref={scrambleRef}
                 onMouseEnter={!disableInternalHover ? replay : undefined}
                 onMouseLeave={!disableInternalHover ? replay : undefined}
                 className={`${className} ${fontSize} font-disket cursor-pointer`}
             >
                 {children}
-            </p>
+            </span>
         )
     }
 )
